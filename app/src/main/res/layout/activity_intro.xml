@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activitis.IntroActivity">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="460sp"
+                android:scaleType="fitXY"
+                android:src="@drawable/intro_backgound">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/textViewIntroTitle"
+                android:layout_marginTop="20dp"
+                android:textColor="#CF233C"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:text="Booking travel \n around the world"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:gravity="center">
+
+            </TextView>
+
+            <TextView
+                android:textAlignment="center"
+                android:id="@+id/textViewIntroDescription"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:text="Book tickets of any means of transport \n and travel throughout Vietnam!!"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintlayoutIntro"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="40dp"
+                android:background="@drawable/intro_btn_started">
+
+                <TextView
+                    android:id="@+id/textviewIntro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="108dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Get started"
+                    android:textColor="@color/white"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"></TextView>
+
+                <ImageView
+                    android:id="@+id/imageViewIntro"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="290dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/arrow" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
