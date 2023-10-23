@@ -31,6 +31,7 @@ public class DetailHotelActivity extends AppCompatActivity {
     }
 
     private void setVariable(){
+
         hotel = (Hotel) getIntent().getSerializableExtra("object");
 
         txtTitle.setText(hotel.getName());
