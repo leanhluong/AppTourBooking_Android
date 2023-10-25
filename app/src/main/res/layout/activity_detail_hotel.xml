@@ -218,18 +218,20 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="32dp"
                 android:textSize="20sp"/>
+
             <TextView
                 android:id="@+id/txt_detail_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Các phòng nghỉ tại khách sạn được thiết kế rộng rãi và sang trọng, với đầy đủ tiện nghi hiện đại để đảm bảo sự thoải mái tối đa cho khách hàng. Từ ban công riêng, quý khách có thể thưởng ngoạn tầm nhìn đẹp và cảm nhận sự mát mẻ của biển hoặc thành phố. Ngoài ra, các phòng còn được trang bị truy cập Wi-Fi miễn phí, TV màn hình phẳng, minibar, và nhiều tiện ích khác."
-                android:textColor="@color/black"
-                android:textStyle="italic"
                 android:layout_marginStart="32dp"
-                android:inputType="textMultiLine"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="32dp"
-                android:textSize="14sp"/>
+                android:text="descripton"
+                android:inputType="textMultiLine"
+                android:minHeight="48dp"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="italic" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -240,7 +242,7 @@
                 android:layout_marginBottom="16dp">
 
                 <TextView
-                    android:id="@+id/txtPrice_details"
+                    android:id="@+id/txt_detail_prices"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
@@ -268,14 +270,13 @@
                     android:id="@+id/textView43"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
+                    android:text="K vnd/ngày"
                     android:textColor="@color/black"
-                    android:text="vnd/ngày"
-                    app:layout_constraintBottom_toBottomOf="@+id/txtPrice_details"
-                    app:layout_constraintStart_toEndOf="@+id/txtPrice_details"
-                    app:layout_constraintTop_toTopOf="@+id/txtPrice_details" />
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/txt_detail_prices"
+                    app:layout_constraintStart_toEndOf="@+id/txt_detail_prices"
+                    app:layout_constraintTop_toTopOf="@+id/txt_detail_prices" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </ScrollView>

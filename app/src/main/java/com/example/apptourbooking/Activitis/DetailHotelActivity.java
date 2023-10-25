@@ -13,7 +13,7 @@ import com.example.apptourbooking.R;
 
 public class DetailHotelActivity extends AppCompatActivity {
 
-    private TextView txtTitle, txtLocation, txtBed, txtGuide, txtWifi, txtDescription, txtScore;
+    private TextView txtTitle, txtLocation, txtBed, txtGuide, txtWifi, txtDescription, txtScore, txtPrice;
     private Hotel hotel;
 
     private ImageView ImgHotel, btnBack;
@@ -39,6 +39,7 @@ public class DetailHotelActivity extends AppCompatActivity {
         txtLocation.setText(hotel.getLocation());
         txtBed.setText(hotel.getBed()+ " Bed");
         txtDescription.setText(hotel.getDescription());
+        txtPrice.setText(hotel.getPrice()+"");
         if(hotel.isGuide()){
             txtGuide.setText("Guide");
         }else {
@@ -72,6 +73,6 @@ public class DetailHotelActivity extends AppCompatActivity {
         txtScore = findViewById(R.id.txt_detail_score);
         ImgHotel = findViewById(R.id.img_detail_hotel);
         btnBack = findViewById(R.id.img_detail_back);
-
+        txtPrice = findViewById(R.id.txt_detail_prices);
     }
 }

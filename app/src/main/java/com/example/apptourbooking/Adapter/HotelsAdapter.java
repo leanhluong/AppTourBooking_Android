@@ -40,6 +40,7 @@ public class HotelsAdapter extends RecyclerView.Adapter<HotelsAdapter.ViewHolder
         holder.name.setText(listHotels.get(position).getName());
         holder.location.setText(listHotels.get(position).getLocation());
         holder.scoreTxt.setText(" " + listHotels.get(position).getScore());
+        holder.price.setText(listHotels.get(position).getPrice()+"K Vnd");
 
         int drawableResId = holder.itemView.getResources()
                 .getIdentifier(listHotels.get(position).getPic(), "drawable",
@@ -63,7 +64,7 @@ public class HotelsAdapter extends RecyclerView.Adapter<HotelsAdapter.ViewHolder
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView name, location, scoreTxt;
+        TextView name, location, scoreTxt, price;
         ImageView pic;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -72,6 +73,7 @@ public class HotelsAdapter extends RecyclerView.Adapter<HotelsAdapter.ViewHolder
             location = itemView.findViewById(R.id.txtLocation);
             scoreTxt = itemView.findViewById(R.id.txtScore);
             pic = itemView.findViewById(R.id.imageView7);
+            price = itemView.findViewById(R.id.txtPrice_hotel);
         }
     }
 }

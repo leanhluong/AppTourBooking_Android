@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class Hotel implements Serializable {
 
+    private int id;
     private String name;
     private String location;
     private String description;
@@ -25,6 +26,14 @@ public class Hotel implements Serializable {
         this.pic = pic;
         this.wifi = wifi;
         this.price = price;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
