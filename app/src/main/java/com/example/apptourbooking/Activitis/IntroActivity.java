@@ -17,9 +17,7 @@ import com.example.apptourbooking.R;
 
 public class IntroActivity extends AppCompatActivity {
 
-    private static final int NOTICIFITION_ID = 1;
     ConstraintLayout cs;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,27 +30,10 @@ public class IntroActivity extends AppCompatActivity {
                 Intent intent = new Intent(IntroActivity.this, MainActivity.class);
                 startActivity(intent);
 
-//                sendNoticification();
             }
         });
 
     }
-
-//    private void sendNoticification(){
-//
-////        Bitmap bitmap = new BitmapFactory.decodeResource(getResources(),R.mipmap.ic_launcher);
-//        Notification notification = new Notification.Builder(this)
-//                .setContentTitle("Thông báo")
-//                .setContentText("Đây là thông báo")
-//                .setSmallIcon(R.drawable.ic_noticication)
-////                .setLargeIcon(bitmap)
-//                .build();
-//
-//        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-//        if(notificationManager != null){
-//            notificationManager.notify(NOTICIFITION_ID, notification);
-//        }
-//    }
 
 
 }

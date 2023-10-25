@@ -7,7 +7,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.apptourbooking.Adapter.HotelsAdapter;
@@ -17,38 +19,39 @@ import com.example.apptourbooking.R;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    LinearLayout linearLayoutUuDai;
-    TextView txtLogin;
+
+    private ScrollView loadSroll;
+    private LinearLayout linearLayoutUuDai, lnTaiKhoan, lnTrangChu;
+    private TextView txtLogin;
     private RecyclerView.Adapter adapterRoom;
     private RecyclerView recyclerRoom;
+    private ImageView img_trangchu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        AnhXa();
+        Init();
 
-        txtLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, LoginActivity.class));
-            }
-        });
+        Login();
 
         initRecyclerView();
 
-        linearLayoutUuDai.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, CouponsActivity.class));
-            }
-        });
+        TrangChu();
+
+        Coupon();
+
+        TaiKhoan();
 
     }
 
-    private void AnhXa(){
+    private void Init(){
         linearLayoutUuDai = (LinearLayout) findViewById(R.id.linearlayoutUuDai);
+        lnTaiKhoan = (LinearLayout) findViewById(R.id.ln_main_taikhoan);
         txtLogin = (TextView) findViewById(R.id.textView_login);
+        lnTrangChu = findViewById(R.id.main_ln_trangchu);
+        loadSroll = findViewById(R.id.scrollView2);
+        img_trangchu = findViewById(R.id.main_Img_trangchu);
     }
 
     private void initRecyclerView(){
@@ -61,5 +64,54 @@ public class MainActivity extends AppCompatActivity {
         recyclerRoom.setLayoutManager(new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false));
         adapterRoom = new HotelsAdapter(listHotel);
         recyclerRoom.setAdapter(adapterRoom);
+    }
+
+    private void Login(){
+        txtLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+            }
+        });
+    }
+
+    private void TrangChu(){
+        lnTrangChu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadSroll.smoothScrollTo(0, 0);
+            }
+        });
+
+        loadSroll.setOnScrollChangeListener(new View.OnScrollChangeListener() {
+            @Override
+            public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+                if (scrollY > oldScrollY) {
+                    // Kéo xuống, thay đổi sang imageView2
+                    img_trangchu.setImageResource(R.drawable.main_ic_arrowup);
+                } else if(scrollY == 0 ){
+                    // Kéo lên, thay đổi sang imageView1
+                    img_trangchu.setImageResource(R.drawable.main_ic_home);
+                }
+            }
+        });
+    }
+
+    private void Coupon(){
+        linearLayoutUuDai.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, CouponsActivity.class));
+            }
+        });
+    }
+
+    private void TaiKhoan(){
+        lnTaiKhoan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+            }
+        });
     }
 }

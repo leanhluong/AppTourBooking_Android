@@ -13,6 +13,9 @@
         android:theme="@style/Theme.AppTourBooking"
         tools:targetApi="31">
         <activity
+            android:name=".Activitis.ProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activitis.DetailHotelActivity"
             android:exported="false" />
         <activity
