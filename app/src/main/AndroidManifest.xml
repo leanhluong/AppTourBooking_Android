@@ -13,6 +13,15 @@
         android:theme="@style/Theme.AppTourBooking"
         tools:targetApi="31">
         <activity
+            android:name=".Admin.ManagerHotel"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.ManageAccount"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.AdminActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activitis.ProfileActivity"
             android:exported="false" />
         <activity
@@ -20,19 +29,19 @@
             android:exported="false" />
         <activity
             android:name=".Activitis.RegisterActivity"
-            android:windowSoftInputMode="stateAlwaysHidden"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
             android:name=".Activitis.LoginActivity"
-            android:windowSoftInputMode="stateAlwaysHidden"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
             android:name=".Activitis.CouponsActivity"
             android:exported="false" />
         <activity
             android:name=".Activitis.MainActivity"
-            android:windowSoftInputMode="stateAlwaysHidden"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
             android:name=".Activitis.IntroActivity"
             android:exported="true">

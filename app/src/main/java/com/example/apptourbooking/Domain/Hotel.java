@@ -15,6 +15,18 @@ public class Hotel implements Serializable {
     private boolean wifi;
     private int price;
 
+    public Hotel(int id, String name, String location, String description,
+                 int bed, double score, String pic, int price) {
+        this.id = id;
+        this.name = name;
+        this.location = location;
+        this.description = description;
+        this.bed = bed;
+        this.score = score;
+        this.pic = pic;
+        this.price = price;
+    }
+
     public Hotel(String name, String location, String description,
                  int bed, boolean guide, double score, String pic, boolean wifi, int price) {
         this.name = name;

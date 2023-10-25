@@ -11,7 +11,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.apptourbooking.Database.DBLogin;
+import com.example.apptourbooking.Admin.AdminActivity;
+import com.example.apptourbooking.Database.DatabaseHelper;
 import com.example.apptourbooking.R;
 
 public class LoginActivity extends AppCompatActivity {
@@ -21,7 +22,7 @@ public class LoginActivity extends AppCompatActivity {
     ConstraintLayout cslRegister;
     private EditText username, password;
     private Button btn_login;
-    DBLogin DB;
+    DatabaseHelper DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +85,7 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
     private void Login(){
-        DB =  new DBLogin(this);
+        DB =  new DatabaseHelper(this);
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,11 +93,16 @@ public class LoginActivity extends AppCompatActivity {
                 String pass = password.getText().toString();
                 if(user.equals("") || pass.equals("") ){
                     Toast.makeText(LoginActivity.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
-                } else {
+                }
+                else {
                     Boolean checkuserpass = DB.checkusernamepassword(user,pass);
                     if(checkuserpass == true){
                         Toast.makeText(LoginActivity.this, "Sign in successfully", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        if(user.equals("anhluong0110")){
+                            startActivity(new Intent(getApplicationContext(), AdminActivity.class));
+                        }else {
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        }
                     } else {
                         Toast.makeText(LoginActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
                     }

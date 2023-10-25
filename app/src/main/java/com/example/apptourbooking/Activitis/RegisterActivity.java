@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.apptourbooking.Database.DBLogin;
+import com.example.apptourbooking.Database.DatabaseHelper;
 import com.example.apptourbooking.R;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -19,7 +19,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText username, fullname, password, repassword;
     private Button btnRegister;
 
-    DBLogin DB;
+    DatabaseHelper DB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,7 +57,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void Register(){
-        DB = new DBLogin(this);
+        DB = new DatabaseHelper(this);
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
