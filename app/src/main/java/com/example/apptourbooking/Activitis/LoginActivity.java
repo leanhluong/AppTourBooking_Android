@@ -3,10 +3,13 @@ package com.example.apptourbooking.Activitis;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -18,6 +21,7 @@ import com.example.apptourbooking.R;
 public class LoginActivity extends AppCompatActivity {
 
     ImageView imgbackLogin, imgHienMk;
+    private CheckBox rememberCheckbox;
     private boolean passwordVisible = false;
     ConstraintLayout cslRegister;
     private EditText username, password;
@@ -38,6 +42,8 @@ public class LoginActivity extends AppCompatActivity {
 
         ShowPassword();
 
+        SharedRemember();
+
     }
 
     private void Anhxa(){
@@ -47,6 +53,7 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.login_editText_password);
         btn_login = findViewById(R.id.btn_login);
         imgHienMk = findViewById(R.id.login_img_hienmk);
+        rememberCheckbox = findViewById(R.id.login_cb_remember);
     }
 
     private void Back(){
@@ -98,6 +105,21 @@ public class LoginActivity extends AppCompatActivity {
                     Boolean checkuserpass = DB.checkusernamepassword(user,pass);
                     if(checkuserpass == true){
                         Toast.makeText(LoginActivity.this, "Sign in successfully", Toast.LENGTH_SHORT).show();
+                        if(rememberCheckbox.isChecked()){
+                            SharedPreferences sharedPreferences = getSharedPreferences("MyPreferences", MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putString("RememberUsername", user);
+                            editor.putString("RememberPassword", pass);
+                            editor.putBoolean("rememberMe", true);
+                            editor.apply();
+                        } else {
+                            SharedPreferences sharedPreferences = getSharedPreferences("MyPreferences", MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.remove("RememberUsername");
+                            editor.remove("RememberPassword");
+                            editor.putBoolean("rememberMe", false);
+                            editor.apply();
+                        }
                         if(user.equals("anhluong0110")){
                             startActivity(new Intent(getApplicationContext(), AdminActivity.class));
                         }else {
@@ -109,5 +131,21 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void SharedRemember(){
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPreferences", MODE_PRIVATE);
+        boolean rememberMe = sharedPreferences.getBoolean("rememberMe", false);
+
+        if (rememberMe) {
+            // Nếu người dùng đã chọn "Lưu tài khoản và mật khẩu", bạn có thể đọc tài khoản và mật khẩu từ SharedPreferences
+            String savedUsername = sharedPreferences.getString("RememberUsername", "");
+            String savedPassword = sharedPreferences.getString("RememberPassword", "");
+
+            // Đặt tài khoản và mật khẩu vào trường nhập liệu
+            username.setText(savedUsername);
+            password.setText(savedPassword);
+            rememberCheckbox.setChecked(true);
+        }
     }
 }
