@@ -5,6 +5,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -13,16 +15,18 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.apptourbooking.Adapter.HotelsAdapter;
+import com.example.apptourbooking.Database.DatabaseHelper;
 import com.example.apptourbooking.Domain.Hotel;
 import com.example.apptourbooking.R;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
     private ScrollView loadSroll;
     private LinearLayout linearLayoutUuDai, lnTaiKhoan, lnTrangChu;
-    private TextView txtLogin;
+    private TextView txtLogin, greetingTextView;
     private RecyclerView.Adapter adapterRoom;
     private RecyclerView recyclerRoom;
     private ImageView img_trangchu;
@@ -34,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         Init();
 
         Login();
+        SetWelcomeHeader();
 
         initRecyclerView();
 
@@ -52,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         lnTrangChu = findViewById(R.id.main_ln_trangchu);
         loadSroll = findViewById(R.id.scrollView2);
         img_trangchu = findViewById(R.id.main_Img_trangchu);
+        greetingTextView = findViewById(R.id.main_txt_welcome_weather);
     }
 
     private void initRecyclerView(){
@@ -114,4 +120,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void SetWelcomeHeader(){
+        Calendar calendar = Calendar.getInstance();
+        int hour = calendar.get(Calendar.HOUR_OF_DAY);
+// Kiểm tra khoảng thời gian và đặt nội dung tương ứng cho TextView
+        if (hour >= 6 && hour < 10) {
+            greetingTextView.setText("Chào buổi sáng");
+        } else if (hour >= 10 && hour < 13) {
+            greetingTextView.setText("Chào buổi trưa");
+        }else if (hour >= 13 && hour < 18) {
+            greetingTextView.setText("Chào buổi Chiều");
+        } else {
+            greetingTextView.setText("Chào buổi tối");
+        }
+    }
+
 }
