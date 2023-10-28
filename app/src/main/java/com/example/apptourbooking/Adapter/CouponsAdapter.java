@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.apptourbooking.DAO.UserDAO;
 import com.example.apptourbooking.Domain.PhieuGiamGia;
 import com.example.apptourbooking.R;
 
@@ -17,7 +18,6 @@ public class CouponsAdapter extends BaseAdapter {
     private Context context;
     private int layout;
     private List<PhieuGiamGia> couponsList;
-
     public CouponsAdapter(Context context, int layout, List<PhieuGiamGia> couponsList) {
         this.context = context;
         this.layout = layout;

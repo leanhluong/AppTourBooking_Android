@@ -10,6 +10,14 @@ public class UserInfo {
     public UserInfo() {
     }
 
+    public UserInfo(int userId, String userName, String fullName, String password, int role) {
+        this.userId = userId;
+        this.userName = userName;
+        this.fullName = fullName;
+        this.password = password;
+        this.role = role;
+    }
+
     public UserInfo(String userName, String fullName, String password, int role) {
         this.userName = userName;
         this.fullName = fullName;

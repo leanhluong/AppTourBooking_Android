@@ -20,7 +20,7 @@ import com.example.apptourbooking.R;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-public class HotelsAdapter extends RecyclerView.Adapter<HotelsAdapter.ViewHolder> {
+public class HotelsAdapter extends RecyclerView.Adapter<HotelsAdapter.ViewHolderHotel> {
 
     ArrayList<Hotel> listHotels;
 
@@ -30,13 +30,13 @@ public class HotelsAdapter extends RecyclerView.Adapter<HotelsAdapter.ViewHolder
 
     @NonNull
     @Override
-    public HotelsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public HotelsAdapter.ViewHolderHotel onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_holder_hotel, parent, false);
-        return new ViewHolder(inflate);
+        return new ViewHolderHotel(inflate);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull HotelsAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull HotelsAdapter.ViewHolderHotel holder, int position) {
         holder.name.setText(listHotels.get(position).getName());
         holder.location.setText(listHotels.get(position).getLocation());
         holder.scoreTxt.setText(" " + listHotels.get(position).getScore());
@@ -63,10 +63,10 @@ public class HotelsAdapter extends RecyclerView.Adapter<HotelsAdapter.ViewHolder
         return listHotels.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolderHotel extends RecyclerView.ViewHolder{
         TextView name, location, scoreTxt, price;
         ImageView pic;
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolderHotel(@NonNull View itemView) {
             super(itemView);
 
             name = itemView.findViewById(R.id.txtTitleZoom);

@@ -120,7 +120,7 @@ public class LoginActivity extends AppCompatActivity {
                             editor.putBoolean("rememberMe", false);
                             editor.apply();
                         }
-                        if(user.equals("anhluong0110")){
+                        if(user.equals("admin")){
                             startActivity(new Intent(getApplicationContext(), AdminActivity.class));
                         }else {
                             startActivity(new Intent(getApplicationContext(), MainActivity.class));

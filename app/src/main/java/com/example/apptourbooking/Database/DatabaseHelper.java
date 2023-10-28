@@ -68,19 +68,35 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS "+ TB_USER);
+        onCreate(db);
     }
 
     public Boolean InsertData(String username,String fullname, String password){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(TB_USER_NAME, username);
-        contentValues.put(TB_USER_FULLNAME, fullname);
-        contentValues.put(TB_USER_PASSWORD, password);
+        if(validateUser(username,password)){
+                contentValues.put(TB_USER_NAME, username);
+                contentValues.put(TB_USER_FULLNAME, fullname);
+                contentValues.put(TB_USER_PASSWORD, password);
+        }
         long result = MyDB.insert("users", null, contentValues );
         if(result == -1) return false;
         else
             return true;
     }
+
+    private boolean validateUser(String username, String password) {
+        if (username != null && username.length() <= 10) {
+            try {
+                int value = Integer.parseInt(username);
+                return (value >= 1 && value <= 99);
+            } catch (NumberFormatException e) {
+                return false;
+            }
+        }
+        return false;
+    }
+
 
     public Boolean checkusername (String username){
         SQLiteDatabase MyDB = this.getWritableDatabase();

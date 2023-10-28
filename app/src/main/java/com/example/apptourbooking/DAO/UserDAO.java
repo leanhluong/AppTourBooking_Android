@@ -8,6 +8,7 @@ import static com.example.apptourbooking.Database.DatabaseHelper.TB_USER_NAME;
 import static com.example.apptourbooking.Database.DatabaseHelper.TB_USER_PASSWORD;
 import static com.example.apptourbooking.Database.DatabaseHelper.TB_USER_ROLE;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -68,14 +69,31 @@ public class UserDAO {
         c.moveToFirst();
         while (c.isAfterLast()==false){
             UserInfo u = new UserInfo();
+            u.setUserId(c.getInt(0));
             u.setUserName(c.getString(1));
             u.setFullName(c.getString(2));
             u.setPassword(c.getString(3));
             u.setRole(c.getInt(4));
 
-            String chuoi = u.getFullName() + " - " + u.getUserName()+ " - "+ u.getPassword()+ " - "+ u.getRole();
+            String chuoi = u.getUserId() + " - "+ u.getFullName() + " - " + u.getUserName()+ " - "+ u.getPassword()+ " - "+ u.getRole();
             lu.add(chuoi);
             c.moveToNext();
+        }
+        c.close();
+        return lu;
+    }
+
+    public List<UserInfo> getAllUserToAccount(){
+        List<UserInfo> lu = new ArrayList<>();
+        Cursor c= db.rawQuery("SELECT * FROM "+ TB_USER, new String[]{});
+            while (c.moveToNext()){
+                @SuppressLint("Range") Integer id =  c.getInt(c.getColumnIndex(TB_USER_ID));
+                @SuppressLint("Range") String fullname =  c.getString(c.getColumnIndex(TB_USER_FULLNAME));
+                @SuppressLint("Range") String username =  c.getString(c.getColumnIndex(TB_USER_NAME));
+                @SuppressLint("Range") String password =  c.getString(c.getColumnIndex(TB_USER_PASSWORD));
+                @SuppressLint("Range") Integer role =  c.getInt(c.getColumnIndex(TB_USER_ROLE));
+
+                lu.add(new UserInfo(id, username,fullname,password,role));
         }
         c.close();
         return lu;

@@ -22,6 +22,7 @@ import android.widget.Toast;
 
 import com.example.apptourbooking.Activitis.LoginActivity;
 import com.example.apptourbooking.Activitis.RegisterActivity;
+import com.example.apptourbooking.Adapter.ManagerAccountAdapter;
 import com.example.apptourbooking.DAO.UserDAO;
 import com.example.apptourbooking.Database.DatabaseHelper;
 import com.example.apptourbooking.Domain.UserInfo;
@@ -39,6 +40,9 @@ public class ManageAccount extends AppCompatActivity {
     ListView lv;
     List<String> ds = new ArrayList<>();
     ArrayAdapter<String> adapter;
+
+    List<UserInfo> us ;
+    ManagerAccountAdapter managerAccountAdapter;
     UserDAO userDAO;
     DatabaseHelper DB;
     @Override
@@ -57,8 +61,12 @@ public class ManageAccount extends AppCompatActivity {
 
         userDAO = new UserDAO(this);
         ds = userDAO.getAllUser();
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, ds);
-        lv.setAdapter(adapter);
+//        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, ds);
+//        lv.setAdapter(adapter);
+
+        us = userDAO.getAllUserToAccount();
+        managerAccountAdapter = new ManagerAccountAdapter(ManageAccount.this, us);
+        lv.setAdapter(managerAccountAdapter);
 
         Insert();
         Delete();
@@ -159,10 +167,10 @@ public class ManageAccount extends AppCompatActivity {
         btn_load.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ds.clear();
-                ds = userDAO.getAllUser();
-                adapter = new ArrayAdapter<>(ManageAccount.this, android.R.layout.simple_list_item_1, ds);
-                lv.setAdapter(adapter);
+                us.clear();
+                us = userDAO.getAllUserToAccount();
+                managerAccountAdapter = new ManagerAccountAdapter(ManageAccount.this, us);
+                lv.setAdapter(managerAccountAdapter);
             }
         });
     }

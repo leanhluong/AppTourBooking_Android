@@ -70,7 +70,7 @@ public class RegisterActivity extends AppCompatActivity {
                 } else {
                     if(pass.equals(repass)){
                         Boolean checkuser = DB.checkusername(user);
-                        if(checkuser == false){
+                        if(checkuser == false ){
                             Boolean insert = DB.InsertData(user,name,pass);
                             if(insert == true){
                                 Toast.makeText(RegisterActivity.this, "Register successfully", Toast.LENGTH_SHORT).show();
