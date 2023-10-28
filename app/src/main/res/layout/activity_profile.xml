@@ -444,7 +444,6 @@
     </ScrollView>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:layout_marginTop="100dp"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         app:layout_constraintBottom_toBottomOf="@+id/scrollView3"
@@ -464,13 +463,14 @@
 
 
                 <LinearLayout
+                    android:id="@+id/main_ln_trangchu"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView8"
+                        android:id="@+id/main_Img_trangchu"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_gravity="center"
@@ -561,6 +561,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/ln_main_taikhoan"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"

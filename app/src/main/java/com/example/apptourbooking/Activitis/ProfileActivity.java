@@ -13,7 +13,7 @@ import com.example.apptourbooking.R;
 public class ProfileActivity extends AppCompatActivity {
 
     private TextView btn_login;
-    private LinearLayout btn_coupon;
+    private LinearLayout linearLayoutUuDai, lnTaiKhoan, lnTrangChu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,11 +21,17 @@ public class ProfileActivity extends AppCompatActivity {
 
         init();
 
+        Login();
+        Coupon();
+        TrangChu();
+
     }
 
     private void init(){
         btn_login = findViewById(R.id.taikhoan_txt_login);
-        btn_coupon = findViewById(R.id.taikhoan_ln_coupon);
+        linearLayoutUuDai = (LinearLayout) findViewById(R.id.linearlayoutUuDai);
+        lnTaiKhoan = (LinearLayout) findViewById(R.id.ln_main_taikhoan);
+        lnTrangChu = findViewById(R.id.main_ln_trangchu);
     }
 
     private void Login(){
@@ -38,10 +44,28 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private void Coupon(){
-        btn_coupon.setOnClickListener(new View.OnClickListener() {
+        linearLayoutUuDai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(ProfileActivity.this, CouponsActivity.class));
+            }
+        });
+    }
+
+    private void TrangChu(){
+        lnTrangChu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ProfileActivity.this, MainActivity.class));
+            }
+        });
+    }
+
+    private void ReLoad(){
+        lnTaiKhoan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
     }

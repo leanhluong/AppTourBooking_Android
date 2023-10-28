@@ -6,6 +6,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.example.apptourbooking.Adapter.CouponsAdapter;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 
 public class CouponsActivity extends AppCompatActivity {
 
+    private LinearLayout  lnTaiKhoan, lnTrangChu;
     ConstraintLayout ctMainBack;
     ListView lvCounpons;
     ArrayList<PhieuGiamGia> arrCoupons;
@@ -28,21 +30,49 @@ public class CouponsActivity extends AppCompatActivity {
 
         AnhXa();
 
+        BacktoMain();
+
+        LoadCoupon();
+        TaiKhoan();
+        TrangChu();
+    }
+
+    private void AnhXa(){
+
+        lnTaiKhoan = (LinearLayout) findViewById(R.id.ln_main_taikhoan);
+        lnTrangChu = findViewById(R.id.main_ln_trangchu);
+        ctMainBack = (ConstraintLayout) findViewById(R.id.layoutCouponBack);
+        lvCounpons = (ListView) findViewById(R.id.listViewCoupons);
+
+    }
+
+    private void TaiKhoan(){
+        lnTaiKhoan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CouponsActivity.this, ProfileActivity.class));
+            }
+        });
+    }
+    private void TrangChu(){
+        lnTrangChu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CouponsActivity.this, MainActivity.class));
+            }
+        });
+    }
+
+    private void BacktoMain(){
         ctMainBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(CouponsActivity.this, MainActivity.class));
             }
         });
-
-        adapter =  new CouponsAdapter(CouponsActivity.this, R.layout.dong_coupons, arrCoupons);
-        lvCounpons.setAdapter(adapter);
     }
 
-    private void AnhXa(){
-
-        ctMainBack = (ConstraintLayout) findViewById(R.id.layoutCouponBack);
-        lvCounpons = (ListView) findViewById(R.id.listViewCoupons);
+    private void LoadCoupon(){
         arrCoupons = new ArrayList<>();
         arrCoupons.add(new PhieuGiamGia("GIẢM ĐẾN $100", "Không yêu cầu số tiền tối thiểu. | Ưu đãi hết hạn trong 7 ngày!",R.drawable.coupon1));
         arrCoupons.add(new PhieuGiamGia("GIẢM GIÁ $6", "Chi tiêu ít nhất $60 | Ưu đãi hết hạn trong 7 ngày!",R.drawable.coupon2));
@@ -51,5 +81,8 @@ public class CouponsActivity extends AppCompatActivity {
         arrCoupons.add(new PhieuGiamGia("GIẢM ĐẾN $100", "Không yêu cầu số tiền tối thiểu. | Ưu đãi hết hạn trong 7 ngày!",R.drawable.coupon1));
         arrCoupons.add(new PhieuGiamGia("GIẢM GIÁ $6", "Chi tiêu ít nhất $60 | Ưu đãi hết hạn trong 7 ngày!",R.drawable.coupon2));
         arrCoupons.add(new PhieuGiamGia("GIẢM ĐẾN $7.20", "Chi tiêu ít nhất $60 | Ưu đãi hết hạn trong 7 ngày!",R.drawable.coupon3));
+
+        adapter =  new CouponsAdapter(CouponsActivity.this, R.layout.dong_coupons, arrCoupons);
+        lvCounpons.setAdapter(adapter);
     }
 }

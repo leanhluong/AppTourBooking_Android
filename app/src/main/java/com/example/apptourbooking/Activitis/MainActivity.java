@@ -53,8 +53,9 @@ public class MainActivity extends AppCompatActivity {
     private void Init(){
         linearLayoutUuDai = (LinearLayout) findViewById(R.id.linearlayoutUuDai);
         lnTaiKhoan = (LinearLayout) findViewById(R.id.ln_main_taikhoan);
-        txtLogin = (TextView) findViewById(R.id.textView_login);
         lnTrangChu = findViewById(R.id.main_ln_trangchu);
+        txtLogin = (TextView) findViewById(R.id.textView_login);
+
         loadSroll = findViewById(R.id.scrollView2);
         img_trangchu = findViewById(R.id.main_Img_trangchu);
         greetingTextView = findViewById(R.id.main_txt_welcome_weather);
