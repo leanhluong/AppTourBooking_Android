@@ -13,6 +13,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -34,17 +35,14 @@ import java.util.List;
 public class ManageAccount extends AppCompatActivity {
 
     private ImageView btn_back;
-    private EditText edt_fullname, edt_username, edt_password, edt_role;
+    private EditText edt_fullname, edt_username, edt_password, edt_role, edt_token;
     private Button btn_add, btn_delete, btn_update, btn_load;
 
     ListView lv;
-    List<String> ds = new ArrayList<>();
-    ArrayAdapter<String> adapter;
 
     List<UserInfo> us ;
     ManagerAccountAdapter managerAccountAdapter;
     UserDAO userDAO;
-    DatabaseHelper DB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,18 +58,26 @@ public class ManageAccount extends AppCompatActivity {
         });
 
         userDAO = new UserDAO(this);
-        ds = userDAO.getAllUser();
-//        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, ds);
-//        lv.setAdapter(adapter);
 
         us = userDAO.getAllUserToAccount();
         managerAccountAdapter = new ManagerAccountAdapter(ManageAccount.this, us);
         lv.setAdapter(managerAccountAdapter);
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                edt_fullname.setText(us.get(position).getFullName());
+                edt_username.setText(us.get(position).getUserName());
+                edt_password.setText(us.get(position).getPassword());
+                edt_token.setText(us.get(position).getToken());
+            }
+        });
 
         Insert();
         Delete();
         Update();
         Load();
+
+
 
     }
 
@@ -81,6 +87,7 @@ public class ManageAccount extends AppCompatActivity {
         edt_username = findViewById(R.id.mAccount_edt_username);
         edt_password = findViewById(R.id.mAccount_edt_password);
         edt_role = findViewById(R.id.mAccount_edt_role);
+        edt_token = findViewById(R.id.mAccount_edt_token);
         lv= findViewById(R.id.mAccount_lv);
         btn_add = findViewById(R.id.mAccount_btn_add);
         btn_delete = findViewById(R.id.mAccount_btn_delete);
@@ -97,6 +104,7 @@ public class ManageAccount extends AppCompatActivity {
                 u.setUserName(edt_username.getText().toString());
                 u.setFullName(edt_fullname.getText().toString());
                 u.setPassword(edt_password.getText().toString());
+                u.setToken(edt_token.getText().toString());
                 u.setRole(Integer.parseInt(edt_role.getText().toString()));
 
                 long kq =  userDAO.insertUser(u);
@@ -105,28 +113,6 @@ public class ManageAccount extends AppCompatActivity {
                 }if (kq==1){
                     Toast.makeText(ManageAccount.this, "Add successfully", Toast.LENGTH_SHORT).show();
                 }
-
-//                DB = new DatabaseHelper(this);
-//                String user = edt_username.getText().toString();
-//                String name = edt_fullname.getText().toString();
-//                String pass = edt_password.getText().toString();
-//                if(user.equals("")||name.equals("") || pass.equals("") ){
-//                    Toast.makeText(ManageAccount.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
-//                } else {
-//                        Boolean checkuser = DB.checkusername(user);
-//                        if(checkuser == false){
-//                            Boolean insert = DB.InsertData(user,name,pass);
-//                            if(insert == true){
-//                                Toast.makeText(ManageAccount.this, "Register successfully", Toast.LENGTH_SHORT).show();
-//                            }
-//                            else {
-//                                Toast.makeText(ManageAccount.this, "Register failed", Toast.LENGTH_SHORT).show();
-//                            }
-//                        }
-//                        else {
-//                            Toast.makeText(ManageAccount.this, "User already exitsts! Please sign in ", Toast.LENGTH_SHORT).show();
-//                        }
-//                }
             }
         });
     }
@@ -152,6 +138,7 @@ public class ManageAccount extends AppCompatActivity {
                 u.setUserName(edt_username.getText().toString());
                 u.setFullName(edt_fullname.getText().toString());
                 u.setPassword(edt_password.getText().toString());
+                u.setToken(edt_token.getText().toString());
                 u.setRole(Integer.parseInt(edt_role.getText().toString()));
 
                 long kq =  userDAO.updateUser(u);

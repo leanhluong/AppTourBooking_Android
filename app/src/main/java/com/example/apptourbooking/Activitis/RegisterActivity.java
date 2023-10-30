@@ -16,7 +16,7 @@ import com.example.apptourbooking.R;
 public class RegisterActivity extends AppCompatActivity {
     private ImageView imgbackRegister, btnShowPass, btnShowRepass;
     private boolean passwordVisible = false;
-    private EditText username, fullname, password, repassword;
+    private EditText username, fullname, password, repassword, token;
     private Button btnRegister;
 
     DatabaseHelper DB;
@@ -39,6 +39,7 @@ public class RegisterActivity extends AppCompatActivity {
         imgbackRegister = findViewById(R.id.img_register_back);
         username = findViewById(R.id.editText_username);
         fullname = findViewById(R.id.editText_Fullname);
+        token = findViewById(R.id.editText_Token);
         password = findViewById(R.id.editText_password);
         repassword = findViewById(R.id.editText_confirm_password);
         btnRegister = findViewById(R.id.btn_Register);
@@ -63,15 +64,16 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String user = username.getText().toString();
                 String name = fullname.getText().toString();
+                String tok = token.getText().toString();
                 String pass = password.getText().toString();
                 String repass= repassword.getText().toString();
-                if(user.equals("")||name.equals("") || pass.equals("") || repass.equals("")){
+                if(user.equals("") ||name.equals("")||tok.equals("")|| pass.equals("") || repass.equals("")){
                     Toast.makeText(RegisterActivity.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
                 } else {
                     if(pass.equals(repass)){
                         Boolean checkuser = DB.checkusername(user);
                         if(checkuser == false ){
-                            Boolean insert = DB.InsertData(user,name,pass);
+                            Boolean insert = DB.InsertData(user,name,tok,pass);
                             if(insert == true){
                                 Toast.makeText(RegisterActivity.this, "Register successfully", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(getApplicationContext(), LoginActivity.class));

@@ -54,12 +54,14 @@ public class ManagerAccountAdapter extends BaseAdapter {
             TextView txt_fullname = (TextView) viewUser.findViewById(R.id.lv_mAccount_fullname);
             TextView txt_username = (TextView) viewUser.findViewById(R.id.lv_mAccount_username);
             TextView txt_password = (TextView) viewUser.findViewById(R.id.lv_mAccount_passowrd);
+            TextView txt_token = (TextView) viewUser.findViewById(R.id.lv_mAccount_token);
             TextView txt_role = (TextView) viewUser.findViewById(R.id.lv_mAccount_role);
 
             txt_id.setText("" + userInfo.getUserId());
             txt_fullname.setText( userInfo.getFullName());
             txt_username.setText(userInfo.getUserName());
             txt_password.setText(userInfo.getPassword());
+            txt_token.setText(userInfo.getToken());
             txt_role.setText(""+ userInfo.getRole());
             return viewUser;
 

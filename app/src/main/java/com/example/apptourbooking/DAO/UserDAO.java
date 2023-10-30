@@ -7,6 +7,7 @@ import static com.example.apptourbooking.Database.DatabaseHelper.TB_USER_ID;
 import static com.example.apptourbooking.Database.DatabaseHelper.TB_USER_NAME;
 import static com.example.apptourbooking.Database.DatabaseHelper.TB_USER_PASSWORD;
 import static com.example.apptourbooking.Database.DatabaseHelper.TB_USER_ROLE;
+import static com.example.apptourbooking.Database.DatabaseHelper.TB_USER_TOKEN;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
@@ -37,6 +38,7 @@ public class UserDAO {
         contentValues.put("username", userInfo.getUserName());
         contentValues.put("fullname", userInfo.getFullName());
         contentValues.put("password", userInfo.getPassword());
+        contentValues.put("token", userInfo.getToken());
         contentValues.put("role", String.valueOf(userInfo.getRole()));
         if(db.insert(TB_USER, null, contentValues)<0){
             return -1;
@@ -55,6 +57,7 @@ public class UserDAO {
         values.put("username", s.getUserName());
         values.put("fullname", s.getFullName());
         values.put("password", s.getPassword());
+        values.put("token", s.getToken());
         values.put("role", s.getRole());
         int kq = db.update(TB_USER, values,  "username = ?" , new String[]{s.getUserName()});
         if(kq <= 0){
@@ -63,25 +66,25 @@ public class UserDAO {
     }
 
     //lasy du lieu
-    public List<String> getAllUser(){
-        List<String> lu = new ArrayList<>();
-        Cursor c= db.query(TB_USER, null, null, null, null, null, null);
-        c.moveToFirst();
-        while (c.isAfterLast()==false){
-            UserInfo u = new UserInfo();
-            u.setUserId(c.getInt(0));
-            u.setUserName(c.getString(1));
-            u.setFullName(c.getString(2));
-            u.setPassword(c.getString(3));
-            u.setRole(c.getInt(4));
-
-            String chuoi = u.getUserId() + " - "+ u.getFullName() + " - " + u.getUserName()+ " - "+ u.getPassword()+ " - "+ u.getRole();
-            lu.add(chuoi);
-            c.moveToNext();
-        }
-        c.close();
-        return lu;
-    }
+//    public List<String> getAllUser(){
+//        List<String> lu = new ArrayList<>();
+//        Cursor c= db.query(TB_USER, null, null, null, null, null, null);
+//        c.moveToFirst();
+//        while (c.isAfterLast()==false){
+//            UserInfo u = new UserInfo();
+//            u.setUserId(c.getInt(0));
+//            u.setUserName(c.getString(1));
+//            u.setFullName(c.getString(2));
+//            u.setPassword(c.getString(3));
+//            u.setRole(c.getInt(4));
+//
+//            String chuoi = u.getUserId() + " - "+ u.getFullName() + " - " + u.getUserName()+ " - "+ u.getPassword()+ " - "+ u.getRole();
+//            lu.add(chuoi);
+//            c.moveToNext();
+//        }
+//        c.close();
+//        return lu;
+//    }
 
     public List<UserInfo> getAllUserToAccount(){
         List<UserInfo> lu = new ArrayList<>();
@@ -92,8 +95,10 @@ public class UserDAO {
                 @SuppressLint("Range") String username =  c.getString(c.getColumnIndex(TB_USER_NAME));
                 @SuppressLint("Range") String password =  c.getString(c.getColumnIndex(TB_USER_PASSWORD));
                 @SuppressLint("Range") Integer role =  c.getInt(c.getColumnIndex(TB_USER_ROLE));
+                @SuppressLint("Range") String token =  c.getString(c.getColumnIndex(TB_USER_TOKEN));
 
-                lu.add(new UserInfo(id, username,fullname,password,role));
+
+                lu.add(new UserInfo(id, username,fullname,password,token, role));
         }
         c.close();
         return lu;
