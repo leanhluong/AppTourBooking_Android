@@ -70,7 +70,6 @@ public class RegisterActivity extends AppCompatActivity {
                             System.out.println("Fetching FCM registration token failed");
                             return;
                         }
-
                         // Get new FCM registration token
                         token = task.getResult();
                     }
