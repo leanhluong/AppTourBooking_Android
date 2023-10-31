@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "868743735150",
+    "project_id": "notificationapptour",
+    "storage_bucket": "notificationapptour.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:868743735150:android:ffaf724fad76f1b202037f",
+        "android_client_info": {
+          "package_name": "com.example.apptourbooking"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLAenAs6eVaojx18P6k322sz4Sa8iVbd4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:868743735150:android:c5d6a0a7c523e3dd02037f",
+        "android_client_info": {
+          "package_name": "com.example.notificationapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLAenAs6eVaojx18P6k322sz4Sa8iVbd4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:868743735150:android:9eff0f788d518e7802037f",
+        "android_client_info": {
+          "package_name": "com.example.notificationapptour"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLAenAs6eVaojx18P6k322sz4Sa8iVbd4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
