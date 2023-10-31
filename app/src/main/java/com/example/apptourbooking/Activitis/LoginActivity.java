@@ -3,7 +3,6 @@ package com.example.apptourbooking.Activitis;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -15,7 +14,9 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.apptourbooking.Admin.AdminActivity;
+import com.example.apptourbooking.Database.UserDAO;
 import com.example.apptourbooking.Database.DatabaseHelper;
+import com.example.apptourbooking.Domain.UserInfo;
 import com.example.apptourbooking.R;
 
 public class LoginActivity extends AppCompatActivity {
@@ -27,6 +28,8 @@ public class LoginActivity extends AppCompatActivity {
     private EditText username, password;
     private Button btn_login;
     DatabaseHelper DB;
+
+    UserDAO userDAO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,16 +96,19 @@ public class LoginActivity extends AppCompatActivity {
     }
     private void Login(){
         DB =  new DatabaseHelper(this);
+        userDAO = new UserDAO(this);
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String user = username.getText().toString();
                 String pass = password.getText().toString();
+
+                UserInfo u = userDAO.getUser(user);
                 if(user.equals("") || pass.equals("") ){
                     Toast.makeText(LoginActivity.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    Boolean checkuserpass = DB.checkusernamepassword(user,pass);
+                    Boolean checkuserpass = DB.checkusernamepassword(user, pass);
                     if(checkuserpass == true){
                         Toast.makeText(LoginActivity.this, "Sign in successfully", Toast.LENGTH_SHORT).show();
                         if(rememberCheckbox.isChecked()){
@@ -123,7 +129,9 @@ public class LoginActivity extends AppCompatActivity {
                         if(user.equals("admin")){
                             startActivity(new Intent(getApplicationContext(), AdminActivity.class));
                         }else {
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                            intent.putExtra("key_account",u );
+                            startActivity(intent);
                         }
                     } else {
                         Toast.makeText(LoginActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();

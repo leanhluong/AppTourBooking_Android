@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".Activitis.UpdateProfileActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="wrap_content"
+                android:layout_height="140dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/top_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView26"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/profile" />
+
+            <TextView
+                android:id="@+id/textView45"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:text="Profile"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/imageView8"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:gravity="center_vertical"
+                android:textStyle="bold"
+                android:text="ID" />
+
+            <EditText
+                android:id="@+id/edit_profile_id"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="none"
+                android:text="" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:gravity="center_vertical"
+                android:textStyle="bold"
+                android:text="Full Name" />
+
+            <EditText
+                android:id="@+id/edit_profile_fullname"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="text"
+                android:text="" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:gravity="center_vertical"
+                android:textStyle="bold"
+                android:text="UserName" />
+
+            <EditText
+                android:id="@+id/edit_profile_username"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="text"
+                android:text="" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:gravity="center_vertical"
+                android:textStyle="bold"
+                android:text="Password" />
+
+            <EditText
+                android:id="@+id/edit_profile_password"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="text"
+                android:text="" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:gravity="center_vertical"
+                android:textStyle="bold"
+                android:text="Token" />
+
+            <EditText
+                android:id="@+id/edit_profile_token"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="text"
+                android:text="" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:gravity="center_vertical"
+                android:textStyle="bold"
+                android:text="Role" />
+
+            <EditText
+                android:id="@+id/edit_profile_role"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="none"
+                android:text="" />
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/edit_profile_btn_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/intro_btn_started"
+                android:text="Save"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/edit_profile_btn_exits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/intro_btn_started"
+                android:text="Exits"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

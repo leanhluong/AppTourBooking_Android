@@ -1,4 +1,4 @@
-package com.example.apptourbooking.DAO;
+package com.example.apptourbooking.Database;
 
 
 import static com.example.apptourbooking.Database.DatabaseHelper.TB_USER;
@@ -52,14 +52,14 @@ public class UserDAO {
         return 1;
     }
 
-    public int updateUser(UserInfo s){
+    public long updateUser(UserInfo s){
         ContentValues values = new ContentValues();
         values.put("username", s.getUserName());
         values.put("fullname", s.getFullName());
         values.put("password", s.getPassword());
         values.put("token", s.getToken());
         values.put("role", s.getRole());
-        int kq = db.update(TB_USER, values,  "username = ?" , new String[]{s.getUserName()});
+        long kq = db.update(TB_USER, values,  "username = ?" , new String[]{s.getUserName()});
         if(kq <= 0){
             return -1;
         }return 1;
@@ -97,10 +97,30 @@ public class UserDAO {
                 @SuppressLint("Range") Integer role =  c.getInt(c.getColumnIndex(TB_USER_ROLE));
                 @SuppressLint("Range") String token =  c.getString(c.getColumnIndex(TB_USER_TOKEN));
 
-
                 lu.add(new UserInfo(id, username,fullname,password,token, role));
         }
         c.close();
         return lu;
     }
+    public UserInfo getUser(String us){
+        UserInfo lu = null; // Khởi tạo lu ban đầu là null
+        Cursor c = db.rawQuery("SELECT * FROM " + TB_USER + " WHERE username = ?", new String[]{us});
+
+        if (c.moveToFirst()) {
+            do {
+                @SuppressLint("Range") Integer id =  c.getInt(c.getColumnIndex(TB_USER_ID));
+                @SuppressLint("Range") String fullname =  c.getString(c.getColumnIndex(TB_USER_FULLNAME));
+                @SuppressLint("Range") String username =  c.getString(c.getColumnIndex(TB_USER_NAME));
+                @SuppressLint("Range") String password =  c.getString(c.getColumnIndex(TB_USER_PASSWORD));
+                @SuppressLint("Range") Integer role =  c.getInt(c.getColumnIndex(TB_USER_ROLE));
+                @SuppressLint("Range") String token =  c.getString(c.getColumnIndex(TB_USER_TOKEN));
+
+                lu = new UserInfo(id, username, fullname, password, token, role);
+            } while (c.moveToNext());
+        }
+
+        c.close();
+        return lu;
+    }
+
 }

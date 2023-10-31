@@ -67,155 +67,154 @@
         android:layout_height="0dp"
         android:layout_marginTop="100dp"
         android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/coordinatorLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:id="@+id/coordinatorLayout"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+<!--    <androidx.coordinatorlayout.widget.CoordinatorLayout-->
+<!--        android:id="@+id/coordinatorLayout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="60dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent">-->
 
-        <com.google.android.material.bottomappbar.BottomAppBar
-            android:id="@+id/app_bar"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_gravity="bottom"
-            android:backgroundTint="@color/white">
+<!--        <com.google.android.material.bottomappbar.BottomAppBar-->
+<!--            android:id="@+id/app_bar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:layout_gravity="bottom"-->
+<!--            android:backgroundTint="@color/white">-->
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:orientation="horizontal">-->
 
 
-                <LinearLayout
-                    android:id="@+id/main_ln_trangchu"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.2"
-                    android:orientation="vertical">
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/main_ln_trangchu"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="0.2"-->
+<!--                    android:orientation="vertical">-->
 
-                    <ImageView
-                        android:id="@+id/main_Img_trangchu"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="8dp"
-                        android:src="@drawable/main_ic_home" />
+<!--                    <ImageView-->
+<!--                        android:id="@+id/main_Img_trangchu"-->
+<!--                        android:layout_width="30dp"-->
+<!--                        android:layout_height="30dp"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:src="@drawable/main_ic_home" />-->
 
-                    <TextView
-                        android:id="@+id/textView15"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:text="Trang chủ"
-                        android:textAlignment="center"
-                        android:textColor="@color/black" />
-                </LinearLayout>
+<!--                    <TextView-->
+<!--                        android:id="@+id/textView15"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="2dp"-->
+<!--                        android:text="Trang chủ"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@color/black" />-->
+<!--                </LinearLayout>-->
 
-                <LinearLayout
-                    android:id="@+id/linearlayoutUuDai"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.2"
-                    android:orientation="vertical">
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/linearlayoutUuDai"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="0.2"-->
+<!--                    android:orientation="vertical">-->
 
-                    <ImageView
-                        android:id="@+id/imageView9"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="8dp"
-                        android:src="@drawable/main_ic_coupon" />
+<!--                    <ImageView-->
+<!--                        android:id="@+id/imageView9"-->
+<!--                        android:layout_width="30dp"-->
+<!--                        android:layout_height="30dp"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:src="@drawable/main_ic_coupon" />-->
 
-                    <TextView
-                        android:id="@+id/textView16"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:text="Ưu đãi"
-                        android:textAlignment="center"
-                        android:textColor="@color/black" />
-                </LinearLayout>
+<!--                    <TextView-->
+<!--                        android:id="@+id/textView16"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="2dp"-->
+<!--                        android:text="Ưu đãi"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@color/black" />-->
+<!--                </LinearLayout>-->
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.2"
-                    android:orientation="vertical">
+<!--                <LinearLayout-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="0.2"-->
+<!--                    android:orientation="vertical">-->
 
-                    <ImageView
-                        android:id="@+id/imageView10"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="8dp"
-                        android:src="@drawable/main_ic_chat" />
+<!--                    <ImageView-->
+<!--                        android:id="@+id/imageView10"-->
+<!--                        android:layout_width="30dp"-->
+<!--                        android:layout_height="30dp"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:src="@drawable/main_ic_chat" />-->
 
-                    <TextView
-                        android:id="@+id/textView17"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:text="Chat"
-                        android:textAlignment="center"
-                        android:textColor="@color/black" />
-                </LinearLayout>
+<!--                    <TextView-->
+<!--                        android:id="@+id/textView17"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="2dp"-->
+<!--                        android:text="Chat"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@color/black" />-->
+<!--                </LinearLayout>-->
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.2"
-                    android:orientation="vertical">
+<!--                <LinearLayout-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="0.2"-->
+<!--                    android:orientation="vertical">-->
 
-                    <ImageView
-                        android:id="@+id/imageView11"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="8dp"
-                        android:src="@drawable/main_ic_cart" />
+<!--                    <ImageView-->
+<!--                        android:id="@+id/imageView11"-->
+<!--                        android:layout_width="30dp"-->
+<!--                        android:layout_height="30dp"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:src="@drawable/main_ic_cart" />-->
 
-                    <TextView
-                        android:id="@+id/textView18"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:text="Đơn hàng"
-                        android:textAlignment="center"
-                        android:textColor="@color/black" />
-                </LinearLayout>
+<!--                    <TextView-->
+<!--                        android:id="@+id/textView18"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="2dp"-->
+<!--                        android:text="Đơn hàng"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@color/black" />-->
+<!--                </LinearLayout>-->
 
-                <LinearLayout
-                    android:id="@+id/ln_main_taikhoan"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.2"
-                    android:orientation="vertical">
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/ln_main_taikhoan"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="0.2"-->
+<!--                    android:orientation="vertical">-->
 
-                    <ImageView
-                        android:id="@+id/imageView12"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="8dp"
-                        android:src="@drawable/main_ic_profile" />
+<!--                    <ImageView-->
+<!--                        android:id="@+id/imageView12"-->
+<!--                        android:layout_width="30dp"-->
+<!--                        android:layout_height="30dp"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:src="@drawable/main_ic_profile" />-->
 
-                    <TextView
-                        android:id="@+id/textView19"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:text="Tài khoản"
-                        android:textAlignment="center"
-                        android:textColor="@color/black" />
-                </LinearLayout>
-            </LinearLayout>
-        </com.google.android.material.bottomappbar.BottomAppBar>
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+<!--                    <TextView-->
+<!--                        android:id="@+id/textView19"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="2dp"-->
+<!--                        android:text="Tài khoản"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="@color/black" />-->
+<!--                </LinearLayout>-->
+<!--            </LinearLayout>-->
+<!--        </com.google.android.material.bottomappbar.BottomAppBar>-->
+<!--    </androidx.coordinatorlayout.widget.CoordinatorLayout>-->
 </androidx.constraintlayout.widget.ConstraintLayout>

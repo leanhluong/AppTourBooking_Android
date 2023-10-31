@@ -8,7 +8,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.apptourbooking.DAO.UserDAO;
 import com.example.apptourbooking.Domain.PhieuGiamGia;
 import com.example.apptourbooking.R;
 

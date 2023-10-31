@@ -1,6 +1,8 @@
 package com.example.apptourbooking.Domain;
 
-public class UserInfo {
+import java.io.Serializable;
+
+public class UserInfo implements Serializable {
     private int userId;
     private String userName;
     private String fullName;
@@ -10,6 +12,11 @@ public class UserInfo {
     private int role;
 
     public UserInfo() {
+    }
+
+    public UserInfo(String userName, String password) {
+        this.userName = userName;
+        this.password = password;
     }
 
     public UserInfo(int userId, String userName, String fullName, String password, int role) {

@@ -1,35 +1,21 @@
 package com.example.apptourbooking.Admin;
 
-import static com.example.apptourbooking.Database.DatabaseHelper.TB_USER;
-import static com.example.apptourbooking.Database.DatabaseHelper.TB_USER_FULLNAME;
-import static com.example.apptourbooking.Database.DatabaseHelper.TB_USER_NAME;
-
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.ContentValues;
-import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.apptourbooking.Activitis.LoginActivity;
-import com.example.apptourbooking.Activitis.RegisterActivity;
 import com.example.apptourbooking.Adapter.ManagerAccountAdapter;
-import com.example.apptourbooking.DAO.UserDAO;
-import com.example.apptourbooking.Database.DatabaseHelper;
+import com.example.apptourbooking.Database.UserDAO;
 import com.example.apptourbooking.Domain.UserInfo;
 import com.example.apptourbooking.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ManageAccount extends AppCompatActivity {
@@ -69,6 +55,7 @@ public class ManageAccount extends AppCompatActivity {
                 edt_username.setText(us.get(position).getUserName());
                 edt_password.setText(us.get(position).getPassword());
                 edt_token.setText(us.get(position).getToken());
+                edt_role.setText(""+us.get(position).getRole());
             }
         });
 

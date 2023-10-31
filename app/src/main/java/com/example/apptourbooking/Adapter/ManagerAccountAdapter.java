@@ -1,15 +1,12 @@
 package com.example.apptourbooking.Adapter;
 
 import android.content.Context;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.apptourbooking.DAO.UserDAO;
-import com.example.apptourbooking.Domain.PhieuGiamGia;
+import com.example.apptourbooking.Database.UserDAO;
 import com.example.apptourbooking.Domain.UserInfo;
 import com.example.apptourbooking.R;
 
