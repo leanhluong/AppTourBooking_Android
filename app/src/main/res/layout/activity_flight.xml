@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".Activitis.FlightActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chọn Chuyến Bay"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Điểm Đi"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"
+        />
+
+    <Spinner
+        android:id="@+id/spinner_origin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Chọn Điểm Đi"
+        android:layout_marginBottom="16dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Điểm Đến"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"
+        />
+
+    <Spinner
+        android:id="@+id/spinner_destination"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Chọn Điểm Đến"
+        android:layout_marginBottom="16dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ngày Đi"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Chọn Ngày Đi"
+        android:inputType="date"
+        android:layout_marginBottom="16dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:layout_width="5dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Săn Vé"
+            android:textStyle="bold"
+            android:background="#0077B6"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="8dp"
+            />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Tìm Kiếm"
+            android:textStyle="bold"
+            android:background="#FF0000"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="8dp"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ưu đãi"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        />
+
+    <!-- Thêm các thành phần khác liên quan đến ưu đãi nếu cần -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Khám phá các chuyến bay khác"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        />
+
+    <!-- Thêm các thành phần khác liên quan đến chuyến bay khác nếu cần -->
+
+</LinearLayout>
