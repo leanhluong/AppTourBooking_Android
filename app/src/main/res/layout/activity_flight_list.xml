@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    tools:context=".Activitis.FlightListActivity">
+
+    <TextView
+        android:id="@+id/text_flight_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chuyến bay ABC"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/text_flight_date" />
+
+    <TextView
+        android:id="@+id/text_flight_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ngày: 2023-11-03"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_flight_name"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <!-- Thêm các thành phần khác liên quan đến chuyến bay, ví dụ: giá vé, giờ bay, v.v. -->
+</androidx.constraintlayout.widget.ConstraintLayout>

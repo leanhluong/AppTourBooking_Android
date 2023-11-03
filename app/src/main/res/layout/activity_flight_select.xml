@@ -59,13 +59,13 @@
         android:layout_marginBottom="8dp"
         />
 
-    <EditText
-        android:layout_width="match_parent"
+    <DatePicker
+        android:id="@+id/date_picker"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Chọn Ngày Đi"
-        android:inputType="date"
-        android:layout_marginBottom="16dp"
-        />
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:calendarViewShown="true" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -74,38 +74,40 @@
         android:gravity="center">
 
         <Button
-            android:layout_width="5dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text="Săn Vé"
             android:textStyle="bold"
             android:background="#0077B6"
             android:textColor="#FFFFFF"
-            android:layout_marginBottom="8dp"
+            android:layout_marginRight="16dp"
             />
 
         <Button
-            android:layout_width="0dp"
+            android:id="@+id/btn_select_flight"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text="Tìm Kiếm"
             android:textStyle="bold"
-            android:background="#FF0000"
+            android:background="@android:color/holo_red_dark"
             android:textColor="#FFFFFF"
-            android:layout_marginBottom="8dp"
             />
 
     </LinearLayout>
 
+    <ImageView
+        android:layout_width="133dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/flight" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ưu đãi"
-        android:textStyle="bold"
         android:layout_marginTop="16dp"
-        />
-
-    <!-- Thêm các thành phần khác liên quan đến ưu đãi nếu cần -->
+        android:text="Ưu đãi khi đặt vé máy bay"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
