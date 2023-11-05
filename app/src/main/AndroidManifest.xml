@@ -13,12 +13,33 @@
         android:theme="@style/Theme.AppTourBooking"
         tools:targetApi="31">
         <activity
+<<<<<<< HEAD
             android:name=".TourDetrailsActivity"
             android:exported="false" />
         <activity
             android:name=".TourListActivity"
+=======
+            android:name=".Activitis.FlightListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activitis.FlightDetailsActivity"
+>>>>>>> origin/Mainbackup
             android:exported="false" />
 
+        <activity
+            android:name=".Admin.ManagerHotel"
+            android:exported="false"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".Admin.ManageAccount"
+            android:exported="false"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".Activitis.FlightActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activitis.UpdateProfileActivity"
+            android:exported="false" />
         <activity
             android:name=".Admin.ManagerHotel"
             android:exported="false"

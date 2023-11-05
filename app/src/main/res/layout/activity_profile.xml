@@ -26,7 +26,7 @@
                 android:layout_height="100dp">
 
                 <ImageView
-                    android:id="@+id/imageView17"
+                    android:id="@+id/taikhoan_img_edtProfile"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_marginStart="20dp"
@@ -44,9 +44,9 @@
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView17"
-                    app:layout_constraintStart_toEndOf="@+id/imageView17"
-                    app:layout_constraintTop_toTopOf="@+id/imageView17" />
+                    app:layout_constraintBottom_toBottomOf="@+id/taikhoan_img_edtProfile"
+                    app:layout_constraintStart_toEndOf="@+id/taikhoan_img_edtProfile"
+                    app:layout_constraintTop_toTopOf="@+id/taikhoan_img_edtProfile" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout
@@ -430,11 +430,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="100dp"
                 android:text="V.1.1.0"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="15dp"
+                android:textStyle="bold"
+                tools:ignore="TextSizeCheck" />
+
+            <TextView
+                android:id="@+id/taikhoan_txt_logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="100dp"
+                android:text="Logout"
+                android:textAlignment="center"
+                android:textColor="#f31"
+                android:textSize="30dp"
                 android:textStyle="bold"
                 tools:ignore="TextSizeCheck" />
 

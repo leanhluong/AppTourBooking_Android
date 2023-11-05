@@ -179,6 +179,7 @@
                                 android:textColor="@color/black" />
                         </LinearLayout>
                         <LinearLayout
+                            android:id="@+id/screen_flight"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="0.2"

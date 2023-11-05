@@ -25,6 +25,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String TB_USER_FULLNAME = "FullName";
     public static final String TB_USER_NAME = "Username";
     public static final String TB_USER_PASSWORD = "Password";
+    public static final String TB_USER_TOKEN = "Token";
     public static final String TB_USER_ROLE = "Role";
 
     public static final String TB_HOTEL_ID = "HotelId";
@@ -60,7 +61,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String tbUSER = "CREATE TABLE " + TB_USER + " ( " + TB_USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + TB_USER_FULLNAME +" TEXT, " + TB_USER_NAME + " TEXT, " + TB_USER_PASSWORD +" TEXT, "+TB_USER_ROLE +" INTEGER) ";
+                + TB_USER_FULLNAME +" TEXT, " + TB_USER_NAME + " TEXT, " + TB_USER_PASSWORD +" TEXT, "+ TB_USER_TOKEN +" TEXT, "+TB_USER_ROLE +" INTEGER) ";
         String tbHotel = "CREATE TABLE " + TB_HOTEL + "( " + TB_HOTEL_ID+ " INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + TB_HOTEL_NAME + " TEXT, "+ TB_HOTEL_LOCATION +" TEXT, " + TB_HOTEL_DESCRIPTION + " TEXT, "
                 + TB_HOTEL_BED + " NTEGER, "+ TB_HOTEL_GUIDE + " TEXT, " + TB_HOTEL_SCORE + " TEXT, "
@@ -87,15 +88,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public Boolean InsertData(String username,String fullname, String password){
+    public Boolean InsertData(String username,String fullname,String token, String password){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        if(validateUser(username,password)){
                 contentValues.put(TB_USER_NAME, username);
                 contentValues.put(TB_USER_FULLNAME, fullname);
+                contentValues.put(TB_USER_TOKEN, token);
                 contentValues.put(TB_USER_PASSWORD, password);
-        }
-        long result = MyDB.insert("users", null, contentValues );
+        long result = MyDB.insert(TB_USER, null, contentValues );
         if(result == -1) return false;
         else
             return true;
@@ -172,4 +172,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return list;
     }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> origin/Mainbackup
 }

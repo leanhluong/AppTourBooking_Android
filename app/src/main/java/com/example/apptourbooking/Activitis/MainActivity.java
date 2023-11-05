@@ -5,8 +5,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -15,8 +13,8 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.apptourbooking.Adapter.HotelsAdapter;
-import com.example.apptourbooking.Database.DatabaseHelper;
 import com.example.apptourbooking.Domain.Hotel;
+import com.example.apptourbooking.Domain.UserInfo;
 import com.example.apptourbooking.R;
 import com.example.apptourbooking.TourListActivity;
 
@@ -26,11 +24,17 @@ import java.util.Calendar;
 public class MainActivity extends AppCompatActivity {
 
     private ScrollView loadSroll;
+<<<<<<< HEAD
     private LinearLayout linearLayoutUuDai, lnTaiKhoan, lnTrangChu,lnTour;
+=======
+    private LinearLayout linearLayoutUuDai, lnTaiKhoan, lnTrangChu,screen_flight;
+>>>>>>> origin/Mainbackup
     private TextView txtLogin, greetingTextView;
     private RecyclerView.Adapter adapterRoom;
     private RecyclerView recyclerRoom;
     private ImageView img_trangchu;
+    UserInfo userInfo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         Init();
 
-        Login();
+        Logout();
         SetWelcomeHeader();
 
         initRecyclerView();
@@ -48,7 +52,15 @@ public class MainActivity extends AppCompatActivity {
         Coupon();
 
         TaiKhoan();
+<<<<<<< HEAD
         TourList();
+=======
+        Filght();
+
+        Intent intent = getIntent();
+        userInfo = (UserInfo) intent.getSerializableExtra("key_account");
+        txtLogin.setText(""+ userInfo.getFullName() );
+>>>>>>> origin/Mainbackup
 
     }
 
@@ -58,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
         lnTrangChu = findViewById(R.id.main_ln_trangchu);
         lnTour =findViewById(R.id.main_ln_tour);
         txtLogin = (TextView) findViewById(R.id.textView_login);
+        screen_flight = findViewById(R.id.screen_flight);
 
         loadSroll = findViewById(R.id.scrollView2);
         img_trangchu = findViewById(R.id.main_Img_trangchu);
@@ -75,8 +88,15 @@ public class MainActivity extends AppCompatActivity {
         adapterRoom = new HotelsAdapter(listHotel);
         recyclerRoom.setAdapter(adapterRoom);
     }
-
-    private void Login(){
+    private void Filght(){
+        screen_flight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, FlightActivity.class));
+            }
+        });
+    }
+    private void Logout(){
         txtLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 loadSroll.smoothScrollTo(0, 0);
             }
+
         });
 
         loadSroll.setOnScrollChangeListener(new View.OnScrollChangeListener() {
@@ -120,7 +141,9 @@ public class MainActivity extends AppCompatActivity {
         lnTaiKhoan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+                Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+                intent.putExtra("profile_account",userInfo );
+                startActivity(intent);
             }
         });
     }
@@ -148,5 +171,6 @@ public class MainActivity extends AppCompatActivity {
             greetingTextView.setText("Chào buổi tối");
         }
     }
+
 
 }

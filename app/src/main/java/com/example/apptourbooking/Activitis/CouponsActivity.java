@@ -17,7 +17,6 @@ import java.util.ArrayList;
 
 public class CouponsActivity extends AppCompatActivity {
 
-    private LinearLayout  lnTaiKhoan, lnTrangChu;
     ConstraintLayout ctMainBack;
     ListView lvCounpons;
     ArrayList<PhieuGiamGia> arrCoupons;
@@ -33,41 +32,19 @@ public class CouponsActivity extends AppCompatActivity {
         BacktoMain();
 
         LoadCoupon();
-        TaiKhoan();
-        TrangChu();
+
     }
 
     private void AnhXa(){
-
-        lnTaiKhoan = (LinearLayout) findViewById(R.id.ln_main_taikhoan);
-        lnTrangChu = findViewById(R.id.main_ln_trangchu);
         ctMainBack = (ConstraintLayout) findViewById(R.id.layoutCouponBack);
         lvCounpons = (ListView) findViewById(R.id.listViewCoupons);
-
-    }
-
-    private void TaiKhoan(){
-        lnTaiKhoan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(CouponsActivity.this, ProfileActivity.class));
-            }
-        });
-    }
-    private void TrangChu(){
-        lnTrangChu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(CouponsActivity.this, MainActivity.class));
-            }
-        });
     }
 
     private void BacktoMain(){
         ctMainBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(CouponsActivity.this, MainActivity.class));
+                finish();
             }
         });
     }

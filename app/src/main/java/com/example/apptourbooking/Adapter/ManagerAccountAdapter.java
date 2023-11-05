@@ -1,15 +1,12 @@
 package com.example.apptourbooking.Adapter;
 
 import android.content.Context;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.apptourbooking.DAO.UserDAO;
-import com.example.apptourbooking.Domain.PhieuGiamGia;
+import com.example.apptourbooking.Database.UserDAO;
 import com.example.apptourbooking.Domain.UserInfo;
 import com.example.apptourbooking.R;
 
@@ -54,12 +51,14 @@ public class ManagerAccountAdapter extends BaseAdapter {
             TextView txt_fullname = (TextView) viewUser.findViewById(R.id.lv_mAccount_fullname);
             TextView txt_username = (TextView) viewUser.findViewById(R.id.lv_mAccount_username);
             TextView txt_password = (TextView) viewUser.findViewById(R.id.lv_mAccount_passowrd);
+            TextView txt_token = (TextView) viewUser.findViewById(R.id.lv_mAccount_token);
             TextView txt_role = (TextView) viewUser.findViewById(R.id.lv_mAccount_role);
 
             txt_id.setText("" + userInfo.getUserId());
             txt_fullname.setText( userInfo.getFullName());
             txt_username.setText(userInfo.getUserName());
             txt_password.setText(userInfo.getPassword());
+            txt_token.setText(userInfo.getToken());
             txt_role.setText(""+ userInfo.getRole());
             return viewUser;
 
