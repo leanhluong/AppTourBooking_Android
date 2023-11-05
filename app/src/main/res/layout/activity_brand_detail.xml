@@ -20,13 +20,13 @@
                 app:layout_constraintTop_toTopOf="parent"
                 android:orientation="vertical">
             <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/abi_cl_heading"
+                    android:id="@+id/abd_cl_heading"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
                 <ImageView
-                        android:id="@+id/abi_img_detail_back"
+                        android:id="@+id/abd_img_back"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:contentDescription="@string/btn_des_back"
@@ -36,7 +36,7 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:srcCompat="@drawable/back_arrow"/>
                 <TextView
-                        android:id="@+id/abi_title"
+                        android:id="@+id/abd_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
@@ -46,14 +46,15 @@
                         android:text="@string/tlt_brandIndex"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="@id/abi_img_detail_back"
-                        app:layout_constraintBottom_toBottomOf="@id/abi_img_detail_back"/>
+                        app:layout_constraintTop_toTopOf="@id/abd_img_back"
+                        app:layout_constraintBottom_toBottomOf="@id/abd_img_back"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
             <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
                 <ImageView
-                        android:id="@+id/abi_img_brandLogo"
+                        android:id="@+id/abd_img_brandLogo"
                         android:layout_width="100sp"
                         android:layout_height="100sp"
                         android:layout_marginTop="30dp"
@@ -62,7 +63,7 @@
                         app:layout_constraintEnd_toEndOf="parent"/>
 
                 <TextView
-                        android:id="@+id/abi_txt_brandName"
+                        android:id="@+id/abd_txt_brandName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
@@ -72,17 +73,21 @@
                         android:textColor="@color/white"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/abi_img_brandLogo"/>
+                        app:layout_constraintTop_toBottomOf="@id/abd_img_brandLogo"/>
                 <TextView
+                        android:id="@+id/abd_txt_description"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="20dp"
                         android:textSize="14sp"
-                        app:layout_constraintTop_toBottomOf="@id/abi_txt_brandName"
+                        app:layout_constraintTop_toBottomOf="@id/abd_txt_brandName"
                         app:layout_constraintStart_toStartOf="parent"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
         <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/abd_rv_hotelList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"

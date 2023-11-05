@@ -60,7 +60,6 @@ public class BrandAdapter extends RecyclerView.Adapter<ViewHolder> {
         holder.logo.setImageResource(brand.getLogo());
         holder.item.setOnClickListener(v -> {
             Intent intent = new Intent(v.getContext(), BrandDetailActivity.class);
-
             intent.putExtra("brand", brand);
             v.getContext().startActivity(intent);
         });
@@ -68,6 +67,6 @@ public class BrandAdapter extends RecyclerView.Adapter<ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return 0;
+        return brandList.size();
     }
 }

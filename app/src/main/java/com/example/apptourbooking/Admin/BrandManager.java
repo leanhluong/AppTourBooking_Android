@@ -38,6 +38,10 @@ public class BrandManager {
         return brandDAO.getAllBrands();
     }
 
+    public List<Brand> searchBrand(String name) {
+        return brandDAO.getBrandByName(name);
+    }
+
     public List<Brand> getBrandsByCondition(String column, boolean sortType) {
         return brandDAO.getAllBrandsWithSort(column, sortType);
     }

@@ -19,9 +19,6 @@
                 android:name=".Activitis.AdminActivities.BrandCreateActivity"
                 android:exported="false"/>
         <activity
-                android:name=".Activitis.UserActivities.BrandsHotelActivity"
-                android:exported="false"/>
-        <activity
                 android:name=".Activitis.UserActivities.BrandDetailActivity"
                 android:exported="false"/>
         <activity
