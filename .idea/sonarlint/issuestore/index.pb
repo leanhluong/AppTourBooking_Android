@@ -1,12 +1,8 @@
 
-m
-=app/src/main/java/com/example/apptourbooking/DAO/UserDAO.java,1\8\189dfd9d64295b8dbbfdaabdafe6170a7b73bd75
 n
 >app/src/main/java/com/example/apptourbooking/Domain/Brand.java,7\2\7296a4d5e2d9b6b8b78e5404e40b860cf4dd7b91
 y
 Iapp/src/main/java/com/example/apptourbooking/Database/DatabaseHelper.java,3\f\3f0150dcb3ae32664c96a2354e92edfd5460aa35
-n
->app/src/main/java/com/example/apptourbooking/DAO/BrandDAO.java,7\e\7e841924014b068603c1c853688b978439fed588
 w
 Gapp/src/main/java/com/example/apptourbooking/Adapter/HotelsAdapter.java,2\e\2e0967a79fef1e3bc033e79bcd4c5140abc071c6
 x
@@ -23,3 +19,7 @@ Kapp/src/main/java/com/example/apptourbooking/Activitis/ProfileActivity.java,e\
 Lapp/src/main/java/com/example/apptourbooking/Activitis/RegisterActivity.java,f\8\f86134e736dc33fe788ba48127881c214e7aa8d2
 
 Oapp/src/main/java/com/example/apptourbooking/Adapter/ManagerAccountAdapter.java,6\4\642a8a68fcc0d952577e17f7417d73d36a18b973
+s
+Capp/src/main/java/com/example/apptourbooking/Database/BrandDAO.java,f\5\f5f0b6f19ead774483a33c99ef41e5c421579058
+>
+app/.gitignore,5\1\51e1c5d383dfaa35e0e7e5873a0a99355a86880f

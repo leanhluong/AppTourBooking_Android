@@ -1,31 +1,37 @@
 
 >
-java:S16042"(Make this anonymous inner class a lambda(‰õØ
+java:S16048"(Make this anonymous inner class a lambda(‰õØ
+J
+java:S1604B"(Make this anonymous inner class a lambda(æÖ„ãüÿÿÿÿ8Ò¸í¹1
 C
-java:S1604="(Make this anonymous inner class a lambda(ë‡½Ÿûÿÿÿÿ
-C
-java:S1604`"(Make this anonymous inner class a lambda(É¡Äƒşÿÿÿÿ
+java:S1604R"(Make this anonymous inner class a lambda(ë‡½Ÿûÿÿÿÿ
+J
+java:S1604v"(Make this anonymous inner class a lambda(É¡Äƒşÿÿÿÿ8ÅÅ‘í¹1
+F
+java:S1604ˆ"(Make this anonymous inner class a lambda(µş™â8ÅÅ‘í¹1
+E
+java:S5411^"(Use a primitive boolean expression here.(”‰æ³8ÅÅ‘í¹1
 >
-java:S1604r"(Make this anonymous inner class a lambda(µş™â
->
-java:S5411I"(Use a primitive boolean expression here.(”‰æ³
->
-java:S5411K"(Use a primitive boolean expression here.(˜¿¬‚
+java:S5411a"(Use a primitive boolean expression here.(˜¿¬‚
 o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÊÌÒ±
-g	java:S116"MRename this field "DB" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…«šúÿÿÿÿ
-c
-java:S1659"HDeclare "btnShowPass" and all following declarations on a separate line.(…»í¶øÿÿÿÿ
-[
-java:S1659"EDeclare "fullname" and all following declarations on a separate line.(İË±ø
-c	java:S100&"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Öš¹¤
-c	java:S1001"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃÍ®È
-V	java:S1255"<This block of commented-out lines of code should be removed.(ÙªóÆøÿÿÿÿ
-h	java:S100;"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œ†úÿÿÿÿ
-m
-java:S3776;"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(œ†úÿÿÿÿ
+n	java:S116"MRename this field "DB" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…«šúÿÿÿÿ8çÅ‘í¹1
+j
+java:S1659"HDeclare "btnShowPass" and all following declarations on a separate line.(…»í¶øÿÿÿÿ8„Æ‘í¹1
+b
+java:S1659"EDeclare "fullname" and all following declarations on a separate line.(İË±ø8„Æ‘í¹1
+j	java:S100,"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Öš¹¤8”Æ‘í¹1
+j	java:S1007"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃÍ®È8¤Æ‘í¹1
+]	java:S125;"<This block of commented-out lines of code should be removed.(ÙªóÆøÿÿÿÿ8¤Æ‘í¹1
+i	java:S100@"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(»û#8¤Æ‘í¹1
+L	java:S106F"+Replace this use of System.out by a logger.(ó½£âúÿÿÿÿ8¤Æ‘í¹1
+o	java:S100P"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œ†úÿÿÿÿ8³Æ‘í¹1
+t
+java:S3776P"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(œ†úÿÿÿÿ8³Æ‘í¹1
+D
+java:S1125^"'Remove the unnecessary boolean literal.(”‰æ³8ÑÆ‘í¹1
+_
+java:S1858_"C"TakeToken" returns a string, there's no need to call "toString()".(»±°C8ÑÆ‘í¹1
 =
-java:S1125I"'Remove the unnecessary boolean literal.(”‰æ³
-=
-java:S1125K"'Remove the unnecessary boolean literal.(˜¿¬‚
-h	java:S100_"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µå¯”ùÿÿÿÿ
-h	java:S100q"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨Æ¬öÿÿÿÿÿ
+java:S1125a"'Remove the unnecessary boolean literal.(˜¿¬‚
+h	java:S100u"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µå¯”ùÿÿÿÿ
+i	java:S100‡"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨Æ¬öÿÿÿÿÿ

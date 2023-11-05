@@ -1,17 +1,9 @@
 
-–
-java:S1192O"€Define a constant instead of duplicating this literal "Chi tiÃªu Ã­t nháº¥t $60 | Æ¯u Ä‘Ã£i háº¿t háº¡n trong 7 ngÃ y!" 4 times.(­ªÃ
-C
-java:S16042"(Make this anonymous inner class a lambda(Ã’§şÿÿÿÿ
->
-java:S1604;"(Make this anonymous inner class a lambda(Ú–Œ‹
->
-java:S1604D"(Make this anonymous inner class a lambda(î®ËÈ
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÊÌÒ±
-C
-java:S1659"(Declare "lnTrangChu" on a separate line.(õéÿôşÿÿÿÿ
-h	java:S100("NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(——ùÿÿÿÿ
-c	java:S1001"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’…–
-h	java:S100:"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ä©Âğùÿÿÿÿ
-h	java:S100C"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¹—óûÿÿÿÿ
-h	java:S100L"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÉÅŒûÿÿÿÿ
+
+java:S11927"€Define a constant instead of duplicating this literal "Chi tiÃªu Ã­t nháº¥t $60 | Æ¯u Ä‘Ã£i háº¿t háº¡n trong 7 ngÃ y!" 4 times.(­ªÃ8Î‹¬í¹1
+E
+java:S1604,"(Make this anonymous inner class a lambda(î®ËÈ8Î‹¬í¹1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÊÌÒ±8Î‹¬í¹1
+o	java:S100&"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(——ùÿÿÿÿ8Œ¬í¹1
+o	java:S100+"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¹—óûÿÿÿÿ8Œ¬í¹1
+o	java:S1004"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÉÅŒûÿÿÿÿ8Œ¬í¹1

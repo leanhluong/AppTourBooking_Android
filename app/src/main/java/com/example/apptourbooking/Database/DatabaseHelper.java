@@ -66,10 +66,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String createTblBrand = "CREATE TABLE " + TB_BRAND + " ( " + TB_BRAND_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + TB_BRAND_NAME + " TEXT," + TB_BRAND_DESCRIPTION + " TEXT)";
 
+        String addColumnWithForeinKey = "ALTER TABLE " + TB_HOTEL + " ADD COLUMN " + TB_HOTEL_BRANDID
+                + " INTEGER REFERENCES " + TB_BRAND + "(" + TB_BRAND_ID + ")";
         db.execSQL(tbUSER);
         db.execSQL(tbHotel);
         db.execSQL(tbLocation);
         db.execSQL(createTblBrand);
+        db.execSQL(addColumnWithForeinKey);
         //db.execSQL("CREATE TABLE users(username TEXT PRIMARY KEY, fullname TEXT, password TEXT, ROLE TEXT)");
     }
 

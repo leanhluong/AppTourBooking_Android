@@ -1,36 +1,36 @@
 
-i
-java:S1192m"NDefine a constant instead of duplicating this literal "MyPreferences" 3 times.(ƒÁÆÑúÿÿÿÿ
-l
-java:S1192o"QDefine a constant instead of duplicating this literal "RememberUsername" 3 times.(¸œõ•úÿÿÿÿ
-g
-java:S1192p"QDefine a constant instead of duplicating this literal "RememberPassword" 3 times.(¹Îõè
-f
-java:S1192q"KDefine a constant instead of duplicating this literal "rememberMe" 3 times.(°§ˆÑüÿÿÿÿ
-C
-java:S1604<"(Make this anonymous inner class a lambda( ˆß—ûÿÿÿÿ
-C
-java:S1604E"(Make this anonymous inner class a lambda(ÉŒªˆüÿÿÿÿ
-C
-java:S1604N"(Make this anonymous inner class a lambda(­½ªúÿÿÿÿ
-C
-java:S1604`"(Make this anonymous inner class a lambda(Ó´Ÿøÿÿÿÿ
->
-java:S5411j"(Use a primitive boolean expression here.(¼ÿÓ±
+s
+java:S1192u"QDefine a constant instead of duplicating this literal "RememberUsername" 3 times.(¸œõ•úÿÿÿÿ8çÀ‘í¹1
+p
+java:S1192s"NDefine a constant instead of duplicating this literal "MyPreferences" 3 times.(ƒÁÆÑúÿÿÿÿ8èÀ‘í¹1
+n
+java:S1192v"QDefine a constant instead of duplicating this literal "RememberPassword" 3 times.(¹Îõè8èÀ‘í¹1
+m
+java:S1192w"KDefine a constant instead of duplicating this literal "rememberMe" 3 times.(°§ˆÑüÿÿÿÿ8éÀ‘í¹1
+J
+java:S1604?"(Make this anonymous inner class a lambda( ˆß—ûÿÿÿÿ8êÀ‘í¹1
+J
+java:S1604H"(Make this anonymous inner class a lambda(ÉŒªˆüÿÿÿÿ8êÀ‘í¹1
+J
+java:S1604Q"(Make this anonymous inner class a lambda(­½ªúÿÿÿÿ8êÀ‘í¹1
+J
+java:S1604d"(Make this anonymous inner class a lambda(Ó´Ÿøÿÿÿÿ8ëÀ‘í¹1
+E
+java:S5411p"(Use a primitive boolean expression here.(¼ÿÓ±8ìÀ‘í¹1
 o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÊÌÒ±
-n	java:S116"TRename this field "btn_login" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ºšŒéûÿÿÿÿ
-g	java:S116"MRename this field "DB" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…«šúÿÿÿÿ
-=
-java:S1659"'Declare "imgHienMk" on a separate line.(Ğ•¬ı
-<
-java:S1659"&Declare "password" on a separate line.(‡‰‹¨
-h	java:S1001"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ú±íÑúÿÿÿÿ
-c	java:S100;"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃÍ®È
-c	java:S100D"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­ğ»Ğ
-c	java:S100M"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢Š¾é
-c	java:S100^"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÀğŠÕ
-h
-java:S3776^"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(ÀğŠÕ
-=
-java:S1125j"'Remove the unnecessary boolean literal.(¼ÿÓ±
-i	java:S100ˆ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ°åÖúÿÿÿÿ
+u	java:S116"TRename this field "btn_login" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ºšŒéûÿÿÿÿ8†Â‘í¹1
+n	java:S116"MRename this field "DB" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…«šúÿÿÿÿ8†Â‘í¹1
+D
+java:S1659"'Declare "imgHienMk" on a separate line.(Ğ•¬ı8°Â‘í¹1
+C
+java:S1659"&Declare "password" on a separate line.(‡‰‹¨8±Â‘í¹1
+o	java:S1004"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ú±íÑúÿÿÿÿ8ÌÂ‘í¹1
+j	java:S100>"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃÍ®È8ÌÂ‘í¹1
+j	java:S100G"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­ğ»Ğ8ÜÂ‘í¹1
+j	java:S100P"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢Š¾é8İÂ‘í¹1
+j	java:S100a"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÀğŠÕ8ëÂ‘í¹1
+o
+java:S3776a"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(ÀğŠÕ8ëÂ‘í¹1
+D
+java:S1125p"'Remove the unnecessary boolean literal.(¼ÿÓ±8€Ã‘í¹1
+i	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ°åÖúÿÿÿÿ
