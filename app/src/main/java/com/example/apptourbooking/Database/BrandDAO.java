@@ -8,6 +8,9 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.example.apptourbooking.Domain.Brand;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BrandDAO {
 
     private SQLiteDatabase db;
@@ -32,6 +35,34 @@ public class BrandDAO {
             cursor.close();
             return brand;
         } else return null;
+    }
+
+    @SuppressLint("Range")
+    public List<Brand> getAllBrands() {
+        List<Brand> brandList = new ArrayList<>();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + DatabaseHelper.TB_BRAND, new String[]{});
+        while(cursor.moveToNext()) {
+            brandList.add(new Brand(cursor.getInt(cursor.getColumnIndex(DatabaseHelper.TB_BRAND_ID)),
+                    cursor.getString(cursor.getColumnIndex(DatabaseHelper.TB_BRAND_NAME)),
+                    cursor.getString(cursor.getColumnIndex(DatabaseHelper.TB_BRAND_DESCRIPTION))));
+        }
+        cursor.close();
+        return brandList;
+    }
+
+    /**/
+@SuppressLint("Range")
+    public List<Brand> getAllBrandsWithSort(String sortColumn, boolean sortType) {
+        List<Brand> brandList = new ArrayList<>();
+    Cursor cursor = db.query(DatabaseHelper.TB_BRAND, null, null
+            , null, null, null, sortColumn + " " + (sortType? "ASC" : "DESC"), null);
+        while(cursor.moveToNext()) {
+            brandList.add(new Brand(cursor.getInt(cursor.getColumnIndex(DatabaseHelper.TB_BRAND_ID)),
+                    cursor.getString(cursor.getColumnIndex(DatabaseHelper.TB_BRAND_NAME)),
+                    cursor.getString(cursor.getColumnIndex(DatabaseHelper.TB_BRAND_DESCRIPTION))));
+        }
+        cursor.close();
+        return brandList;
     }
 
     public long insertBrand(Brand brand) {
