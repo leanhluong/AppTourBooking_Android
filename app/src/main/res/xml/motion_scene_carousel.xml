@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto"
+    >
+    <!-- Transition 1: Initial to the end state -->
+    <Transition
+        motion:constraintSetStart="@+id/start"
+        motion:constraintSetEnd="@+id/end1"
+        >
+        <OnSwipe
+            motion:dragDirection="dragRight"
+            motion:touchAnchorId="@+id/motionLayout"
+            motion:touchAnchorSide="left"
+            />
+    </Transition>
+
+    <!-- Transition 2: End state to the next state -->
+    <Transition
+        motion:constraintSetStart="@+id/end1"
+        motion:constraintSetEnd="@+id/end2"
+        >
+        <OnSwipe
+            motion:dragDirection="dragRight"
+            motion:touchAnchorId="@+id/motionLayout"
+            motion:touchAnchorSide="left"
+            />
+    </Transition>
+
+    <!-- Define additional transitions for looping -->
+
+    <ConstraintSet android:id="@+id/start">
+        <!-- Define the initial state of your carousel content -->
+        <!-- Ensure that the motionLayout has the initial position -->
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end1">
+        <!-- Define the state for your first content -->
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end2">
+        <!-- Define the state for your second content -->
+    </ConstraintSet>
+
+    <!-- Define additional ConstraintSets for looping -->
+</MotionScene>

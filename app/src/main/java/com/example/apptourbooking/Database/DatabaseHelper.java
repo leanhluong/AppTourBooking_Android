@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 import com.example.apptourbooking.Domain.Hotel;
+import com.example.apptourbooking.Domain.Tour;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +45,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
 
+    public static final String TB_TOUR = "Tour";
+    public static final String TB_TOUR_ID = "TourId";
+    public static final String TB_TOUR_NAME = "TourName";
+    public static final String TB_TOUR_DESCRIPTION = "Description";
+    public static final String TB_TOUR_PLACE = "Place";
+    public static final String TB_TOUR_PRICE = "Price";
+    public static final String TB_TOUR_IMG = "Img";
+
     public DatabaseHelper(@Nullable Context context) {
         super(context, DBTOURBOOKING, null, 1);
     }
@@ -58,16 +67,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 +TB_HOTEL_PIC + " TEXT, "+ TB_HOTEL_WIFI +" TEXT, " + TB_HOTEL_PRICE + " INTEGER) ";
         String tbLocation = "CREATE TABLE "+ TB_LOCATION +" ( "+TB_LOCATION_ID+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + TB_LOCATION_NAME +" TEXT," + TB_LOCATION_PIC+" TEXT) ";
+        String tbTour = "CREATE TABLE " + TB_TOUR + " ( " + TB_TOUR_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + TB_TOUR_NAME + " TEXT, " + TB_TOUR_DESCRIPTION + " TEXT, " + TB_TOUR_PLACE + " TEXT, "
+                + TB_TOUR_PRICE + " TEXT, " + TB_TOUR_IMG + " TEXT)";
 
         db.execSQL(tbUSER);
         db.execSQL(tbHotel);
         db.execSQL(tbLocation);
+        db.execSQL(tbTour);
+
         //db.execSQL("CREATE TABLE users(username TEXT PRIMARY KEY, fullname TEXT, password TEXT, ROLE TEXT)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS "+ TB_USER);
+        db.execSQL("DROP TABLE IF EXISTS " + TB_TOUR);
+
         onCreate(db);
     }
 
@@ -84,7 +100,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         else
             return true;
     }
+    public long insertTour(String tourName, String description, String location, String price, String img) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(TB_TOUR_NAME, tourName);
+        values.put(TB_TOUR_DESCRIPTION, description);
+        values.put(TB_TOUR_PLACE, location);
+        values.put(TB_TOUR_PRICE, price);
+        values.put(TB_TOUR_IMG, img);
 
+        return db.insert(TB_TOUR, null, values);
+    }
     private boolean validateUser(String username, String password) {
         if (username != null && username.length() <= 10) {
             try {
@@ -145,4 +171,5 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return list;
     }
+
 }

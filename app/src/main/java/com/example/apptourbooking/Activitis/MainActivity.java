@@ -18,6 +18,7 @@ import com.example.apptourbooking.Adapter.HotelsAdapter;
 import com.example.apptourbooking.Database.DatabaseHelper;
 import com.example.apptourbooking.Domain.Hotel;
 import com.example.apptourbooking.R;
+import com.example.apptourbooking.TourListActivity;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -25,7 +26,7 @@ import java.util.Calendar;
 public class MainActivity extends AppCompatActivity {
 
     private ScrollView loadSroll;
-    private LinearLayout linearLayoutUuDai, lnTaiKhoan, lnTrangChu;
+    private LinearLayout linearLayoutUuDai, lnTaiKhoan, lnTrangChu,lnTour;
     private TextView txtLogin, greetingTextView;
     private RecyclerView.Adapter adapterRoom;
     private RecyclerView recyclerRoom;
@@ -47,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         Coupon();
 
         TaiKhoan();
+        TourList();
 
     }
 
@@ -54,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         linearLayoutUuDai = (LinearLayout) findViewById(R.id.linearlayoutUuDai);
         lnTaiKhoan = (LinearLayout) findViewById(R.id.ln_main_taikhoan);
         lnTrangChu = findViewById(R.id.main_ln_trangchu);
+        lnTour =findViewById(R.id.main_ln_tour);
         txtLogin = (TextView) findViewById(R.id.textView_login);
 
         loadSroll = findViewById(R.id.scrollView2);
@@ -118,6 +121,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+            }
+        });
+    }
+
+    private void TourList(){
+        lnTour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, TourListActivity.class) );
             }
         });
     }
