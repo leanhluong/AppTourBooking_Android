@@ -1,0 +1,21 @@
+
+C
+java:S1604&"(Make this anonymous inner class a lambda(Ó´Ÿøÿÿÿÿ
+>
+java:S1604/"(Make this anonymous inner class a lambda(¥Œİ›
+>
+java:S16048"(Make this anonymous inner class a lambda(Ú–Œ‹
+C
+java:S1604A"(Make this anonymous inner class a lambda(Ã’§şÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÊÌÒ±
+i	java:S116"TRename this field "btn_login" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(È©Ä
+]
+java:S1659"GDeclare "lnTaiKhoan" and all following declarations on a separate line.(Ñõ†Û
+c	java:S100%"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÀğŠÕ
+c	java:S100."NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñÅû
+h	java:S1007"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ä©Âğùÿÿÿÿ
+h	java:S100@"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äÆ•¸úÿÿÿÿ
+—
+java:S1186C"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¡é††
+F
+java:S1144@"+Remove this unused private "ReLoad" method.(äÆ•¸úÿÿÿÿ

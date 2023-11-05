@@ -19,6 +19,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String TB_USER = "Users";
     public static final String TB_HOTEL = "Hotel";
     public static final String TB_LOCATION = "Location";
+    public static final String TB_BRAND = "Brands";
 
     public static final String TB_USER_ID = "UserId";
     public static final String TB_USER_FULLNAME = "FullName";
@@ -32,17 +33,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String TB_HOTEL_DESCRIPTION = "Description";
     public static final String TB_HOTEL_BED = "Bed";
     public static final String TB_HOTEL_GUIDE = "Guide";
-    public static final String TB_HOTEL_SCORE= "Score";
+    public static final String TB_HOTEL_SCORE = "Score";
     public static final String TB_HOTEL_PIC = "Pic";
     public static final String TB_HOTEL_WIFI = "Wifi";
     public static final String TB_HOTEL_PRICE = "Price";
+    public static final String TB_HOTEL_BRANDID = "BrandId";
 
 
     public static final String TB_LOCATION_ID = "LocationId";
     public static final String TB_LOCATION_NAME = "LocationName";
     public static final String TB_LOCATION_PIC = "LocationPic";
 
+    public static final String TB_BRAND_ID = "BrandId";
+    public static final String TB_BRAND_NAME = "BrandName";
+    public static final String TB_BRAND_DESCRIPTION = "BrandDescription";
 
+    public static final String FK_HOTEL_BRAND = "FK_Hotel_Brand";
 
     public DatabaseHelper(@Nullable Context context) {
         super(context, DBTOURBOOKING, null, 1);
@@ -51,36 +57,42 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String tbUSER = "CREATE TABLE " + TB_USER + " ( " + TB_USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + TB_USER_FULLNAME +" TEXT, " + TB_USER_NAME + " TEXT, " + TB_USER_PASSWORD +" TEXT, "+TB_USER_ROLE +" INTEGER) ";
-        String tbHotel = "CREATE TABLE " + TB_HOTEL + "( " + TB_HOTEL_ID+ " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + TB_HOTEL_NAME + " TEXT, "+ TB_HOTEL_LOCATION +" TEXT, " + TB_HOTEL_DESCRIPTION + " TEXT, "
-                + TB_HOTEL_BED + " NTEGER, "+ TB_HOTEL_GUIDE + " TEXT, " + TB_HOTEL_SCORE + " TEXT, "
-                +TB_HOTEL_PIC + " TEXT, "+ TB_HOTEL_WIFI +" TEXT, " + TB_HOTEL_PRICE + " INTEGER) ";
-        String tbLocation = "CREATE TABLE "+ TB_LOCATION +" ( "+TB_LOCATION_ID+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + TB_LOCATION_NAME +" TEXT," + TB_LOCATION_PIC+" TEXT) ";
+                + TB_USER_FULLNAME + " TEXT, " + TB_USER_NAME + " TEXT, " + TB_USER_PASSWORD + " TEXT, " + TB_USER_ROLE + " INTEGER) ";
+        String tbHotel = "CREATE TABLE " + TB_HOTEL + "( " + TB_HOTEL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + TB_HOTEL_NAME + " TEXT, " + TB_HOTEL_LOCATION + " TEXT, " + TB_HOTEL_BRANDID + " INTEGER, " + TB_HOTEL_DESCRIPTION + " TEXT, "
+                + TB_HOTEL_BED + " NTEGER, " + TB_HOTEL_GUIDE + " TEXT, " + TB_HOTEL_SCORE + " TEXT, "
+                + TB_HOTEL_PIC + " TEXT, " + TB_HOTEL_WIFI + " TEXT, " + TB_HOTEL_PRICE + " INTEGER) ";
+        String tbLocation = "CREATE TABLE " + TB_LOCATION + " ( " + TB_LOCATION_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + TB_LOCATION_NAME + " TEXT," + TB_LOCATION_PIC + " TEXT) ";
+        String createTblBrand = "CREATE TABLE " + TB_BRAND + " ( " + TB_BRAND_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + TB_BRAND_NAME + " TEXT," + TB_BRAND_DESCRIPTION + " TEXT) ";
+
+        String createBrandHotelForeinKey = "ALTER TABLE " + TB_HOTEL + " WITH CHECK ADD CONSTRAINT " + FK_HOTEL_BRAND + " FOREIGN KEY(" + TB_HOTEL_BRANDID + ")" +
+                "REFERENCES " + TB_BRAND + "(" + TB_BRAND_ID + ")";
 
         db.execSQL(tbUSER);
         db.execSQL(tbHotel);
         db.execSQL(tbLocation);
+        db.execSQL(createTblBrand);
         //db.execSQL("CREATE TABLE users(username TEXT PRIMARY KEY, fullname TEXT, password TEXT, ROLE TEXT)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS "+ TB_USER);
+        db.execSQL("DROP TABLE IF EXISTS " + TB_USER);
         onCreate(db);
     }
 
-    public Boolean InsertData(String username,String fullname, String password){
+    public Boolean InsertData(String username, String fullname, String password) {
         SQLiteDatabase MyDB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        if(validateUser(username,password)){
-                contentValues.put(TB_USER_NAME, username);
-                contentValues.put(TB_USER_FULLNAME, fullname);
-                contentValues.put(TB_USER_PASSWORD, password);
+        if (validateUser(username, password)) {
+            contentValues.put(TB_USER_NAME, username);
+            contentValues.put(TB_USER_FULLNAME, fullname);
+            contentValues.put(TB_USER_PASSWORD, password);
         }
-        long result = MyDB.insert("users", null, contentValues );
-        if(result == -1) return false;
+        long result = MyDB.insert("users", null, contentValues);
+        if (result == -1) return false;
         else
             return true;
     }
@@ -98,20 +110,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public Boolean checkusername (String username){
+    public Boolean checkusername(String username) {
         SQLiteDatabase MyDB = this.getWritableDatabase();
-        Cursor cursor = MyDB.rawQuery("SELECT * FROM Users where username = ?", new String[] {username});
-        if(cursor.getCount()>0)
+        Cursor cursor = MyDB.rawQuery("SELECT * FROM Users where username = ?", new String[]{username});
+        if (cursor.getCount() > 0)
             return true;
         else
             return false;
 
     }
 
-    public Boolean checkusernamepassword ( String username, String password){
+    public Boolean checkusernamepassword(String username, String password) {
         SQLiteDatabase MyDB = this.getWritableDatabase();
-        Cursor cursor =  MyDB.rawQuery("SELECT * FROM users WHERE username = ? and password = ?", new String[] {username, password});
-        if(cursor.getCount() > 0 )
+        Cursor cursor = MyDB.rawQuery("SELECT * FROM users WHERE username = ? and password = ?", new String[]{username, password});
+        if (cursor.getCount() > 0)
             return true;
         else
             return false;
@@ -124,13 +136,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     //get all hotel
-    public List<Hotel> getAll(){
+    public List<Hotel> getAllHotel() {
         List<Hotel> list = new ArrayList<>();
         SQLiteDatabase st = getReadableDatabase();
         String order = "date DESC";
         Cursor rs = st.query(TB_HOTEL, null, null,
-                null, null, null,order);
-        while (rs!=null && rs.moveToNext()){
+                null, null, null, order);
+        while (rs != null && rs.moveToNext()) {
             int id = rs.getInt(0);
             String name = rs.getString(1);
             String location = rs.getString(2);
@@ -139,8 +151,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             double score = rs.getDouble(5);
             String pic = rs.getString(6);
             int price = rs.getInt(7);
-            list.add(new Hotel(id,name,location,description,bed
-                    ,score,pic,price));
+            list.add(new Hotel(id, name, location, description, bed
+                    , score, pic, price));
 
         }
         return list;

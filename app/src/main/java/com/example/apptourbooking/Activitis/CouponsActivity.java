@@ -50,6 +50,7 @@ public class CouponsActivity extends AppCompatActivity {
         lnTaiKhoan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 startActivity(new Intent(CouponsActivity.this, ProfileActivity.class));
             }
         });

@@ -1,0 +1,27 @@
+
+d
+java:S1192;"NDefine a constant instead of duplicating this literal "CREATE TABLE " 4 times.(ÿ‹‘
+{
+java:S1192;"eDefine a constant instead of duplicating this literal " INTEGER PRIMARY KEY AUTOINCREMENT, " 3 times.(ÿ‹‘
+d
+java:S1192<"IDefine a constant instead of duplicating this literal " TEXT, " 10 times.(ë™ÂÂøÿÿÿÿ
+k	java:S117W"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“Çó°ÿÿÿÿÿ
+k	java:S117r"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“Çó°ÿÿÿÿÿ
+k	java:S117|"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“Çó°ÿÿÿÿÿ
+n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(º‚¹u
+h
+java:S1854F"MRemove this useless assignment to local variable "createBrandHotelForeinKey".(ŒÎ¬öûÿÿÿÿ
+Y
+java:S1481F">Remove this unused "createBrandHotelForeinKey" local variable.(ŒÎ¬öûÿÿÿÿ
+V	java:S125M"<This block of commented-out lines of code should be removed.(ÂëáÑÿÿÿÿÿ
+c	java:S100V"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ìşÛ
+W
+java:S1126_"AReplace this if-then-else statement by a single return statement.(Ö³Á
+E
+java:S1172d"/Remove this unused method parameter "password".(•î½ü
+W
+java:S1126t"AReplace this if-then-else statement by a single return statement.(¡°µ°
+W
+java:S1126~"AReplace this if-then-else statement by a single return statement.(¡°µ°
+D
+java:S1185…"(Remove this method to simply inherit it.(öå“ùÿÿÿÿ

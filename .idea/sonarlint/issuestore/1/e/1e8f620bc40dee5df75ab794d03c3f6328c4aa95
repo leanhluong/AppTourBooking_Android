@@ -1,0 +1,5 @@
+
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Íº±
+l	java:S116"WRename this field "CouponsTitle" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÚÕºÚ
+w	java:S116"]Rename this field "CouponsDescription" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(â‘ç¤şÿÿÿÿ
+i	java:S116"TRename this field "CouponImg" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§Ë‘¬

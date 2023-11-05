@@ -1,0 +1,36 @@
+
+i
+java:S1192m"NDefine a constant instead of duplicating this literal "MyPreferences" 3 times.(ƒÁÆÑúÿÿÿÿ
+l
+java:S1192o"QDefine a constant instead of duplicating this literal "RememberUsername" 3 times.(¸œõ•úÿÿÿÿ
+g
+java:S1192p"QDefine a constant instead of duplicating this literal "RememberPassword" 3 times.(¹Îõè
+f
+java:S1192q"KDefine a constant instead of duplicating this literal "rememberMe" 3 times.(°§ˆÑüÿÿÿÿ
+C
+java:S1604<"(Make this anonymous inner class a lambda( ˆß—ûÿÿÿÿ
+C
+java:S1604E"(Make this anonymous inner class a lambda(ÉŒªˆüÿÿÿÿ
+C
+java:S1604N"(Make this anonymous inner class a lambda(­½ªúÿÿÿÿ
+C
+java:S1604`"(Make this anonymous inner class a lambda(Ó´Ÿøÿÿÿÿ
+>
+java:S5411j"(Use a primitive boolean expression here.(¼ÿÓ±
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÊÌÒ±
+n	java:S116"TRename this field "btn_login" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ºšŒéûÿÿÿÿ
+g	java:S116"MRename this field "DB" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…«šúÿÿÿÿ
+=
+java:S1659"'Declare "imgHienMk" on a separate line.(Ğ•¬ı
+<
+java:S1659"&Declare "password" on a separate line.(‡‰‹¨
+h	java:S1001"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ú±íÑúÿÿÿÿ
+c	java:S100;"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃÍ®È
+c	java:S100D"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­ğ»Ğ
+c	java:S100M"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢Š¾é
+c	java:S100^"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÀğŠÕ
+h
+java:S3776^"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(ÀğŠÕ
+=
+java:S1125j"'Remove the unnecessary boolean literal.(¼ÿÓ±
+i	java:S100ˆ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ°åÖúÿÿÿÿ
