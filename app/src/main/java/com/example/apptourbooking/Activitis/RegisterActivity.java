@@ -1,5 +1,6 @@
 package com.example.apptourbooking.Activitis;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,11 +13,15 @@ import android.widget.Toast;
 
 import com.example.apptourbooking.Database.DatabaseHelper;
 import com.example.apptourbooking.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class RegisterActivity extends AppCompatActivity {
     private ImageView imgbackRegister, btnShowPass, btnShowRepass;
     private boolean passwordVisible = false;
     private EditText username, fullname, password, repassword;
+    private String token;
     private Button btnRegister;
 
     DatabaseHelper DB;
@@ -25,6 +30,7 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        TakeToken();
         Init();
 
         Back();
@@ -55,6 +61,21 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
     }
+    private String TakeToken(){
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(new OnCompleteListener<String>() {
+                    @Override
+                    public void onComplete(@NonNull Task<String> task) {
+                        if (!task.isSuccessful()) {
+                            System.out.println("Fetching FCM registration token failed");
+                            return;
+                        }
+                        // Get new FCM registration token
+                        token = task.getResult();
+                    }
+                });
+        return token;
+    }
 
     private void Register(){
         DB = new DatabaseHelper(this);
@@ -65,13 +86,14 @@ public class RegisterActivity extends AppCompatActivity {
                 String name = fullname.getText().toString();
                 String pass = password.getText().toString();
                 String repass= repassword.getText().toString();
-                if(user.equals("")||name.equals("") || pass.equals("") || repass.equals("")){
+                if(user.equals("") ||name.equals("")|| pass.equals("") || repass.equals("")){
                     Toast.makeText(RegisterActivity.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
                 } else {
                     if(pass.equals(repass)){
                         Boolean checkuser = DB.checkusername(user);
                         if(checkuser == false ){
-                            Boolean insert = DB.InsertData(user,name,pass);
+                            String tok = TakeToken().toString();
+                            Boolean insert = DB.InsertData(user,name,tok,pass);
                             if(insert == true){
                                 Toast.makeText(RegisterActivity.this, "Register successfully", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(getApplicationContext(), LoginActivity.class));

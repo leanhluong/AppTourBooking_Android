@@ -5,8 +5,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -15,8 +13,8 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.apptourbooking.Adapter.HotelsAdapter;
-import com.example.apptourbooking.Database.DatabaseHelper;
 import com.example.apptourbooking.Domain.Hotel;
+import com.example.apptourbooking.Domain.UserInfo;
 import com.example.apptourbooking.R;
 
 import java.util.ArrayList;
@@ -30,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.Adapter adapterRoom;
     private RecyclerView recyclerRoom;
     private ImageView img_trangchu;
+    UserInfo userInfo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         Init();
 
-        Login();
+        Logout();
         SetWelcomeHeader();
 
         initRecyclerView();
@@ -47,6 +47,10 @@ public class MainActivity extends AppCompatActivity {
         Coupon();
 
         TaiKhoan();
+
+        Intent intent = getIntent();
+        userInfo = (UserInfo) intent.getSerializableExtra("key_account");
+        txtLogin.setText(""+ userInfo.getFullName() );
 
     }
 
@@ -73,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerRoom.setAdapter(adapterRoom);
     }
 
-    private void Login(){
+    private void Logout(){
         txtLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 loadSroll.smoothScrollTo(0, 0);
             }
+
         });
 
         loadSroll.setOnScrollChangeListener(new View.OnScrollChangeListener() {
@@ -117,7 +122,9 @@ public class MainActivity extends AppCompatActivity {
         lnTaiKhoan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+                Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+                intent.putExtra("profile_account",userInfo );
+                startActivity(intent);
             }
         });
     }
@@ -136,5 +143,6 @@ public class MainActivity extends AppCompatActivity {
             greetingTextView.setText("Chào buổi tối");
         }
     }
+
 
 }

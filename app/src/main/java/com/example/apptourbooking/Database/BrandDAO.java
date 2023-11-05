@@ -1,4 +1,4 @@
-package com.example.apptourbooking.DAO;
+package com.example.apptourbooking.Database;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;

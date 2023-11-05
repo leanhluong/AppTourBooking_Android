@@ -42,19 +42,19 @@
                 app:srcCompat="@drawable/back_arrow" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:autofillHints=""
-            android:drawableStart="@drawable/search_icon"
-            android:ems="10"
-            android:hint="Enter search name account"
-            android:inputType="text"
-            android:minHeight="48dp"
-            android:textSize="15sp"
-            tools:ignore="VisualLintTextFieldSize" />
+<!--        <EditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="20dp"-->
+<!--            android:layout_marginEnd="20dp"-->
+<!--            android:autofillHints=""-->
+<!--            android:drawableStart="@drawable/search_icon"-->
+<!--            android:ems="10"-->
+<!--            android:hint="Enter search name account"-->
+<!--            android:inputType="text"-->
+<!--            android:minHeight="48dp"-->
+<!--            android:textSize="15sp"-->
+<!--            tools:ignore="VisualLintTextFieldSize" />-->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -161,6 +161,38 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_weight="1"
+                android:text="Token:          "
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/mAccount_edt_token"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="..."
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:text=""
+                android:textSize="18sp"
+                tools:ignore="VisualLintTextFieldSize" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
                 android:text="Role:          "
                 android:textColor="@color/black"
                 android:textSize="18sp"
@@ -183,7 +215,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:layout_marginTop="5dp"
             android:orientation="horizontal">
 
@@ -210,7 +242,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:layout_marginTop="5dp"
             android:orientation="horizontal">
 
@@ -239,6 +271,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="20dp"
+            android:layout_marginTop="20dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:orientation="horizontal">
@@ -282,6 +315,15 @@
                 android:textStyle="bold"
                 android:textSize="15sp"
                 android:text="Password" />
+            <TextView
+                android:id="@+id/textView42"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:text="Token" />
 
             <TextView
                 android:id="@+id/textView41"

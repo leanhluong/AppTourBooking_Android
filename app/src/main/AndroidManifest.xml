@@ -13,13 +13,16 @@
         android:theme="@style/Theme.AppTourBooking"
         tools:targetApi="31">
         <activity
-            android:name=".Admin.ManagerHotel"
-            android:windowSoftInputMode="stateAlwaysHidden"
+            android:name=".Activitis.UpdateProfileActivity"
             android:exported="false" />
         <activity
+            android:name=".Admin.ManagerHotel"
+            android:exported="false"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
             android:name=".Admin.ManageAccount"
-            android:windowSoftInputMode="stateAlwaysHidden"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
             android:name=".Admin.AdminActivity"
             android:exported="false" />
