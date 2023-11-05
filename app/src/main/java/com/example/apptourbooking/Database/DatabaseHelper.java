@@ -48,6 +48,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String TB_BRAND_ID = "BrandId";
     public static final String TB_BRAND_NAME = "BrandName";
     public static final String TB_BRAND_DESCRIPTION = "BrandDescription";
+    public static final String TB_BRAND_LOGO = "BrandLogo";
 
     public DatabaseHelper(@Nullable Context context) {
         super(context, DBTOURBOOKING, null, 1);
@@ -64,7 +65,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String tbLocation = "CREATE TABLE "+ TB_LOCATION +" ( "+TB_LOCATION_ID+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + TB_LOCATION_NAME +" TEXT," + TB_LOCATION_PIC+" TEXT) ";
         String createTblBrand = "CREATE TABLE " + TB_BRAND + " ( " + TB_BRAND_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + TB_BRAND_NAME + " TEXT," + TB_BRAND_DESCRIPTION + " TEXT)";
+                + TB_BRAND_NAME + " TEXT," + TB_BRAND_DESCRIPTION + " TEXT, " + TB_BRAND_LOGO + " INTEGER)";
 
         String addColumnWithForeinKey = "ALTER TABLE " + TB_HOTEL + " ADD COLUMN " + TB_HOTEL_BRANDID
                 + " INTEGER REFERENCES " + TB_BRAND + "(" + TB_BRAND_ID + ")";

@@ -1,14 +1,17 @@
 package com.example.apptourbooking.Domain;
 
-public class Brand {
+import java.io.Serializable;
+public class Brand implements Serializable{
     private int brandId;
     private String brandName;
-    private String desciption;
+    private String description;
+    private int logo;
 
-    public Brand(int brandId, String brandName, String desciption) {
+    public Brand(int brandId, String brandName, String description, int logo) {
         this.brandId = brandId;
         this.brandName = brandName;
-        this.desciption = desciption;
+        this.description = description;
+        this.logo = logo;
     }
 
     public Brand() {
@@ -30,11 +33,19 @@ public class Brand {
         this.brandName = brandName;
     }
 
-    public String getDesciption() {
-        return desciption;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDesciption(String desciption) {
-        this.desciption = desciption;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getLogo() {
+        return logo;
+    }
+
+    public void setLogo(int logo) {
+        this.logo = logo;
     }
 }

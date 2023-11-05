@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/bvh_itemWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView
+            android:id="@+id/bvh_img_brandLogo"
+            android:layout_width="100sp"
+            android:layout_height="100sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+            android:id="@+id/bvh_txt_brandName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/bvh_img_brandLogo"
+            app:layout_constraintTop_toTopOf="@id/bvh_img_brandLogo"/>
+    <TextView
+            android:id="@+id/bvh_txt_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@id/bvh_img_brandLogo"
+            app:layout_constraintTop_toBottomOf="@id/bvh_txt_brandName"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

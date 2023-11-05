@@ -1,19 +1,20 @@
 
-k	java:S1175"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸”íıÿÿÿÿ
-f	java:S1176"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€ó
-f	java:S1177"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğÓ€–
-f	java:S1178"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÖªêÃ
-f	java:S1179"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÔÉÌ£
+k	java:S1172"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸”íıÿÿÿÿ
+f	java:S1173"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€ó
+f	java:S1174"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğÓ€–
+f	java:S1175"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÖªêÃ
+l	java:S1176"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶³™j8ˆ°Àÿ¹1
+f	java:S1177"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÔÉÌ£
 t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¯¿ò™ÿÿÿÿÿ
-Q	java:S125B"<This block of commented-out lines of code should be removed.(½Øî”
-f	java:S116_"QRename this field "txt_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(º»Œæ
-l	java:S116_"WRename this field "txt_fullname" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(º»Œæ
-l	java:S116_"WRename this field "txt_username" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(º»Œæ
-l	java:S116_"WRename this field "txt_password" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(º»Œæ
-h	java:S116_"SRename this field "txt_role" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(º»Œæ
+Q	java:S125A"<This block of commented-out lines of code should be removed.(½Øî”
+f	java:S116^"QRename this field "txt_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(º»Œæ
+l	java:S116^"WRename this field "txt_fullname" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(º»Œæ
+l	java:S116^"WRename this field "txt_username" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(º»Œæ
+l	java:S116^"WRename this field "txt_password" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(º»Œæ
+h	java:S116^"SRename this field "txt_role" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(º»Œæ
 _
-java:S1659_"IDeclare "txt_fullname" and all following declarations on a separate line.(º»Œæ
+java:S1659^"IDeclare "txt_fullname" and all following declarations on a separate line.(º»Œæ
 I
-java:S3985^".Remove this unused private "ViewHolder" class.(í÷Œãıÿÿÿÿ
+java:S3985]".Remove this unused private "ViewHolder" class.(í÷Œãıÿÿÿÿ
 @
-java:S1068"+Remove this unused "context" private field.(êİç
+java:S1068"+Remove this unused "context" private field.(êİç

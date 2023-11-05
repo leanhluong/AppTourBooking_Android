@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">App Tour Booking</string>
 
-    <string name="txt_brandIntro">Enhance your travel with famous brands</string>
+    <string name="txt_brandIntro">Enhance your travel with our famous brands</string>
 
     <string name="tlt_brandIndex">Brand</string>
 

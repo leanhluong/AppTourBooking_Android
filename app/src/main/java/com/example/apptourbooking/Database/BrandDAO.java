@@ -31,7 +31,8 @@ public class BrandDAO {
             cursor.moveToFirst();
             Brand brand = new Brand(cursor.getInt(cursor.getColumnIndex(DatabaseHelper.TB_BRAND_ID)),
                     cursor.getString(cursor.getColumnIndex(DatabaseHelper.TB_BRAND_NAME)),
-                    cursor.getString(cursor.getColumnIndex(DatabaseHelper.TB_BRAND_DESCRIPTION)));
+                    cursor.getString(cursor.getColumnIndex(DatabaseHelper.TB_BRAND_DESCRIPTION)),
+                    cursor.getInt(cursor.getColumnIndex(DatabaseHelper.TB_BRAND_LOGO)));
             cursor.close();
             return brand;
         } else return null;
@@ -44,7 +45,8 @@ public class BrandDAO {
         while(cursor.moveToNext()) {
             brandList.add(new Brand(cursor.getInt(cursor.getColumnIndex(DatabaseHelper.TB_BRAND_ID)),
                     cursor.getString(cursor.getColumnIndex(DatabaseHelper.TB_BRAND_NAME)),
-                    cursor.getString(cursor.getColumnIndex(DatabaseHelper.TB_BRAND_DESCRIPTION))));
+                    cursor.getString(cursor.getColumnIndex(DatabaseHelper.TB_BRAND_DESCRIPTION)),
+                    cursor.getInt(cursor.getColumnIndex(DatabaseHelper.TB_BRAND_LOGO))));
         }
         cursor.close();
         return brandList;
@@ -59,7 +61,8 @@ public class BrandDAO {
         while(cursor.moveToNext()) {
             brandList.add(new Brand(cursor.getInt(cursor.getColumnIndex(DatabaseHelper.TB_BRAND_ID)),
                     cursor.getString(cursor.getColumnIndex(DatabaseHelper.TB_BRAND_NAME)),
-                    cursor.getString(cursor.getColumnIndex(DatabaseHelper.TB_BRAND_DESCRIPTION))));
+                    cursor.getString(cursor.getColumnIndex(DatabaseHelper.TB_BRAND_DESCRIPTION)),
+                    cursor.getInt(cursor.getColumnIndex(DatabaseHelper.TB_BRAND_LOGO))));
         }
         cursor.close();
         return brandList;
@@ -87,7 +90,7 @@ public class BrandDAO {
     private ContentValues getContentFromBrand(Brand brand) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(DatabaseHelper.TB_BRAND_NAME, brand.getBrandName());
-        contentValues.put(DatabaseHelper.TB_BRAND_DESCRIPTION, brand.getDesciption());
+        contentValues.put(DatabaseHelper.TB_BRAND_DESCRIPTION, brand.getDescription());
         return contentValues;
     }
 }
