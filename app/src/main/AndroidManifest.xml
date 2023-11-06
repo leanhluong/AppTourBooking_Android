@@ -13,6 +13,7 @@
         android:theme="@style/Theme.AppTourBooking"
         tools:targetApi="31">
         <activity
+<<<<<<< HEAD
             android:name=".Admin.AddHotelActivity"
             android:exported="false" />
         <activity
@@ -23,6 +24,16 @@
             android:exported="false"
             android:parentActivityName=".Activitis.MainActivity"
             android:theme="@style/AppThemeWithActionBar" />
+=======
+            android:name=".Activitis.FlightListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activitis.FlightDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activitis.FlightActivity"
+            android:exported="false" />
+>>>>>>> origin/Mainbackup
         <activity
             android:name=".Activitis.UpdateProfileActivity"
             android:exported="false" />
