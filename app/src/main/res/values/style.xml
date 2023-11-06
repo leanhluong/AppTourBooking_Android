@@ -5,4 +5,7 @@
         <item name="android:textColorHint">@android:color/darker_gray</item> <!-- Màu gợi ý văn bản -->
         <item name="android:textStyle">normal</item> <!-- Chuyển phông chữ thành normal để loại bỏ gạch ngang -->
     </style>
+    <style name="AppThemeWithActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Các thuộc tính của style -->
+    </style>
 </resources>

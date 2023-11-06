@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.apptourbooking.Activitis.LoginActivity;
+import com.example.apptourbooking.Activitis.ManagerHotel;
 import com.example.apptourbooking.R;
 
 public class AdminActivity extends AppCompatActivity {
@@ -31,7 +32,7 @@ public class AdminActivity extends AppCompatActivity {
         btn_mHotel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AdminActivity.this, ManagerHotel.class));
+                startActivity(new Intent(AdminActivity.this, PageViewListHotel.class));
             }
         });
 

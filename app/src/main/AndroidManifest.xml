@@ -13,10 +13,24 @@
         android:theme="@style/Theme.AppTourBooking"
         tools:targetApi="31">
         <activity
+            android:name=".Admin.AddHotelActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.UpdateHotelActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.AddHotel"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.PageViewListHotel"
+            android:exported="false"
+            android:parentActivityName=".Activitis.MainActivity"
+            android:theme="@style/AppThemeWithActionBar" />
+        <activity
             android:name=".Activitis.UpdateProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".Admin.ManagerHotel"
+            android:name=".Activitis.ManagerHotel"
             android:exported="false"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity

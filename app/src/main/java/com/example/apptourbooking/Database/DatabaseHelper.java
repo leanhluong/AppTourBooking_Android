@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -14,6 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
+    private Context context;
+    private static final int DATABASE_VERSION= 1;
     public static final String DBTOURBOOKING = "TourBooking.db";
 
     public static final String TB_USER = "Users";
@@ -47,6 +50,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public DatabaseHelper(@Nullable Context context) {
         super(context, DBTOURBOOKING, null, 1);
+        this.context=context;
     }
 
     @Override
@@ -54,7 +58,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String tbUSER = "CREATE TABLE " + TB_USER + " ( " + TB_USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + TB_USER_FULLNAME +" TEXT, " + TB_USER_NAME + " TEXT, " + TB_USER_PASSWORD +" TEXT, "+ TB_USER_TOKEN +" TEXT, "+TB_USER_ROLE +" INTEGER) ";
         String tbHotel = "CREATE TABLE " + TB_HOTEL + "( " + TB_HOTEL_ID+ " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + TB_HOTEL_NAME + " TEXT, "+ TB_HOTEL_LOCATION +" TEXT, " + TB_HOTEL_DESCRIPTION + " TEXT, "
+                + TB_HOTEL_NAME + " TEXT, "+ TB_HOTEL_LOCATION + " TEXT, " + TB_HOTEL_DESCRIPTION + " TEXT, "
                 + TB_HOTEL_BED + " NTEGER, "+ TB_HOTEL_GUIDE + " TEXT, " + TB_HOTEL_SCORE + " TEXT, "
                 +TB_HOTEL_PIC + " TEXT, "+ TB_HOTEL_WIFI +" TEXT, " + TB_HOTEL_PRICE + " INTEGER) ";
         String tbLocation = "CREATE TABLE "+ TB_LOCATION +" ( "+TB_LOCATION_ID+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
@@ -69,6 +73,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS "+ TB_USER);
+        onCreate(db);
+        db.execSQL("DROP TABLE IF EXISTS "+ TB_HOTEL);
         onCreate(db);
     }
 
@@ -146,6 +152,72 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return list;
     }
 
+// Hotel call
 
+public void addHotel(String name, String description, String location, int bed, int price, String pic
+        , String guide, String score, String wifi){
+    SQLiteDatabase db = this.getWritableDatabase();
+    ContentValues cv = new ContentValues();
+
+    cv.put(TB_HOTEL_NAME,name);
+    cv.put(TB_HOTEL_DESCRIPTION,description);
+    cv.put(TB_HOTEL_LOCATION,location);
+    cv.put(TB_HOTEL_BED,bed);
+    cv.put(TB_HOTEL_PRICE,price);
+    cv.put(TB_HOTEL_PIC,pic);
+    cv.put(TB_HOTEL_GUIDE,guide);
+    cv.put(TB_HOTEL_SCORE,score);
+    cv.put(TB_HOTEL_WIFI,wifi);
+
+    long result = db.insert(TB_HOTEL,null, cv);
+    if(result == -1){
+        Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
+    }else {
+        Toast.makeText(context, "Added Successfully!", Toast.LENGTH_SHORT).show();
+    }
+}
+
+    // doc database
+    public Cursor readAllDataHotel(){
+        String query = "SELECT * FROM " + TB_HOTEL;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if(db != null){
+            cursor = db.rawQuery(query, null);
+        }
+        return cursor;
+    }
+    public void updateData(String row_id, String name, String description, String location, int bed, int price, String pic
+            , String guide, String score, String wifi){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(TB_HOTEL_NAME,name);
+        cv.put(TB_HOTEL_LOCATION,location);
+        cv.put(TB_HOTEL_DESCRIPTION,description);
+        cv.put(TB_HOTEL_BED,bed);
+        cv.put(TB_HOTEL_GUIDE,guide);
+        cv.put(TB_HOTEL_PIC,pic);
+        cv.put(TB_HOTEL_SCORE,score);
+        cv.put(TB_HOTEL_WIFI,wifi);
+        cv.put(TB_HOTEL_PRICE,price);
+
+        long result = db.update(TB_HOTEL, cv, "_id=?", new String[]{row_id});
+        if(result == -1){
+            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(context, "Updated Successfully!", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+    public void deleteOneRow(String row_id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        long result = db.delete(TB_HOTEL, "_id=?", new String[]{row_id});
+        if(result == -1){
+            Toast.makeText(context, "Failed to Delete.", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(context, "Successfully Deleted.", Toast.LENGTH_SHORT).show();
+        }
+    }
 
 }

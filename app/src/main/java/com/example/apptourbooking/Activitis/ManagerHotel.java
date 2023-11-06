@@ -1,15 +1,13 @@
-package com.example.apptourbooking.Admin;
+package com.example.apptourbooking.Activitis;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.example.apptourbooking.Activitis.MainActivity;
 import com.example.apptourbooking.Adapter.HotelsAdapter;
 import com.example.apptourbooking.Database.DatabaseHelper;
 import com.example.apptourbooking.Domain.Hotel;
@@ -48,7 +46,7 @@ public class ManagerHotel extends AppCompatActivity {
         ArrayList<Hotel> listHotel =  new ArrayList<>();
         listHotel.add(new Hotel("Hoa Hồng","Đà Nẵng","akjad  hasd askd jhas dkjas",3, true, 4.8, "location_dannang", true, 1000));
         listHotel.add(new Hotel("Hanh Hương","Đà Lạt","ádasdasdasd ",3, true, 4.9, "location_dalat", true, 2000));
-        listHotel.add(new Hotel("Lưu Ly","Sa Pa","ádasdasdasd",3, true, 4.5, "location_sapa", true, 5000));
+        listHotel.add(new Hotel("Lưu Ly","Sa Pa","ádasdasdasd",3, false, 4.5, "location_sapa", true, 5000));
 
         recyclerView.setLayoutManager(new LinearLayoutManager(ManagerHotel.this, LinearLayoutManager.VERTICAL, false));
         adapterHotel = new HotelsAdapter(listHotel);

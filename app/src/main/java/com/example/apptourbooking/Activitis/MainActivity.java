@@ -13,6 +13,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.apptourbooking.Adapter.HotelsAdapter;
+import com.example.apptourbooking.Admin.PageViewListHotel;
 import com.example.apptourbooking.Domain.Hotel;
 import com.example.apptourbooking.Domain.UserInfo;
 import com.example.apptourbooking.R;
@@ -23,11 +24,11 @@ import java.util.Calendar;
 public class MainActivity extends AppCompatActivity {
 
     private ScrollView loadSroll;
-    private LinearLayout linearLayoutUuDai, lnTaiKhoan, lnTrangChu;
+    private LinearLayout linearLayoutUuDai, lnTaiKhoan, lnTrangChu ;
     private TextView txtLogin, greetingTextView;
     private RecyclerView.Adapter adapterRoom;
     private RecyclerView recyclerRoom;
-    private ImageView img_trangchu;
+    private ImageView img_trangchu,img_hotel, img_logout;
     UserInfo userInfo;
 
     @Override
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Init();
-
+        ListHotel();
         Logout();
         SetWelcomeHeader();
 
@@ -52,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
         userInfo = (UserInfo) intent.getSerializableExtra("key_account");
         txtLogin.setText(""+ userInfo.getFullName() );
 
+
+
     }
 
     private void Init(){
@@ -59,10 +62,11 @@ public class MainActivity extends AppCompatActivity {
         lnTaiKhoan = (LinearLayout) findViewById(R.id.ln_main_taikhoan);
         lnTrangChu = findViewById(R.id.main_ln_trangchu);
         txtLogin = (TextView) findViewById(R.id.textView_login);
-
+        img_hotel=findViewById(R.id.list_hotel);
         loadSroll = findViewById(R.id.scrollView2);
         img_trangchu = findViewById(R.id.main_Img_trangchu);
         greetingTextView = findViewById(R.id.main_txt_welcome_weather);
+        img_logout = findViewById(R.id.main_img_logout);
     }
 
     private void initRecyclerView(){
@@ -78,10 +82,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void Logout(){
-        txtLogin.setOnClickListener(new View.OnClickListener() {
+        img_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, LoginActivity.class));
+            }
+        });
+    }
+    private void ListHotel(){
+        img_hotel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ManagerHotel.class));
             }
         });
     }
