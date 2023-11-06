@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/imgViewFlight"
+
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/flight"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true" />
+
+    <LinearLayout
+        android:layout_marginTop="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/imgViewFlight"
+        android:orientation="vertical"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp">
+
+        <TextView
+            android:id="@+id/txtFlightName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Chuyến bay Hanoi - Ho Chi Minh"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtFlightDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Giá vé: $500\nThời gian bay: 2 giờ 30 phút"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/txtFlightDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ngày đi: 11/7/2023"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

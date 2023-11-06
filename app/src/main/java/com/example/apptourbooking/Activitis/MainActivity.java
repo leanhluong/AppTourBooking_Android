@@ -25,10 +25,14 @@ import java.util.Calendar;
 public class MainActivity extends AppCompatActivity {
 
     private ScrollView loadSroll;
+<<<<<<< HEAD
 
 
     private LinearLayout linearLayoutUuDai, lnTaiKhoan, lnTrangChu,screen_flight;
 
+=======
+    private LinearLayout linearLayoutUuDai, lnTaiKhoan, lnTrangChu, lnBrand,screen_flight;
+>>>>>>> origin/AnhKTM
     private TextView txtLogin, greetingTextView;
     private RecyclerView.Adapter adapterRoom;
     private RecyclerView recyclerRoom;
@@ -54,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
         TaiKhoan();
         Filght();
+        Brand();
 
         Intent intent = getIntent();
         userInfo = (UserInfo) intent.getSerializableExtra("key_account");
@@ -67,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
         linearLayoutUuDai = (LinearLayout) findViewById(R.id.linearlayoutUuDai);
         lnTaiKhoan = (LinearLayout) findViewById(R.id.ln_main_taikhoan);
         lnTrangChu = findViewById(R.id.main_ln_trangchu);
+        lnBrand = findViewById(R.id.am_ln_brand);
         txtLogin = (TextView) findViewById(R.id.textView_login);
 
         img_hotel=findViewById(R.id.list_hotel);
@@ -132,6 +138,15 @@ public class MainActivity extends AppCompatActivity {
                     // Kéo lên, thay đổi sang imageView1
                     img_trangchu.setImageResource(R.drawable.main_ic_home);
                 }
+            }
+        });
+    }
+
+    private void Brand(){
+        lnBrand.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, BrandIndexActivity.class));
             }
         });
     }

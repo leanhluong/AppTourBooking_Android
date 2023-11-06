@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">App Tour Booking</string>
+
+    <string name="txt_brandIntro">Enhance your travel with our famous brands</string>
+
+    <string name="tlt_brandIndex">Brand</string>
+
+    <string name="btn_des_back">Back</string>
+    <string name="btn_search">Search</string>
+
+    <string name="hnt_chooseBrand">Choose a brand</string>
 </resources>

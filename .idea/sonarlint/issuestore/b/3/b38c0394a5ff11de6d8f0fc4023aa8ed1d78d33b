@@ -1,0 +1,36 @@
+
+s
+java:S1192v"QDefine a constant instead of duplicating this literal "RememberUsername" 3 times.(¸œõ•úÿÿÿÿ8ä“‰¢º1
+p
+java:S1192t"NDefine a constant instead of duplicating this literal "MyPreferences" 3 times.(ƒÁÆÑúÿÿÿÿ8ä“‰¢º1
+n
+java:S1192w"QDefine a constant instead of duplicating this literal "RememberPassword" 3 times.(¹Îõè8ä“‰¢º1
+m
+java:S1192x"KDefine a constant instead of duplicating this literal "rememberMe" 3 times.(°§ˆÑüÿÿÿÿ8ä“‰¢º1
+J
+java:S1604?"(Make this anonymous inner class a lambda( ˆß—ûÿÿÿÿ8ä“‰¢º1
+J
+java:S1604H"(Make this anonymous inner class a lambda(ÉŒªˆüÿÿÿÿ8ä“‰¢º1
+J
+java:S1604Q"(Make this anonymous inner class a lambda(­½ªúÿÿÿÿ8ä“‰¢º1
+J
+java:S1604e"(Make this anonymous inner class a lambda(Ó´žŸøÿÿÿÿ8ä“‰¢º1
+E
+java:S5411q"(Use a primitive boolean expression here.(¼ÿÓ±8ä“‰¢º1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÊÌÒ±8ä“‰¢º1
+u	java:S116"TRename this field "btn_login" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ºšŒéûÿÿÿÿ8˜”‰¢º1
+n	java:S116"MRename this field "DB" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…«šúÿÿÿÿ8˜”‰¢º1
+D
+java:S1659"'Declare "imgHienMk" on a separate line.(Ð•¬ý8›”‰¢º1
+C
+java:S1659"&Declare "password" on a separate line.(‡‰‹¨8›”‰¢º1
+o	java:S1004"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ú±íÑúÿÿÿÿ8ª”‰¢º1
+j	java:S100>"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃÍ®È8ª”‰¢º1
+j	java:S100G"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­ð»Ð8ª”‰¢º1
+j	java:S100P"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢Š¾é8ª”‰¢º1
+j	java:S100a"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÀðŠÕ8»”‰¢º1
+o
+java:S3776a"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(ÀðŠÕ8»”‰¢º1
+D
+java:S1125q"'Remove the unnecessary boolean literal.(¼ÿÓ±8»”‰¢º1
+p	java:S100‘"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ°åÖúÿÿÿÿ8»”‰¢º1

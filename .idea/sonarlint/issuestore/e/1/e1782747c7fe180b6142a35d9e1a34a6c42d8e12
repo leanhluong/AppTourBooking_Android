@@ -1,0 +1,29 @@
+
+E
+java:S1604;"(Make this anonymous inner class a lambda(£ÀÜ«8™¤°¢º1
+>
+java:S1604D"(Make this anonymous inner class a lambda(¥ŒÝ›
+>
+java:S1604M"(Make this anonymous inner class a lambda(Ú–Œ‹
+J
+java:S1604X"(Make this anonymous inner class a lambda(£ÑÂÞýÿÿÿÿ8™¤°¢º1
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÊÌÒ±
+p	java:S116"TRename this field "btn_login" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Îéñ¸8²¤°¢º1
+q	java:S116"URename this field "btn_logout" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Îéñ¸8²¤°¢º1
+s	java:S116"WRename this field "edit_profile" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±Æ‘š8²¤°¢º1
+E
+java:S1659"(Declare "btn_logout" on a separate line.(Îéñ¸8È¤°¢º1
+]
+java:S1659"GDeclare "lnTaiKhoan" and all following declarations on a separate line.(Ñõ†Û
+v
+java:S1450"YRemove the "lnTaiKhoan" field and declare it as a local variable in the relevant methods.(Ñõ†Û8È¤°¢º1
+Y
+java:S1874+"<Remove this use of "getSerializableExtra"; it is deprecated.(¢ºçÃ8È¤°¢º1
+o	java:S100:"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥¯Á›ÿÿÿÿÿ8Ø¤°¢º1
+c	java:S100C"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñŽÅû
+h	java:S100L"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ä©Âðùÿÿÿÿ
+j	java:S100W"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶í¬ß8ä¤°¢º1
+K
+java:S1068".Remove this unused "lnTaiKhoan" private field.(Ñõ†Û8ä¤°¢º1
+M
+java:S1068"+Remove this unused "userDAO" private field.(¡âŽÒþÿÿÿÿ8ä¤°¢º1

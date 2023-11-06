@@ -241,6 +241,7 @@
                         android:orientation="horizontal"
                         android:layout_weight="1">
                         <LinearLayout
+                                android:id="@+id/am_ln_brand"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="0.2"
@@ -459,11 +460,11 @@
                 android:orientation="vertical">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_margin="8dp"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:background="@drawable/location_phuquoc"
-                    android:layout_weight="1">
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/location_phuquoc">
 
                     <TextView
                         android:id="@+id/textView23"
