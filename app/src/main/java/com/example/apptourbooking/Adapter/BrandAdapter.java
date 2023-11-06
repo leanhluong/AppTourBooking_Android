@@ -19,7 +19,8 @@ import java.util.List;
 
 class ViewHolder extends RecyclerView.ViewHolder {
     TextView brandName;
-    TextView description;    ImageView logo;
+    TextView description;
+    ImageView logo;
     ConstraintLayout item;
 
     public ViewHolder(@NonNull @NotNull View itemView) {
@@ -27,7 +28,7 @@ class ViewHolder extends RecyclerView.ViewHolder {
         brandName = (TextView) itemView.findViewById(R.id.bvh_txt_brandName);
         description = (TextView) itemView.findViewById(R.id.bvh_txt_description);
         logo = (ImageView) itemView.findViewById(R.id.bvh_img_brandLogo);
-
+        item = (ConstraintLayout) itemView.findViewById(R.id.bvh_itemWrapper);
     }
 }
 
@@ -56,11 +57,11 @@ public class BrandAdapter extends RecyclerView.Adapter<ViewHolder> {
         holder.brandName.setText(brand.getBrandName());
         holder.description.setText(brand.getDescription());
         holder.logo.setImageResource(brand.getLogo());
-//        holder.item.setOnClickListener(v -> {
-//            Intent intent = new Intent(v.getContext(), BrandDetailActivity.class);
-//            intent.putExtra("brand", brand);
-//            context.startActivity(intent);
-//        });
+        holder.item.setOnClickListener(v -> {
+            Intent intent = new Intent(holder.item.getContext(), BrandDetailActivity.class);
+            intent.putExtra("brand", brand);
+            holder.item.getContext().startActivity(intent);
+        });
     }
 
     @Override

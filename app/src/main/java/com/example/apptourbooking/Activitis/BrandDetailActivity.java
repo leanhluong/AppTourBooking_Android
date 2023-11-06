@@ -7,6 +7,7 @@ import android.os.Bundle;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.apptourbooking.Adapter.HotelsAdapter;
+import com.example.apptourbooking.Domain.Brand;
 import com.example.apptourbooking.Domain.Hotel;
 import com.example.apptourbooking.R;
 
@@ -18,11 +19,19 @@ public class BrandDetailActivity extends AppCompatActivity {
     private TextView txtDescription;
     private ImageView imgLogo;
     private RecyclerView rvHotelList;
+    private ImageView imgBack;
+
+    private Brand brand;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_brand_detail);
         Binding();
+
+        brand = (Brand) getIntent().getSerializableExtra("brand");
+        txtBrandName.setText(brand.getBrandName());
+        txtDescription.setText(brand.getDescription());
+        imgLogo.setImageResource(brand.getLogo());
 
         ArrayList<Hotel> listHotel =  new ArrayList<>();
         listHotel.add(new Hotel("Hoa Hồng","Đà Nẵng","akjad  hasd askd jhas dkjas",3, true, 4.8, "location_dannang", true, 1000));
@@ -33,11 +42,18 @@ public class BrandDetailActivity extends AppCompatActivity {
 
         rvHotelList.setAdapter(hotelsAdapter);
         rvHotelList.setLayoutManager(new LinearLayoutManager(this));
+        setEventBack();
+
     }
     private void Binding() {
         txtBrandName = (TextView) findViewById(R.id.abd_txt_brandName);
         txtDescription = (TextView) findViewById(R.id.abd_txt_description);
         imgLogo = (ImageView) findViewById(R.id.abd_img_brandLogo);
         rvHotelList = (RecyclerView) findViewById(R.id.abd_rv_hotelList);
+        imgBack = (ImageView) findViewById(R.id.abd_img_back);
+    }
+
+    private void setEventBack() {
+        imgBack.setOnClickListener(v -> finish());
     }
 }

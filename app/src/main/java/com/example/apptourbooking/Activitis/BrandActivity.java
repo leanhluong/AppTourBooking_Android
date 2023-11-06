@@ -29,8 +29,7 @@ public class BrandActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_brand);
-        rvBrandList = (RecyclerView) findViewById(R.id.ab_rv_brandList);
-        btnBack = (ConstraintLayout) findViewById(R.id.ab_btn_back);
+        Binding();
 
         brandManager = new BrandManager(this);
         brandList = brandManager.getAllBrands();
@@ -39,6 +38,12 @@ public class BrandActivity extends AppCompatActivity {
         rvBrandList.setLayoutManager(new LinearLayoutManager(this));
         setEventBack();
         setEventCreate();
+    }
+
+    private void Binding() {
+        rvBrandList = (RecyclerView) findViewById(R.id.ab_rv_brandList);
+        btnBack = (ConstraintLayout) findViewById(R.id.ab_btn_back);
+        btnCreate = (Button) findViewById(R.id.ab_btn_createBrand);
     }
 
 
