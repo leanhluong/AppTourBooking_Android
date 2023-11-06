@@ -26,15 +26,18 @@ import java.util.List;
 
 public class TourDAO {
     private SQLiteDatabase db;
-    private DatabaseHelper dbHelper;
+    DatabaseHelper dbHelper;
     private Context context;
 
     public TourDAO(Context context) {
 
         this.context = context;
+        dbHelper = new DatabaseHelper(context);
 
 
     }
+
+
     public boolean deleteTour(int tourId) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         String whereClause = TB_TOUR_ID + " = ?";
@@ -65,9 +68,10 @@ public class TourDAO {
 
         return rowsUpdated > 0;
     }
-    public void addTour(String name, String description, String place, String type, String price, String img
+    public void addTour(String name, String description, String place,
+                        String type, String price, String img
             , String size, String duration){
-        SQLiteDatabase db = this.dbHelper.getWritableDatabase();
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
         cv.put(TB_TOUR_NAME,name);
@@ -88,9 +92,10 @@ public class TourDAO {
     }
     public ArrayList<Tour> getAllTours() {
         ArrayList<Tour> tourList = new ArrayList<>();
+        SQLiteDatabase db = this.dbHelper.getReadableDatabase();
+        String query = "SELECT * FROM " + TB_TOUR;
 
-        Cursor cursor = db.query(TB_TOUR, null, null, null, null, null, null);
-
+        Cursor cursor = db.rawQuery(query, null);
         if (cursor != null && cursor.moveToFirst()) {
             do {
                 int tourIdIndex = cursor.getColumnIndex(TB_TOUR_ID);
@@ -122,9 +127,7 @@ public class TourDAO {
                 }
             } while (cursor.moveToNext());
         }
-        else {
 
-        }
 
         if (cursor != null) {
             cursor.close();
@@ -133,6 +136,16 @@ public class TourDAO {
         db.close();
 
         return tourList;
+    }
+    public Cursor readAllDataTour(){
+        String query = "SELECT * FROM " + TB_TOUR;
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+
+        Cursor cursor = null;
+        if(db != null){
+            cursor = db.rawQuery(query, null);
+        }
+        return cursor;
     }
     public Tour getTourById(int tourId) {
         SQLiteDatabase db = dbHelper.getReadableDatabase();

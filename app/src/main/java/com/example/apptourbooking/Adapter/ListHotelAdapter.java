@@ -27,7 +27,6 @@ public class ListHotelAdapter extends RecyclerView.Adapter<ListHotelAdapter.Hote
     private Activity activity;
 
 
-
     private ArrayList hotel_id,hotel_name,hotel_description,hotel_location,hotel_pic,
             hotel_bed,hotel_guide,hotel_score,hotel_wifi,hotel_price;
     public ListHotelAdapter(Activity activity, Context context, ArrayList hotel_id, ArrayList hotel_name, ArrayList hotel_location,ArrayList hotel_description,
@@ -97,7 +96,7 @@ public class ListHotelAdapter extends RecyclerView.Adapter<ListHotelAdapter.Hote
     public class HotelViewHolder extends RecyclerView.ViewHolder{
     TextView id,name,description,location,price,guide,bed,score,wifi;
     ImageView pic;
-            LinearLayout hotellayout;
+    LinearLayout hotellayout;
     public HotelViewHolder(@NonNull View itemView){
     super(itemView);
         id = itemView.findViewById(R.id.id_hotel);

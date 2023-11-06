@@ -35,7 +35,6 @@ public class AddTourActivity extends AppCompatActivity {
                     tourDAO.addTour(name_input.getText().toString().trim(),
                             description_input.getText().toString().trim(),
                             place_input.getText().toString().trim(),
-
                             tourtype_input.getText().toString().trim(),
                             price_input.getText().toString().trim(),
                             img_input.getText().toString().trim(),

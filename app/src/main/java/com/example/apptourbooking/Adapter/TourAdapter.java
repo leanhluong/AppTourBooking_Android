@@ -22,6 +22,8 @@ import java.util.List;
 public class TourAdapter extends RecyclerView.Adapter<TourAdapter.MyViewHolder> {
 
     private ArrayList<Tour> tourList;
+    private static final int VIEW_TYPE_ONE = 1;
+    private static final int VIEW_TYPE_TWO = 2;
 
 
     public TourAdapter( ArrayList<Tour> tourList) {
@@ -35,6 +37,7 @@ public class TourAdapter extends RecyclerView.Adapter<TourAdapter.MyViewHolder> 
     public TourAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.tour_list_item, parent, false);
         return new MyViewHolder(itemView);
+
     }
 
     @Override
@@ -75,4 +78,5 @@ public class TourAdapter extends RecyclerView.Adapter<TourAdapter.MyViewHolder> 
             btnTourBooking = view.findViewById(R.id.btn_tour_booking);
         }
     }
+
 }

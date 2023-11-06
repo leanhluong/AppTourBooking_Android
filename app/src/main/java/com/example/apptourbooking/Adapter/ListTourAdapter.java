@@ -23,8 +23,6 @@ public class ListTourAdapter extends RecyclerView.Adapter<ListTourAdapter.TourVi
     private Context context;
     private Activity activity;
 
-
-
     private ArrayList Tour_id,Tour_name,Tour_description,Tour_place,Tour_img,
             Tour_size,Tour_type,Tour_duration,Tour_price;
     public ListTourAdapter(Activity activity, Context context, ArrayList Tour_id, ArrayList Tour_name, ArrayList Tour_place, ArrayList Tour_description,
@@ -45,21 +43,20 @@ public class ListTourAdapter extends RecyclerView.Adapter<ListTourAdapter.TourVi
     @Override
     public ListTourAdapter.TourViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.tour_list_item, parent, false);
+        View view = inflater.inflate(R.layout.tour_list_item2, parent, false);
         return new TourViewHolder(view);
     }
 
 
     @Override
     public void onBindViewHolder(@NonNull ListTourAdapter.TourViewHolder holder, int position) {
-        holder.id.setText(String.valueOf(Tour_id.get(position)));
         holder.name.setText(String.valueOf(Tour_name.get(position)));
         holder.description.setText(String.valueOf(Tour_description.get(position)));
         String imageUrl = String.valueOf(Tour_img.get(position));
         Picasso.get().load(imageUrl).into(holder.img);
         holder.price.setText(String.valueOf(Tour_price.get(position)));
 
-//        holder.Tour_type.setText(String.valueOf(Tour_type.get(position)));
+//
         holder.place.setText(String.valueOf(Tour_place.get(position)));
         //Recyclerview onClickListener
 //        holder.Tourlayout.setOnClickListener(new View.OnClickListener() {
@@ -88,19 +85,17 @@ public class ListTourAdapter extends RecyclerView.Adapter<ListTourAdapter.TourVi
     }
 
     public class TourViewHolder extends RecyclerView.ViewHolder{
-    TextView id,name,description,place,price,size,type,duration;
-    ImageView img;
-    LinearLayout Tourlayout;
-    public TourViewHolder(@NonNull View itemView){
-    super(itemView);
+        TextView name,description,place,price;
+        ImageView img;
+        LinearLayout Tourlayout;
+        public TourViewHolder(@NonNull View itemView){
+            super(itemView);
 
-        place = itemView.findViewById(R.id.tv_tour_place);
-        name= itemView.findViewById(R.id.tv_tour_name);
-        img = itemView.findViewById(R.id.img_tour);
-        price = itemView.findViewById(R.id.tv_tour_price);
-
-
-        Tourlayout = itemView.findViewById(R.id.item_tour);
-    }
+            place = itemView.findViewById(R.id.tv_tour_place);
+            name= itemView.findViewById(R.id.tv_tour_name);
+            img = itemView.findViewById(R.id.img_tour);
+            price = itemView.findViewById(R.id.tv_tour_price);
+            Tourlayout = itemView.findViewById(R.id.item_tour);
+        }
     }
 }
