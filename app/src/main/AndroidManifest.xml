@@ -19,9 +19,6 @@
             android:name=".Admin.UpdateHotelActivity"
             android:exported="false" />
         <activity
-            android:name=".Admin.AddHotel"
-            android:exported="false" />
-        <activity
             android:name=".Admin.PageViewListHotel"
             android:exported="false"
             android:parentActivityName=".Activitis.MainActivity"
