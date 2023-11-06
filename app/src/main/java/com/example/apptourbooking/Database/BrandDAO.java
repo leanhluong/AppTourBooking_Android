@@ -101,7 +101,7 @@ public class BrandDAO {
             brandList.add(new Brand(cursor.getInt(cursor.getColumnIndex(DatabaseHelper.TB_BRAND_ID)),
                     cursor.getString(cursor.getColumnIndex(DatabaseHelper.TB_BRAND_NAME)),
                     cursor.getString(cursor.getColumnIndex(DatabaseHelper.TB_BRAND_DESCRIPTION)),
-                    cursor.getInt(cursor.getColumnIndex(DatabaseHelper.TB_BRAND_LOGO))));
+                    0));
         }
         cursor.close();
         return brandList;

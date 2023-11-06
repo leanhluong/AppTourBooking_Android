@@ -3,23 +3,25 @@ k
 java:S1192;"NDefine a constant instead of duplicating this literal "CREATE TABLE " 4 times.(ÿ‹‘8´å–î¹1
 ‚
 java:S1192;"eDefine a constant instead of duplicating this literal " INTEGER PRIMARY KEY AUTOINCREMENT, " 3 times.(ÿ‹‘8´å–î¹1
+s
+java:S1192K"VDefine a constant instead of duplicating this literal "DROP TABLE IF EXISTS " 3 times.(‹¢Ü8äªÎ›º1
 k
 java:S1192<"IDefine a constant instead of duplicating this literal " TEXT, " 12 times.(Õ¾°õúÿÿÿÿ8´å–î¹1
-r	java:S117W"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“Çó°ÿÿÿÿÿ8´å–î¹1
-r	java:S117q"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“Çó°ÿÿÿÿÿ8´å–î¹1
-r	java:S117{"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“Çó°ÿÿÿÿÿ8´å–î¹1
+r	java:S117Y"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“Çó°ÿÿÿÿÿ8³ÏÇ›º1
+r	java:S117s"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“Çó°ÿÿÿÿÿ8³ÏÇ›º1
+r	java:S117}"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“Çó°ÿÿÿÿÿ8³ÏÇ›º1
 u	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(º‚¹u8´å–î¹1
-]	java:S125M"<This block of commented-out lines of code should be removed.(ÂëáÑÿÿÿÿÿ8äå–î¹1
-j	java:S100V"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(êˆ³8äå–î¹1
+]	java:S125N"<This block of commented-out lines of code should be removed.(ÂëáÑÿÿÿÿÿ8äå–î¹1
+j	java:S100X"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(êˆ³8æÏÇ›º1
 ^
-java:S1126^"AReplace this if-then-else statement by a single return statement.(Ö³Á8äå–î¹1
+java:S1126`"AReplace this if-then-else statement by a single return statement.(Ö³Á8æÏÇ›º1
 L
-java:S1172c"/Remove this unused method parameter "password".(•î½ü8äå–î¹1
+java:S1172e"/Remove this unused method parameter "password".(•î½ü8æÏÇ›º1
 ^
-java:S1126s"AReplace this if-then-else statement by a single return statement.(¡°µ°8äå–î¹1
+java:S1126u"AReplace this if-then-else statement by a single return statement.(¡°µ°8ïÏÇ›º1
 ^
-java:S1126}"AReplace this if-then-else statement by a single return statement.(¡°µ°8äå–î¹1
+java:S1126"AReplace this if-then-else statement by a single return statement.(¡°µ°8ïÏÇ›º1
 K
-java:S1185„"(Remove this method to simply inherit it.(öå“ùÿÿÿÿ8äå–î¹1
+java:S1185†"(Remove this method to simply inherit it.(öå“ùÿÿÿÿ8ïÏÇ›º1
 N
-java:S1144c"1Remove this unused private "validateUser" method.(•î½ü8äå–î¹1
+java:S1144e"1Remove this unused private "validateUser" method.(•î½ü8÷ÏÇ›º1

@@ -34,8 +34,6 @@ Dapp/src/main/java/com/example/apptourbooking/Admin/ManagerHotel.java,8\8\886d6
 
 ]app/src/main/java/com/example/apptourbooking/Activitis/UserActivities/BrandIndexActivity.java,5\6\56c9f9143ec495f00746ef07be5b427ee964d4f2
 Ž
-^app/src/main/java/com/example/apptourbooking/Activitis/UserActivities/BrandsHotelActivity.java,d\9\d9b56109795ba51cf76072a45a5d884e544b2191
-Ž
 ^app/src/main/java/com/example/apptourbooking/Activitis/UserActivities/BrandDetailActivity.java,2\1\210b72b79fb1768d75a3099be22033198f5e5494
 
 ]app/src/main/java/com/example/apptourbooking/Activitis/AdminActivities/BrandListActivity.java,3\1\317ea56172a71740bfb37209a48de0b5fd736b3d
@@ -54,3 +52,5 @@ n
 >app/src/main/java/com/example/apptourbooking/Domain/Hotel.java,6\3\63f92f9ea77c1d62428aec589197f72496f81fd1
 x
 Happ/src/main/java/com/example/apptourbooking/Activitis/MainActivity.java,f\4\f4212c30581332989c1c7ddc4cf96a0f0ea4f758
+r
+Bapp/src/main/java/com/example/apptourbooking/Database/UserDAO.java,9\f\9f306bea3548f8f1b853e26f3d576160ff34fd5c

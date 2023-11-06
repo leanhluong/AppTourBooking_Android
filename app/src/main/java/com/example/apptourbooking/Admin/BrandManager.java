@@ -1,5 +1,6 @@
 package com.example.apptourbooking.Admin;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import com.example.apptourbooking.Database.BrandDAO;
 import com.example.apptourbooking.Database.DatabaseHelper;
@@ -38,11 +39,20 @@ public class BrandManager {
         return brandDAO.getAllBrands();
     }
 
+    @SuppressLint("SuspiciousIndentation")
     public List<Brand> searchBrand(String name) {
-        return brandDAO.getBrandByName(name);
+        if(name != null && name.isEmpty())
+            return brandDAO.getBrandByName(name);
+        else
+        return brandDAO.getAllBrands();
     }
 
     public List<Brand> getBrandsByCondition(String column, boolean sortType) {
         return brandDAO.getAllBrandsWithSort(column, sortType);
+    }
+
+    public void CreateSampleData() {
+        brandDAO.clearData();
+        brandDAO.createTempData();
     }
 }

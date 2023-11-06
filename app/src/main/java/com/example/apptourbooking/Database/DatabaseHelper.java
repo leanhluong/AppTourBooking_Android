@@ -72,6 +72,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(tbUSER);
         db.execSQL(tbHotel);
         db.execSQL(tbLocation);
+        db.execSQL("DROP TABLE IF EXISTS " + TB_BRAND);
         db.execSQL(createTblBrand);
         db.execSQL(addColumnWithForeinKey);
         //db.execSQL("CREATE TABLE users(username TEXT PRIMARY KEY, fullname TEXT, password TEXT, ROLE TEXT)");
@@ -80,6 +81,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TB_USER);
+        db.execSQL("DROP TABLE IF EXISTS " + TB_BRAND);
         onCreate(db);
     }
 

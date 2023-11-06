@@ -53,6 +53,7 @@ public class BrandIndexActivity extends AppCompatActivity {
 
     private void setViewAdapter() {
         brandManager = new BrandManager(this);
+        brandManager.CreateSampleData();
         brandList = brandManager.getAllBrands();
         BrandAdapter brandAdapter = new BrandAdapter(getApplicationContext(), R.layout.brand_view_holder, brandList);
         lvBrandList.setAdapter(brandAdapter);
