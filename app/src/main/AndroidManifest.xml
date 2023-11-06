@@ -13,8 +13,15 @@
             android:theme="@style/Theme.AppTourBooking"
             tools:targetApi="31">
         <activity
+<<<<<<< HEAD
 
             android:name=".TourDetailsActivity"
+=======
+            android:name=".Activitis.IntroActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activitis.AddFlightActivity"
+>>>>>>> origin/luan
             android:exported="false" />
         <activity
             android:name=".TourListActivity"
@@ -73,12 +80,24 @@
             android:exported="false"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
-            android:name=".Activitis.LoginActivity"
+            android:name=".Activitis.FlightListActivity"
             android:exported="false"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
             android:name=".Activitis.CouponsActivity"
             android:exported="false" />
+<<<<<<< HEAD
+=======
+        <activity
+            android:name=".Activitis.MainActivity"
+            android:exported="false"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".Activitis.LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+>>>>>>> origin/luan
 
 
         <activity
