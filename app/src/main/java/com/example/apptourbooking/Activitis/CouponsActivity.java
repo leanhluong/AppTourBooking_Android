@@ -54,7 +54,7 @@ public class CouponsActivity extends AppCompatActivity {
         arrCoupons.add(new PhieuGiamGia("GIẢM ĐẾN $100", "Không yêu cầu số tiền tối thiểu. | Ưu đãi hết hạn trong 7 ngày!",R.drawable.coupon1));
         arrCoupons.add(new PhieuGiamGia("GIẢM GIÁ $6", "Chi tiêu ít nhất $60 | Ưu đãi hết hạn trong 7 ngày!",R.drawable.coupon2));
         arrCoupons.add(new PhieuGiamGia("GIẢM ĐẾN $7.20", "Chi tiêu ít nhất $60 | Ưu đãi hết hạn trong 7 ngày!",R.drawable.coupon3));
-        //---------------
+
         arrCoupons.add(new PhieuGiamGia("GIẢM ĐẾN $100", "Không yêu cầu số tiền tối thiểu. | Ưu đãi hết hạn trong 7 ngày!",R.drawable.coupon1));
         arrCoupons.add(new PhieuGiamGia("GIẢM GIÁ $6", "Chi tiêu ít nhất $60 | Ưu đãi hết hạn trong 7 ngày!",R.drawable.coupon2));
         arrCoupons.add(new PhieuGiamGia("GIẢM ĐẾN $7.20", "Chi tiêu ít nhất $60 | Ưu đãi hết hạn trong 7 ngày!",R.drawable.coupon3));

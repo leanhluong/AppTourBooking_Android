@@ -1,4 +1,4 @@
-package com.example.apptourbooking.DAO;
+package com.example.apptourbooking.Database;
 
 import static com.example.apptourbooking.Database.DatabaseHelper.TB_TOUR;
 import static com.example.apptourbooking.Database.DatabaseHelper.TB_TOUR_DESCRIPTION;

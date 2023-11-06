@@ -22,6 +22,11 @@ public class TourAdapter extends RecyclerView.Adapter<TourAdapter.MyViewHolder> 
     private Activity activity;
     private List<Tour> tourList;
 
+    public TourAdapter(Context context, List<Tour> tourList) {
+        this.context = context;
+        this.tourList = tourList;
+    }
+
     @NonNull
     @Override
     public TourAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -33,15 +38,14 @@ public class TourAdapter extends RecyclerView.Adapter<TourAdapter.MyViewHolder> 
     public void onBindViewHolder(@NonNull TourAdapter.MyViewHolder holder, int position) {
         Tour tour = tourList.get(position);
 
-        holder.imgTour.setImageResource(R.drawable.arrow);
+//        holder.imgTour.setImageResource(tour.getImg());
         holder.tvTourName.setText(tour.getTourName());
         holder.tvTourPlace.setText(tour.getPlace());
         holder.tvTourPrice.setText("Từ " + tour.getPrice() + " ₫");
         holder.btnTourBooking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Handle the booking button click here
-                // You can start a new activity or perform any other action
+
             }
         });
     }
@@ -52,7 +56,7 @@ public class TourAdapter extends RecyclerView.Adapter<TourAdapter.MyViewHolder> 
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public ImageView imgTour;
+//        public ImageView imgTour;
         public TextView tvTourName;
         public TextView tvTourPlace;
         public TextView tvTourPrice;
@@ -60,7 +64,7 @@ public class TourAdapter extends RecyclerView.Adapter<TourAdapter.MyViewHolder> 
 
         public MyViewHolder(View view) {
             super(view);
-            imgTour = view.findViewById(R.id.img_tour);
+//            imgTour = view.findViewById(R.id.img_tour);
             tvTourName = view.findViewById(R.id.tv_tour_name);
             tvTourPlace = view.findViewById(R.id.tv_tour_place);
             tvTourPrice = view.findViewById(R.id.tv_tour_price);

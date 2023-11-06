@@ -172,9 +172,5 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return list;
     }
 
-<<<<<<< HEAD
-=======
 
-
->>>>>>> origin/Mainbackup
 }

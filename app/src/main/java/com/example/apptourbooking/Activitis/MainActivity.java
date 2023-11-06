@@ -24,11 +24,11 @@ import java.util.Calendar;
 public class MainActivity extends AppCompatActivity {
 
     private ScrollView loadSroll;
-<<<<<<< HEAD
+
     private LinearLayout linearLayoutUuDai, lnTaiKhoan, lnTrangChu,lnTour;
-=======
-    private LinearLayout linearLayoutUuDai, lnTaiKhoan, lnTrangChu,screen_flight;
->>>>>>> origin/Mainbackup
+
+
+
     private TextView txtLogin, greetingTextView;
     private RecyclerView.Adapter adapterRoom;
     private RecyclerView recyclerRoom;
@@ -52,15 +52,15 @@ public class MainActivity extends AppCompatActivity {
         Coupon();
 
         TaiKhoan();
-<<<<<<< HEAD
+
         TourList();
-=======
-        Filght();
+
+//        Filght();
 
         Intent intent = getIntent();
         userInfo = (UserInfo) intent.getSerializableExtra("key_account");
         txtLogin.setText(""+ userInfo.getFullName() );
->>>>>>> origin/Mainbackup
+
 
     }
 
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         lnTrangChu = findViewById(R.id.main_ln_trangchu);
         lnTour =findViewById(R.id.main_ln_tour);
         txtLogin = (TextView) findViewById(R.id.textView_login);
-        screen_flight = findViewById(R.id.screen_flight);
+//        screen_flight = findViewById(R.id.screen_flight);
 
         loadSroll = findViewById(R.id.scrollView2);
         img_trangchu = findViewById(R.id.main_Img_trangchu);
@@ -89,12 +89,12 @@ public class MainActivity extends AppCompatActivity {
         recyclerRoom.setAdapter(adapterRoom);
     }
     private void Filght(){
-        screen_flight.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, FlightActivity.class));
-            }
-        });
+//        screen_flight.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(MainActivity.this, FlightActivity.class));
+//            }
+//        });
     }
     private void Logout(){
         txtLogin.setOnClickListener(new View.OnClickListener() {
