@@ -55,7 +55,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String TB_BRAND_DESCRIPTION = "BrandDescription";
     public static final String TB_BRAND_LOGO = "BrandLogo";
 
+
+
     public static final String TB_FLIGHTS = "Flights";
+
 
     public static final String TB_FLIGHT_ID = "FlightId";
     public static final String TB_FLIGHT_NAME = "FlightName";
@@ -63,10 +66,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String TB_FLIGHT_DESTINATION = "Destination";
     public static final String TB_FLIGHT_DEPARTURE_DATE = "DepartureDate";
     public static final String TB_FLIGHT_PRICE = "Price";
-
-
-    private static final int DATABASE_VERSION = 1;
-
 
 
 
@@ -81,11 +80,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public DatabaseHelper(@Nullable Context context) {
         super(context, DBTOURBOOKING, null, 1);
-<<<<<<< HEAD
+
         this.context=context;
-=======
+
 //        context.deleteDatabase(DBTOURBOOKING);
->>>>>>> origin/AnhKTM
+
     }
 
     @Override
@@ -119,29 +118,29 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(tbUSER);
         db.execSQL(tbHotel);
         db.execSQL(tbLocation);
-<<<<<<< HEAD
+
         db.execSQL(tbTour);
 
-=======
+
         db.execSQL("DROP TABLE IF EXISTS " + TB_BRAND);
         db.execSQL(createTblBrand);
 //        db.execSQL(addColumnWithForeinKey);
->>>>>>> origin/Mainbackup
+
         //db.execSQL("CREATE TABLE users(username TEXT PRIMARY KEY, fullname TEXT, password TEXT, ROLE TEXT)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-<<<<<<< HEAD
+
         db.execSQL("DROP TABLE IF EXISTS "+ TB_USER);
         db.execSQL("DROP TABLE IF EXISTS " + TB_TOUR);
 
-=======
+
         db.execSQL("DROP TABLE IF EXISTS " + TB_USER);
 //        db.execSQL("DROP TABLE IF EXISTS " + TB_BRAND);
         onCreate(db);
         db.execSQL("DROP TABLE IF EXISTS "+ TB_HOTEL);
->>>>>>> origin/Mainbackup
+
         onCreate(db);
     }
 
@@ -207,30 +206,31 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     //get all hotel
-<<<<<<< HEAD
+
     public ArrayList<Hotel> getAllHotels() {
         ArrayList<Hotel> listHotel = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
         String query = "SELECT * FROM " + TB_HOTEL;
-=======
-    public List<Hotel> getAllHotel() {
-        List<Hotel> list = new ArrayList<>();
-        SQLiteDatabase st = getReadableDatabase();
-        String order = "date DESC";
-        Cursor rs = st.query(TB_HOTEL, null, null,
-                null, null, null, order);
-        while (rs != null && rs.moveToNext()) {
-            int id = rs.getInt(0);
-            String name = rs.getString(1);
-            String location = rs.getString(2);
-            String description = rs.getString(3);
-            int bed = rs.getInt(4);
-            double score = rs.getDouble(5);
-            String pic = rs.getString(6);
-            int price = rs.getInt(7);
-            list.add(new Hotel(id, name, location, description, bed
-                    , score, pic, price));
->>>>>>> origin/AnhKTM
+
+//    public List<Hotel> getAllHotel() {
+//        List<Hotel> list = new ArrayList<>();
+//        SQLiteDatabase st = getReadableDatabase();
+//        String order = "date DESC";
+//        Cursor rs = st.query(TB_HOTEL, null, null,
+//                null, null, null, order);
+//        while (rs != null && rs.moveToNext()) {
+//            int id = rs.getInt(0);
+//            String name = rs.getString(1);
+//            String location = rs.getString(2);
+//            String description = rs.getString(3);
+//            int bed = rs.getInt(4);
+//            double score = rs.getDouble(5);
+//            String pic = rs.getString(6);
+//            int price = rs.getInt(7);
+//            list.add(new Hotel(id, name, location, description, bed
+//                    , score, pic, price));
+//        }
+//    }
 
         Cursor cursor = db.rawQuery(query, null);
         if (cursor != null && cursor.moveToFirst()) {
@@ -348,9 +348,5 @@ public void addHotel(String name, String description, String location, int bed, 
     }
 
 
-<<<<<<< HEAD
-=======
 
-
->>>>>>> origin/Mainbackup
 }

@@ -13,13 +13,13 @@
             android:theme="@style/Theme.AppTourBooking"
             tools:targetApi="31">
         <activity
-<<<<<<< HEAD
+
             android:name=".TourDetailsActivity"
             android:exported="false" />
         <activity
             android:name=".TourListActivity"
-=======
-<<<<<<< HEAD
+            android:exported="false" />
+<activity
 
             android:name=".Admin.AddHotelActivity"
             android:exported="false" />
@@ -33,19 +33,19 @@
             android:theme="@style/AppThemeWithActionBar" />
 <activity
             android:name=".Activitis.FlightListActivity"
->>>>>>> origin/Mainbackup
+
             android:exported="false" />
-=======
+<activity
                 android:name=".Activitis.BrandCreateActivity"
                 android:exported="false"/>
->>>>>>> origin/AnhKTM
+
         <activity
-<<<<<<< HEAD
+
             android:name=".Activitis.FlightDetailsActivity"
             android:exported="false" />
 
         <activity
-            android:name=".Admin.ManagerHotel"
+            android:name=".Activitis.ManagerHotel"
             android:exported="false"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
@@ -79,77 +79,20 @@
         <activity
             android:name=".Activitis.CouponsActivity"
             android:exported="false" />
+
+
         <activity
-            android:name=".Activitis.MainActivity"
-            android:exported="false"
-            android:windowSoftInputMode="stateAlwaysHidden" />
-        <activity
-            android:name=".Activitis.IntroActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-=======
                 android:name=".Activitis.BrandActivity"
                 android:exported="false"/>
-        <activity
-<<<<<<< HEAD
-            android:name=".Activitis.FlightActivity"
-            android:exported="false" />
->>>>>>> origin/Mainbackup
 
-=======
-                android:name=".Activitis.FlightListActivity"
-                android:exported="false"/>
->>>>>>> origin/AnhKTM
-        <activity
-                android:name=".Activitis.FlightDetailsActivity"
-                android:exported="false"/>
-        <activity
-<<<<<<< HEAD
-            android:name=".Activitis.ManagerHotel"
-            android:exported="false"
-            android:windowSoftInputMode="stateAlwaysHidden" />
-=======
-                android:name=".Activitis.FlightActivity"
-                android:exported="false"/>
->>>>>>> origin/AnhKTM
-        <activity
-                android:name=".Activitis.UpdateProfileActivity"
-                android:exported="false"/>
         <activity
                 android:name=".Activitis.BrandDetailActivity"
                 android:exported="false"/>
         <activity
                 android:name=".Activitis.BrandIndexActivity"
                 android:exported="false"/>
-        <activity
-                android:name=".Admin.ManagerHotel"
-                android:exported="false"
-                android:windowSoftInputMode="stateAlwaysHidden"/>
-        <activity
-                android:name=".Admin.ManageAccount"
-                android:exported="false"
-                android:windowSoftInputMode="stateAlwaysHidden"/>
-        <activity
-                android:name=".Admin.AdminActivity"
-                android:exported="false"/>
-        <activity
-                android:name=".Activitis.ProfileActivity"
-                android:exported="false"/>
-        <activity
-                android:name=".Activitis.DetailHotelActivity"
-                android:exported="false"/>
-        <activity
-                android:name=".Activitis.RegisterActivity"
-                android:exported="false"
-                android:windowSoftInputMode="stateAlwaysHidden"/>
-        <activity
-                android:name=".Activitis.LoginActivity"
-                android:exported="false"
-                android:windowSoftInputMode="stateAlwaysHidden"/>
-        <activity
-                android:name=".Activitis.CouponsActivity"
-                android:exported="false"/>
+
+
         <activity
                 android:name=".Activitis.MainActivity"
                 android:exported="false"

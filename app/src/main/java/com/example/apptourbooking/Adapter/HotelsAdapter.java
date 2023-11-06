@@ -18,7 +18,6 @@ import com.example.apptourbooking.Domain.Hotel;
 import com.example.apptourbooking.R;
 import com.squareup.picasso.Picasso;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class HotelsAdapter extends RecyclerView.Adapter<HotelsAdapter.ViewHolderHotel> {
