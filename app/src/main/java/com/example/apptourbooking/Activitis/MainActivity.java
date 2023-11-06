@@ -24,7 +24,7 @@ import java.util.Calendar;
 public class MainActivity extends AppCompatActivity {
 
     private ScrollView loadSroll;
-    private LinearLayout linearLayoutUuDai, lnTaiKhoan, lnTrangChu, lnBrand;
+    private LinearLayout linearLayoutUuDai, lnTaiKhoan, lnTrangChu, lnBrand,screen_flight;
     private TextView txtLogin, greetingTextView;
     private RecyclerView.Adapter adapterRoom;
     private RecyclerView recyclerRoom;
@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         Coupon();
 
         TaiKhoan();
+        Filght();
 
         Intent intent = getIntent();
         userInfo = (UserInfo) intent.getSerializableExtra("key_account");
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         lnTrangChu = findViewById(R.id.main_ln_trangchu);
         lnBrand = findViewById(R.id.am_ln_brand);
         txtLogin = (TextView) findViewById(R.id.textView_login);
+        screen_flight = findViewById(R.id.screen_flight);
 
         loadSroll = findViewById(R.id.scrollView2);
         img_trangchu = findViewById(R.id.main_Img_trangchu);
@@ -78,7 +80,14 @@ public class MainActivity extends AppCompatActivity {
         adapterRoom = new HotelsAdapter(listHotel);
         recyclerRoom.setAdapter(adapterRoom);
     }
-
+    private void Filght(){
+        screen_flight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, FlightActivity.class));
+            }
+        });
+    }
     private void Logout(){
         txtLogin.setOnClickListener(new View.OnClickListener() {
             @Override

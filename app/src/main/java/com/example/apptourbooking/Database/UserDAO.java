@@ -16,6 +16,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.apptourbooking.Database.DatabaseHelper;
+import com.example.apptourbooking.Domain.Flight;
 import com.example.apptourbooking.Domain.UserInfo;
 
 import java.util.ArrayList;
@@ -122,5 +123,8 @@ public class UserDAO {
         c.close();
         return lu;
     }
+
+    /////////////////
+
 
 }

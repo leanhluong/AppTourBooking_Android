@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import com.example.apptourbooking.Domain.Flight;
 import com.example.apptourbooking.Domain.Hotel;
 
 import java.util.ArrayList;
@@ -50,6 +51,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String TB_BRAND_DESCRIPTION = "BrandDescription";
     public static final String TB_BRAND_LOGO = "BrandLogo";
 
+    public static final String TB_FLIGHTS = "Flights";
+
+    public static final String TB_FLIGHT_ID = "FlightId";
+    public static final String TB_FLIGHT_NAME = "FlightName";
+    public static final String TB_FLIGHT_ORIGIN = "Origin";
+    public static final String TB_FLIGHT_DESTINATION = "Destination";
+    public static final String TB_FLIGHT_DEPARTURE_DATE = "DepartureDate";
+    public static final String TB_FLIGHT_PRICE = "Price";
+
+
+    private static final int DATABASE_VERSION = 1;
+
+
+
+
+
     public DatabaseHelper(@Nullable Context context) {
         super(context, DBTOURBOOKING, null, 1);
     }
@@ -64,8 +81,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 +TB_HOTEL_PIC + " TEXT, "+ TB_HOTEL_WIFI +" TEXT, " + TB_HOTEL_PRICE + " INTEGER) ";
         String tbLocation = "CREATE TABLE "+ TB_LOCATION +" ( "+TB_LOCATION_ID+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + TB_LOCATION_NAME +" TEXT," + TB_LOCATION_PIC+" TEXT) ";
+
         String createTblBrand = "CREATE TABLE " + TB_BRAND + " ( " + TB_BRAND_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + TB_BRAND_NAME + " TEXT," + TB_BRAND_DESCRIPTION + " TEXT, " + TB_BRAND_LOGO + " INTEGER)";
+
+        String tbFlights = "CREATE TABLE " + TB_FLIGHTS + " ( " + TB_FLIGHT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                TB_FLIGHT_NAME + " TEXT, " +
+                TB_FLIGHT_ORIGIN + " TEXT, " +
+                TB_FLIGHT_DESTINATION + " TEXT, " +
+                TB_FLIGHT_DEPARTURE_DATE + " TEXT, " +
+                TB_FLIGHT_PRICE + " REAL);";
+        db.execSQL(tbFlights);
 
         String addColumnWithForeinKey = "ALTER TABLE " + TB_HOTEL + " ADD COLUMN " + TB_HOTEL_BRANDID
                 + " INTEGER REFERENCES " + TB_BRAND + "(" + TB_BRAND_ID + ")";
@@ -158,6 +184,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return list;
     }
+
+
+
 
 
 
