@@ -17,6 +17,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.messaging.FirebaseMessaging;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class RegisterActivity extends AppCompatActivity {
     private ImageView imgbackRegister, btnShowPass, btnShowRepass;
     private boolean passwordVisible = false;
@@ -88,7 +91,14 @@ public class RegisterActivity extends AppCompatActivity {
                 String repass= repassword.getText().toString();
                 if(user.equals("") ||name.equals("")|| pass.equals("") || repass.equals("")){
                     Toast.makeText(RegisterActivity.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
-                } else {
+                }
+                else if(isUsernameValid(user) == false ||isUsernameValid(name) == false ){
+                    Toast.makeText(RegisterActivity.this, "Username not validate", Toast.LENGTH_SHORT).show();
+                }
+                else if(pass.length() > 10){
+                    Toast.makeText(RegisterActivity.this, "pass nhỏ hơn 10", Toast.LENGTH_SHORT).show();
+                }
+                else {
                     if(pass.equals(repass)){
                         Boolean checkuser = DB.checkusername(user);
                         if(checkuser == false ){
@@ -112,6 +122,19 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+    public boolean isUsernameValid(String username) {
+        // Yêu cầu username không chấp nhận ký tự đặc biệt và giới hạn 20 ký tự.
+        String regex = "^[a-zA-Z0-9]{1,20}$";
+
+        // Tạo một Pattern để kiểm tra biểu thức chính quy
+        Pattern pattern = Pattern.compile(regex);
+
+        // Sử dụng Matcher để so khớp username với biểu thức chính quy
+        Matcher matcher = pattern.matcher(username);
+
+        // Kiểm tra xem username có khớp với biểu thức chính quy không
+        return matcher.matches();
     }
 
     private void Showpass(){

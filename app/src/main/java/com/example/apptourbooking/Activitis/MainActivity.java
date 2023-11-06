@@ -13,6 +13,8 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.apptourbooking.Adapter.HotelsAdapter;
+import com.example.apptourbooking.Admin.PageViewListHotel;
+import com.example.apptourbooking.Database.DatabaseHelper;
 import com.example.apptourbooking.Domain.Hotel;
 import com.example.apptourbooking.Domain.UserInfo;
 import com.example.apptourbooking.R;
@@ -24,16 +26,28 @@ import java.util.Calendar;
 public class MainActivity extends AppCompatActivity {
 
     private ScrollView loadSroll;
+<<<<<<< HEAD
 
     private LinearLayout linearLayoutUuDai, lnTaiKhoan, lnTrangChu,lnTour;
 
 
 
+=======
+<<<<<<< HEAD
+
+
+    private LinearLayout linearLayoutUuDai, lnTaiKhoan, lnTrangChu,screen_flight;
+
+=======
+    private LinearLayout linearLayoutUuDai, lnTaiKhoan, lnTrangChu, lnBrand,screen_flight;
+>>>>>>> origin/AnhKTM
+>>>>>>> origin/Mainbackup
     private TextView txtLogin, greetingTextView;
     private RecyclerView.Adapter adapterRoom;
     private RecyclerView recyclerRoom;
-    private ImageView img_trangchu;
+    private ImageView img_trangchu,img_hotel, img_logout;
     UserInfo userInfo;
+    DatabaseHelper db = new DatabaseHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Init();
-
+        ListHotel();
         Logout();
         SetWelcomeHeader();
 
@@ -52,36 +66,53 @@ public class MainActivity extends AppCompatActivity {
         Coupon();
 
         TaiKhoan();
+<<<<<<< HEAD
 
         TourList();
 
 //        Filght();
+=======
+        Filght();
+        Brand();
+>>>>>>> origin/Mainbackup
 
         Intent intent = getIntent();
         userInfo = (UserInfo) intent.getSerializableExtra("key_account");
         txtLogin.setText(""+ userInfo.getFullName() );
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/Mainbackup
     }
 
     private void Init(){
         linearLayoutUuDai = (LinearLayout) findViewById(R.id.linearlayoutUuDai);
         lnTaiKhoan = (LinearLayout) findViewById(R.id.ln_main_taikhoan);
         lnTrangChu = findViewById(R.id.main_ln_trangchu);
+<<<<<<< HEAD
         lnTour =findViewById(R.id.main_ln_tour);
         txtLogin = (TextView) findViewById(R.id.textView_login);
 //        screen_flight = findViewById(R.id.screen_flight);
+=======
+        lnBrand = findViewById(R.id.am_ln_brand);
+        txtLogin = (TextView) findViewById(R.id.textView_login);
+
+        img_hotel=findViewById(R.id.list_hotel);
+
+        screen_flight = findViewById(R.id.screen_flight);
+>>>>>>> origin/Mainbackup
+
 
         loadSroll = findViewById(R.id.scrollView2);
         img_trangchu = findViewById(R.id.main_Img_trangchu);
         greetingTextView = findViewById(R.id.main_txt_welcome_weather);
+        img_logout = findViewById(R.id.main_img_logout);
     }
 
     private void initRecyclerView(){
-        ArrayList<Hotel> listHotel =  new ArrayList<>();
-        listHotel.add(new Hotel("Hoa Hồng","Đà Nẵng","akjad  hasd askd jhas dkjas",3, true, 4.8, "location_dannang", true, 1000));
-        listHotel.add(new Hotel("Hanh Hương","Đà Lạt","ádasdasdasd ",3, true, 4.9, "location_dalat", true, 2000));
-        listHotel.add(new Hotel("Lưu Ly","Sa Pa","ádasdasdasd",3, true, 4.5, "location_sapa", true, 5000));
+        ArrayList<Hotel> listHotel =  db.getAllHotels();
 
         recyclerRoom = findViewById(R.id.view_room_sale);
         recyclerRoom.setLayoutManager(new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false));
@@ -97,10 +128,18 @@ public class MainActivity extends AppCompatActivity {
 //        });
     }
     private void Logout(){
-        txtLogin.setOnClickListener(new View.OnClickListener() {
+        img_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, LoginActivity.class));
+            }
+        });
+    }
+    private void ListHotel(){
+        img_hotel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ManagerHotel.class));
             }
         });
     }
@@ -124,6 +163,15 @@ public class MainActivity extends AppCompatActivity {
                     // Kéo lên, thay đổi sang imageView1
                     img_trangchu.setImageResource(R.drawable.main_ic_home);
                 }
+            }
+        });
+    }
+
+    private void Brand(){
+        lnBrand.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, BrandIndexActivity.class));
             }
         });
     }

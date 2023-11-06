@@ -1,53 +1,45 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Activitis.FlightActivity">
-
-    <ImageView
-        android:id="@+id/flightImage"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/flight" />
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="?android:attr/selectableItemBackground">
 
     <TextView
-        android:id="@+id/flightName"
-        android:layout_width="0dp"
+        android:id="@+id/flightNameTextView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Chuyến bay Hanoi - Ho Chi Minh"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/flightImage"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+        android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/flightDetails"
-        android:layout_width="0dp"
+        android:id="@+id/flightTimeTextView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Chi tiết chuyến bay"
-        app:layout_constraintTop_toBottomOf="@+id/flightName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp" />
+        android:text="Thời gian bay: 2 giờ 30 phút"
+        android:textSize="16sp" />
 
-    <!-- Thêm các TextView và các thuộc tính khác ở đây cho chi tiết chuyến bay -->
-    <!-- Ví dụ: Mã chuyến bay, Ngày khởi hành, Giờ khởi hành, Hạng vé, Giá vé, vv. -->
-
-    <Button
-        android:id="@+id/bookFlightButton"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Đặt vé ngay"
-        app:layout_constraintTop_toBottomOf="@+id/flightDetails"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+        android:orientation="horizontal">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/flightPriceTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Giá vé: $500"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/flightClassTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Hạng vé: Economy"
+            android:textSize="16sp" />
+    </LinearLayout>
+</LinearLayout>

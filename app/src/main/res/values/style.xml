@@ -4,5 +4,11 @@
         <item name="android:textColor">@android:color/black</item> <!-- Màu văn bản -->
         <item name="android:textColorHint">@android:color/darker_gray</item> <!-- Màu gợi ý văn bản -->
         <item name="android:textStyle">normal</item> <!-- Chuyển phông chữ thành normal để loại bỏ gạch ngang -->
+    </style>'=
+    <style name="ButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/intro_btn_started</item>
+    </style>
+    <style name="AppThemeWithActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Các thuộc tính của style -->
     </style>
 </resources>
