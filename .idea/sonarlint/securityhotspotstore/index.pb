@@ -78,3 +78,7 @@ z
 Japp/src/main/java/com/example/apptourbooking/Activitis/BrandAcitivity.java,1\9\19d7a7138aa0627f6330c280b27f4d14f74990fc
 w
 Gapp/src/main/java/com/example/apptourbooking/Adapter/FlightAdapter.java,c\0\c04af455fb3d91360737eb3e42f978e050f466ed
+w
+Gapp/src/main/java/com/example/apptourbooking/Activitis/BrandCreate.java,b\9\b9c5769906ea30cbea4bbc3113deb6f2f48b7ddf
+
+Oapp/src/main/java/com/example/apptourbooking/Activitis/BrandCreateActivity.java,c\9\c98b6af91caab8efdc78b559eb86b24b9a1eeaee
