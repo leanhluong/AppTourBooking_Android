@@ -16,6 +16,7 @@ import com.bumptech.glide.load.resource.bitmap.GranularRoundedCorners;
 import com.example.apptourbooking.Activitis.DetailHotelActivity;
 import com.example.apptourbooking.Domain.Hotel;
 import com.example.apptourbooking.R;
+import com.squareup.picasso.Picasso;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -42,12 +43,14 @@ public class HotelsAdapter extends RecyclerView.Adapter<HotelsAdapter.ViewHolder
         holder.scoreTxt.setText(" " + listHotels.get(position).getScore());
         holder.price.setText(listHotels.get(position).getPrice()+"K Vnd");
 
-        int drawableResId = holder.itemView.getResources()
-                .getIdentifier(listHotels.get(position).getPic(), "drawable",
-                        holder.itemView.getContext().getPackageName());
-
+//        int drawableResId = holder.itemView.getResources()
+//                .getIdentifier(listHotels.get(position).getPic(), "drawable",
+//                        holder.itemView.getContext().getPackageName());
+//
+        String imageUrl = String.valueOf(listHotels.get(position).getPic());
+        Picasso.get().load(imageUrl).into(holder.pic);
         Glide.with(holder.itemView.getContext())
-                .load(drawableResId)
+                .load(imageUrl)
                 .transform(new CenterCrop(), new GranularRoundedCorners(40,40,40,40))
                 .into(holder.pic);
 

@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.apptourbooking.Domain.Hotel;
 import com.example.apptourbooking.R;
+import com.squareup.picasso.Picasso;
 
 public class DetailHotelActivity extends AppCompatActivity {
 
@@ -50,10 +51,8 @@ public class DetailHotelActivity extends AppCompatActivity {
         }else {
             txtWifi.setText("No-Wifi");
         }
-        int drawableResId = getResources().getIdentifier(hotel.getPic(), "drawable", getPackageName());
-        Glide.with(this)
-                .load(drawableResId)
-                .into(ImgHotel);
+        String imageUrl = String.valueOf(hotel.getPic());
+        Picasso.get().load(imageUrl).into(ImgHotel);
 
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override

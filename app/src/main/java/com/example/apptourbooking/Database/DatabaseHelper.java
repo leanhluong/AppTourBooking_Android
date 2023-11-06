@@ -130,27 +130,57 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     //get all hotel
-    public List<Hotel> getAll(){
-        List<Hotel> list = new ArrayList<>();
-        SQLiteDatabase st = getReadableDatabase();
-        String order = "date DESC";
-        Cursor rs = st.query(TB_HOTEL, null, null,
-                null, null, null,order);
-        while (rs!=null && rs.moveToNext()){
-            int id = rs.getInt(0);
-            String name = rs.getString(1);
-            String location = rs.getString(2);
-            String description = rs.getString(3);
-            int bed = rs.getInt(4);
-            double score = rs.getDouble(5);
-            String pic = rs.getString(6);
-            int price = rs.getInt(7);
-            list.add(new Hotel(id,name,location,description,bed
-                    ,score,pic,price));
+    public ArrayList<Hotel> getAllHotels() {
+        ArrayList<Hotel> listHotel = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM " + TB_HOTEL;
 
+        Cursor cursor = db.rawQuery(query, null);
+        if (cursor != null && cursor.moveToFirst()) {
+            do {
+                int hotelIdIndex = cursor.getColumnIndex(TB_HOTEL_ID);
+                int hotelNameIndex = cursor.getColumnIndex(TB_HOTEL_NAME);
+                int locationIndex = cursor.getColumnIndex(TB_HOTEL_LOCATION);
+                int descriptionIndex = cursor.getColumnIndex(TB_HOTEL_DESCRIPTION);
+                int bedIndex = cursor.getColumnIndex(TB_HOTEL_BED);
+                int guideIndex = cursor.getColumnIndex(TB_HOTEL_GUIDE);
+                int scoreIndex = cursor.getColumnIndex(TB_HOTEL_SCORE);
+                int picIndex = cursor.getColumnIndex(TB_HOTEL_PIC);
+                int wifiIndex = cursor.getColumnIndex(TB_HOTEL_WIFI);
+                int priceIndex = cursor.getColumnIndex(TB_HOTEL_PRICE);
+
+                if (hotelIdIndex != -1 && hotelNameIndex != -1 && locationIndex != -1
+                        && descriptionIndex != -1 && bedIndex != -1 && guideIndex != -1
+                        && scoreIndex != -1 && picIndex != -1 && wifiIndex != -1
+                        && priceIndex != -1) {
+
+                    int hotelId = cursor.getInt(hotelIdIndex);
+                    String hotelName = cursor.getString(hotelNameIndex);
+                    String location = cursor.getString(locationIndex);
+                    String description = cursor.getString(descriptionIndex);
+                    int bed = cursor.getInt(bedIndex);
+                    int guide = cursor.getInt(guideIndex);
+                    double score = cursor.getDouble(scoreIndex);
+                    String pic = cursor.getString(picIndex);
+                    int wifi = cursor.getInt(wifiIndex);
+                    int price = cursor.getInt(priceIndex);
+
+                    Hotel hotel = new Hotel(hotelName, location, description, bed, guide == 1, score, pic, wifi == 1, price);
+                    hotel.setId(hotelId); // Set the hotel ID
+                    listHotel.add(hotel);
+                }
+            } while (cursor.moveToNext());
         }
-        return list;
+
+        if (cursor != null) {
+            cursor.close();
+        }
+
+        db.close();
+
+        return listHotel;
     }
+
 
 // Hotel call
 
