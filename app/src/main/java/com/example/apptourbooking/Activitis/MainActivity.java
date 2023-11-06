@@ -25,11 +25,10 @@ import java.util.Calendar;
 public class MainActivity extends AppCompatActivity {
 
     private ScrollView loadSroll;
-<<<<<<< HEAD
-    private LinearLayout linearLayoutUuDai, lnTaiKhoan, lnTrangChu ;
-=======
+
+
     private LinearLayout linearLayoutUuDai, lnTaiKhoan, lnTrangChu,screen_flight;
->>>>>>> origin/Mainbackup
+
     private TextView txtLogin, greetingTextView;
     private RecyclerView.Adapter adapterRoom;
     private RecyclerView recyclerRoom;
@@ -69,12 +68,12 @@ public class MainActivity extends AppCompatActivity {
         lnTaiKhoan = (LinearLayout) findViewById(R.id.ln_main_taikhoan);
         lnTrangChu = findViewById(R.id.main_ln_trangchu);
         txtLogin = (TextView) findViewById(R.id.textView_login);
-<<<<<<< HEAD
+
         img_hotel=findViewById(R.id.list_hotel);
-=======
+
         screen_flight = findViewById(R.id.screen_flight);
 
->>>>>>> origin/Mainbackup
+
         loadSroll = findViewById(R.id.scrollView2);
         img_trangchu = findViewById(R.id.main_Img_trangchu);
         greetingTextView = findViewById(R.id.main_txt_welcome_weather);
