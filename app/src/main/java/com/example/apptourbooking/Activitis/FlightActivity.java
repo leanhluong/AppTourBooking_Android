@@ -48,6 +48,8 @@
                 }
             });
 
+
+
             spinnerDestination.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
@@ -63,13 +65,20 @@
                 @Override
                 public void onClick(View v) {
                     String selectedDate = datePicker.getYear() + "-" + (datePicker.getMonth() + 1) + "-" + datePicker.getDayOfMonth();
-                    Intent intent = new Intent(FlightActivity.this, FlightListActivity.class);
-                    intent.putExtra("origin", selectedOrigin);
-                    intent.putExtra("destination", selectedDestination);
-                    intent.putExtra("date", selectedDate);
-                    startActivity(intent);
+
+                    if (diemDiData.equals(diemDenData)) {
+                        Toast.makeText(FlightActivity.this, "Điểm đi và điểm đến không thể giống nhau.", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Intent intent = new Intent(FlightActivity.this, FlightListActivity.class);
+                        intent.putExtra("origin", selectedOrigin);
+                        intent.putExtra("destination", selectedDestination);
+                        intent.putExtra("date", selectedDate);
+                        startActivity(intent);
+                    }
                 }
             });
+
+
 
             // Đặt sự kiện cho DatePicker
             datePicker.init(
