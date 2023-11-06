@@ -1,14 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E8E8E8">
+<LinearLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".Activitis.FlightActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutCouponBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/back_arrow" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:text="Back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView5"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -61,62 +94,41 @@
 
     <DatePicker
         android:id="@+id/date_picker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="366dp"
+
+        android:layout_height="304dp"
         android:layout_gravity="center"
         android:layout_marginTop="16dp"
         android:calendarViewShown="true" />
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
+        android:gravity="center"
+        android:layout_marginTop="80dp"
+        android:orientation="horizontal">
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Săn Vé"
-            android:textStyle="bold"
-            android:background="#0077B6"
-            android:textColor="#FFFFFF"
             android:layout_marginRight="16dp"
-            />
+            android:background="#0077B6"
+            android:text="Săn Vé"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
 
         <Button
-            android:id="@+id/btn_select_flight"
+            android:id="@+id/btnSelectFlight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tìm Kiếm"
-            android:textStyle="bold"
             android:background="@android:color/holo_red_dark"
+            android:text="Tìm Kiếm"
             android:textColor="#FFFFFF"
-            />
-
+            android:textStyle="bold" />
     </LinearLayout>
 
-    <ImageView
-        android:layout_width="133dp"
-        android:layout_height="70dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/flight" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Ưu đãi khi đặt vé máy bay"
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Khám phá các chuyến bay khác"
-        android:textStyle="bold"
-        android:layout_marginTop="16dp"
-        />
-
-    <!-- Thêm các thành phần khác liên quan đến chuyến bay khác nếu cần -->
 
 </LinearLayout>
+</ScrollView>
