@@ -45,15 +45,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String TB_LOCATION_PIC = "LocationPic";
 
 
-
-    public static final String TB_FLIGHTS = "Flights";
-
-    public static final String TB_FLIGHT_ID = "FlightId";
-    public static final String TB_FLIGHT_NAME = "FlightName";
-    public static final String TB_FLIGHT_ORIGIN = "Origin";
-    public static final String TB_FLIGHT_DESTINATION = "Destination";
-    public static final String TB_FLIGHT_DEPARTURE_DATE = "DepartureDate";
-    public static final String TB_FLIGHT_PRICE = "Price";
+    public static final String TABLE_FLIGHTS = "Flights";
+    public static final String FLIGHT_ID = "FlightId";
+    public static final String FLIGHT_ORIGIN = "Origin";
+    public static final String FLIGHT_DESTINATION = "Destination";
+    public static final String FLIGHT_DATE = "Date";
+    public static final String FLIGHT_NAME = "FlightName";
+    public static final String FLIGHT_PRICE = "Price";
+    public static final String FLIGHT_START_TIME = "StartTime";
+    public static final String FLIGHT_END_TIME = "EndTime";
 
 
     private static final int DATABASE_VERSION = 1;
@@ -76,14 +76,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 +TB_HOTEL_PIC + " TEXT, "+ TB_HOTEL_WIFI +" TEXT, " + TB_HOTEL_PRICE + " INTEGER) ";
         String tbLocation = "CREATE TABLE "+ TB_LOCATION +" ( "+TB_LOCATION_ID+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + TB_LOCATION_NAME +" TEXT," + TB_LOCATION_PIC+" TEXT) ";
-        String tbFlights = "CREATE TABLE " + TB_FLIGHTS + " ( " + TB_FLIGHT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                TB_FLIGHT_NAME + " TEXT, " +
-                TB_FLIGHT_ORIGIN + " TEXT, " +
-                TB_FLIGHT_DESTINATION + " TEXT, " +
-                TB_FLIGHT_DEPARTURE_DATE + " TEXT, " +
-                TB_FLIGHT_PRICE + " REAL);";
-        db.execSQL(tbFlights);
 
+
+        // Tạo bảng Flights
+        db.execSQL("CREATE TABLE " + TABLE_FLIGHTS + " (" +
+                FLIGHT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                FLIGHT_ORIGIN + " TEXT, " +
+                FLIGHT_DESTINATION + " TEXT, " +
+                FLIGHT_DATE + " TEXT, " +
+                FLIGHT_NAME + " TEXT, " +
+                FLIGHT_PRICE + " REAL, " +
+                FLIGHT_START_TIME + " TEXT, " +
+                FLIGHT_END_TIME + " TEXT" +
+                ");");
         db.execSQL(tbUSER);
         db.execSQL(tbHotel);
         db.execSQL(tbLocation);
@@ -168,6 +173,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         }
         return list;
+    }
+    public boolean insertFlight(Flight flight) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(FLIGHT_ORIGIN, flight.getOrigin());
+        values.put(FLIGHT_DESTINATION, flight.getDestination());
+        values.put(FLIGHT_DATE, flight.getDate());
+        values.put(FLIGHT_NAME, flight.getFlightName());
+        values.put(FLIGHT_PRICE, flight.getPrice());
+        values.put(FLIGHT_START_TIME, flight.getStartTime());
+        values.put(FLIGHT_END_TIME, flight.getEndTime());
+
+        long result = db.insert(TABLE_FLIGHTS, null, values);
+        db.close();
+
+        return result != -1;
     }
 
 

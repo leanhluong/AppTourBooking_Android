@@ -13,7 +13,10 @@
         android:theme="@style/Theme.AppTourBooking"
         tools:targetApi="31">
         <activity
-            android:name=".Activitis.FlightListActivity"
+            android:name=".Activitis.IntroActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activitis.AddFlightActivity"
             android:exported="false" />
         <activity
             android:name=".Activitis.FlightDetailsActivity"
@@ -46,7 +49,7 @@
             android:exported="false"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
-            android:name=".Activitis.LoginActivity"
+            android:name=".Activitis.FlightListActivity"
             android:exported="false"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
@@ -57,7 +60,7 @@
             android:exported="false"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
-            android:name=".Activitis.IntroActivity"
+            android:name=".Activitis.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

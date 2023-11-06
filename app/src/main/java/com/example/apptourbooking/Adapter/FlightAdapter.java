@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -12,58 +13,51 @@ import com.example.apptourbooking.R;
 
 import java.util.List;
 
-public class FlightAdapter extends BaseAdapter {
-    private Context context;
-    private int layout;
-    private List<Flight> flightList;
 
-    public FlightAdapter(Context context, int layout, List<Flight> flightList) {
-        this.context = context;
-        this.layout = layout;
-        this.flightList = flightList;
-    }
+    public class FlightAdapter extends ArrayAdapter<Flight> {
+        private Context context;
+        private int resource;
+        private List<Flight> flights;
 
-    @Override
-    public int getCount() {
-        return flightList.size();
-    }
-
-    @Override
-    public Object getItem(int position) {
-        return null;
-    }
-
-    @Override
-    public long getItemId(int position) {
-        return 0;
-    }
-
-    private class ViewHolder {
-        ImageView imgFlight;
-        TextView txtFlightName, txtFlightDetails;
-    }
-
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder holder;
-        if (convertView == null) {
-            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(layout, null);
-            holder = new ViewHolder();
-            holder.txtFlightName = convertView.findViewById(R.id.txtFlightName);
-            holder.txtFlightDetails = convertView.findViewById(R.id.txtFlightDetails);
-            holder.imgFlight = convertView.findViewById(R.id.imgViewFlight);
-            convertView.setTag(holder);
-        } else {
-            holder = (ViewHolder) convertView.getTag();
+        public FlightAdapter(Context context, int resource, List<Flight> flights) {
+            super(context, resource, flights);
+            this.context = context;
+            this.resource = resource;
+            this.flights = flights;
         }
 
-        // Gán giá trị
-        Flight flight = flightList.get(position);
-        holder.txtFlightName.setText(flight.getFlightName());
-        holder.txtFlightDetails.setText("Giá vé: $" + flight.getPrice() + "\nGiờ bay: " + flight.getDepartureDate());
-        holder.imgFlight.setImageResource(R.drawable.flight1); // Đặt hình ảnh chuyến bay tương ứng
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            View view = convertView;
+            if (view == null) {
+                LayoutInflater inflater = LayoutInflater.from(context);
+                view = inflater.inflate(resource, null);
+            }
 
-        return convertView;
+            Flight flight = flights.get(position);
+
+            ImageView imgViewFlight = view.findViewById(R.id.imgViewFlight);
+            TextView txtFlightName = view.findViewById(R.id.txtFlightName);
+            TextView txtOrigin = view.findViewById(R.id.txtOrigin);
+            TextView txtDestination = view.findViewById(R.id.txtDestination);
+            TextView txtFlightDate = view.findViewById(R.id.txtFlightDate);
+            TextView txtStartTime = view.findViewById(R.id.txtStartTime);
+            TextView txtEndTime = view.findViewById(R.id.txtEndTime);
+            TextView txtFlightPrice = view.findViewById(R.id.txtFlightPrice);
+
+            // Thiết lập dữ liệu cho các thành phần trong layout
+            // Dựa vào các thuộc tính của đối tượng Flight
+
+            txtFlightName.setText("Airline Name:" + flight.getFlightName());
+            txtOrigin.setText("Origin: " + flight.getOrigin());
+            txtDestination.setText("Destination: " + flight.getDestination());
+            txtFlightDate.setText("Date: " + flight.getDate());
+            txtStartTime.setText("Start Time: " + flight.getStartTime() +" AM");
+            txtEndTime.setText("End Time: " + flight.getEndTime() +" AM");
+            txtFlightPrice.setText("Price: " + flight.getPrice()+" $");
+
+            return view;
+        }
     }
-}
+
+
