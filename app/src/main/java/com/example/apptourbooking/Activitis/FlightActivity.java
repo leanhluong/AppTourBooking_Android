@@ -64,11 +64,21 @@
             btn_select_flight.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    String selectedDate = datePicker.getYear() + "-" + (datePicker.getMonth() + 1) + "-" + datePicker.getDayOfMonth();
+                    int year = datePicker.getYear();
+                    int month = datePicker.getMonth();
+                    int dayOfMonth = datePicker.getDayOfMonth();
+                    Calendar selectedCalendar = Calendar.getInstance();
+                    selectedCalendar.set(year, month, dayOfMonth);
+                    Calendar currentCalendar = Calendar.getInstance();
 
-                    if (diemDiData.equals(diemDenData)) {
+                    // Check if the selected date is in the future
+                    if (selectedCalendar.before(currentCalendar)) {
+                        Toast.makeText(FlightActivity.this, "Vui lòng chọn ngày trong tương lai.", Toast.LENGTH_SHORT).show();
+                    } else if (selectedOrigin.equals(selectedDestination)) {
                         Toast.makeText(FlightActivity.this, "Điểm đi và điểm đến không thể giống nhau.", Toast.LENGTH_SHORT).show();
                     } else {
+                        String selectedDate = year + "-" + (month + 1) + "-" + dayOfMonth;
+
                         Intent intent = new Intent(FlightActivity.this, FlightListActivity.class);
                         intent.putExtra("origin", selectedOrigin);
                         intent.putExtra("destination", selectedDestination);
@@ -77,6 +87,7 @@
                     }
                 }
             });
+
 
 
 

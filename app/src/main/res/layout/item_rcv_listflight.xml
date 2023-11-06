@@ -42,7 +42,7 @@
             android:id="@+id/txtFlightDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ngày đi: 01/01/2023"
+            android:text="Ngày đi: 11/7/2023"
             android:textSize="16sp" />
 
     </LinearLayout>

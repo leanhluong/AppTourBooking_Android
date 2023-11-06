@@ -50,18 +50,19 @@ public class FlightListActivity extends AppCompatActivity {
 
     private void LoadFlights() {
         flightList = new ArrayList<>();
-        flightList.add(new Flight(1, "Hanoi", "Ho Chi Minh", "08:00 AM - 10:30 AM", "Chuyến bay Hanoi - Ho Chi Minh", 500));
-        flightList.add(new Flight(2, "Hanoi", "Ho Chi Minh", "09:30 AM - 12:00 PM", "Chuyến bay Hanoi - Ho Chi Minh", 600));
-        flightList.add(new Flight(3, "Hanoi", "Ho Chi Minh", "11:15 AM - 01:45 PM", "Chuyến bay Hanoi - Ho Chi Minh", 700));
-        flightList.add(new Flight(4, "Hanoi", "Ho Chi Minh", "12:30 PM - 03:00 PM", "Chuyến bay Hanoi - Ho Chi Minh", 550));
-        flightList.add(new Flight(5, "Hanoi", "Ho Chi Minh", "02:00 PM - 04:30 PM", "Chuyến bay Hanoi - Ho Chi Minh", 650));
-        flightList.add(new Flight(6, "Hanoi", "Ho Chi Minh", "03:45 PM - 06:15 PM", "Chuyến bay Hanoi - Ho Chi Minh", 750));
-        flightList.add(new Flight(7, "Hanoi", "Ho Chi Minh", "05:00 PM - 07:30 PM", "Chuyến bay Hanoi - Ho Chi Minh", 700));
-        // You now have seven different flights from Hanoi to Ho Chi Minh with various departure times and prices.
+        flightList.add(new Flight(1, "Hà Nội", "Sài Gòn", "08:00 AM - 10:30 AM", "Chuyến bay Hà Nội - Sài Gòn", 500));
+        flightList.add(new Flight(2, "Hà Nội", "Sài Gòn", "09:30 AM - 12:00 PM", "Chuyến bay Hà Nội - Sài Gòn", 600));
+        flightList.add(new Flight(3, "Hà Nội", "Sài Gòn", "11:15 AM - 01:45 PM", "Chuyến bay Hà Nội - Sài Gòn", 700));
+        flightList.add(new Flight(4, "Hà Nội", "Sài Gòn", "12:30 PM - 03:00 PM", "Chuyến bay Hà Nội - Sài Gòn", 550));
+        flightList.add(new Flight(5, "Hà Nội", "Sài Gòn", "02:00 PM - 04:30 PM", "Chuyến bay Hà Nội - Sài Gòn", 650));
+        flightList.add(new Flight(6, "Hà Nội", "Sài Gòn", "03:45 PM - 06:15 PM", "Chuyến bay Hà Nội - Sài Gòn", 750));
+        flightList.add(new Flight(7, "Hà Nội", "Sài Gòn", "05:00 PM - 07:30 PM", "Chuyến bay Hà Nội - Sài Gòn", 700));
+        // Updated flights with "Sài Gòn" as the destination and "11/7/2023" as the date.
 
         adapter = new FlightAdapter(this, R.layout.item_rcv_listflight, flightList);
         listViewFlights.setAdapter(adapter);
     }
+
 
 
     // Khi bạn chuyển từ FlightActivity
