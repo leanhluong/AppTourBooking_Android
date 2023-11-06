@@ -3,26 +3,63 @@ package com.example.apptourbooking.Domain;
 public class Tour {
     int tourid;
     String tourName;
-    String description;
-    String  Place;
+    String tourDescription;
+    String tourDuration;
+    String tourSize;
+    String tourType;
+    String  place;
     String price;
 
-    public Tour(int tourid, String tourName, String description, String place, String price, String img) {
+    public Tour(int tourid, String tourName, String tourDescription, String tourDuration, String tourSize, String tourType, String place, String price) {
         this.tourid = tourid;
         this.tourName = tourName;
-        this.description = description;
-        Place = place;
+        this.tourDescription = tourDescription;
+        this.tourDuration = tourDuration;
+        this.tourSize = tourSize;
+        this.tourType = tourType;
+        this.place = place;
         this.price = price;
-        this.img = img;
     }
 
-    public Tour(String tourName, String description, String place, String price, String img) {
+    public Tour(String tourName, String place, String price, String img) {
         this.tourName = tourName;
-        this.description = description;
-        Place = place;
+        this.place = place;
         this.price = price;
         this.img = img;
     }
+    public String getTourDescription() {
+        return tourDescription;
+    }
+
+    public void setTourDescription(String tourDescription) {
+        this.tourDescription = tourDescription;
+    }
+
+    public String getTourDuration() {
+        return tourDuration;
+    }
+
+    public void setTourDuration(String tourDuration) {
+        this.tourDuration = tourDuration;
+    }
+
+    public String getTourSize() {
+        return tourSize;
+    }
+
+    public void setTourSize(String tourSize) {
+        this.tourSize = tourSize;
+    }
+
+    public String getTourType() {
+        return tourType;
+    }
+
+    public void setTourType(String tourType) {
+        this.tourType = tourType;
+    }
+
+
 
     public int getTourid() {
         return tourid;
@@ -40,20 +77,14 @@ public class Tour {
         this.tourName = tourName;
     }
 
-    public String getDescription() {
-        return description;
-    }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
 
     public String getPlace() {
-        return Place;
+        return place;
     }
 
     public void setPlace(String place) {
-        Place = place;
+        place = place;
     }
 
     public String getPrice() {

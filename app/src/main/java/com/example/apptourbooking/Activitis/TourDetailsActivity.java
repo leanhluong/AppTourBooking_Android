@@ -1,8 +1,10 @@
-package com.example.apptourbooking;
+package com.example.apptourbooking.Activitis;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.apptourbooking.R;
 
 public class TourDetailsActivity extends AppCompatActivity {
 

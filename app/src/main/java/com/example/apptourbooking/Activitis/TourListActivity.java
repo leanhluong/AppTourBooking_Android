@@ -1,4 +1,4 @@
-package com.example.apptourbooking;
+package com.example.apptourbooking.Activitis;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,10 +18,15 @@ import android.widget.LinearLayout;
 import com.example.apptourbooking.Activitis.CouponsActivity;
 import com.example.apptourbooking.Activitis.MainActivity;
 import com.example.apptourbooking.Adapter.CouponsAdapter;
+import com.example.apptourbooking.Adapter.HotelsAdapter;
 import com.example.apptourbooking.Adapter.ImageSliderAdapter;
 import com.example.apptourbooking.Adapter.TourAdapter;
+import com.example.apptourbooking.Database.DatabaseHelper;
+import com.example.apptourbooking.Database.TourDAO;
+import com.example.apptourbooking.Domain.Hotel;
 import com.example.apptourbooking.Domain.PhieuGiamGia;
 import com.example.apptourbooking.Domain.Tour;
+import com.example.apptourbooking.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,9 +39,9 @@ public class TourListActivity extends AppCompatActivity {
     private List<Tour> tourList;
     private RecyclerView recyclerView;
     private LinearLayout lnTour;
-    ImageView imageView;
-
-//    TourAdapter adapter = new TourAdapter(context,tourList);
+    private ImageView btn_back;
+    private TourAdapter tourAdapter;
+    DatabaseHelper db = new DatabaseHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,33 +50,25 @@ public class TourListActivity extends AppCompatActivity {
 
 //       BacktoMain();
 //       LoadTour();
-
+        tourList = new ArrayList<>();
+        tourAdapter = new TourAdapter(context,R.layout.tour_list_item,tourList);
+        Init();
         LoadCarousel();
-//        imageView= findViewById(R.id.imageView5);
-        List<Tour> dataList = new ArrayList<>();
-//        dataList.add(new Tour("Tour NDE","DI chil","trung quoc","1700000" ,null));
-//        recyclerView = findViewById(R.id.recycler_view_tour_list);
-//        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-//        recyclerView.setLayoutManager(layoutManager);
-//         TourAdapter adapter =new TourAdapter(context,dataList);
-//        // Gán Adapter cho RecyclerView
-//        recyclerView.setAdapter(adapter);
-
-    }
-    private void BacktoMain(){
-        imageView.setOnClickListener(new View.OnClickListener() {
+        btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-             finish();
+                finish();
             }
         });
     }
-//    private void LoadTour(){
-//        tourList = new ArrayList<>();
-//        tourList.add(new Tour(" Tour 5N6D", "a","Trung quoc",null,null));
-//
-//        recyclerView.setAdapter(adapter);
-//    }
+    private void Init(){
+        btn_back = findViewById(R.id.mTourlist);
+        recyclerView = findViewById(R.id.recycler_view_tour_list);
+    }
+
+    private void InitRecyclerView(){
+
+    }
  private void LoadCarousel(){
      ViewPager2 viewPager = findViewById(R.id.carousel_view_tour_list);
      ImageSliderAdapter carouselAdapter = new ImageSliderAdapter(this, carouselImages);

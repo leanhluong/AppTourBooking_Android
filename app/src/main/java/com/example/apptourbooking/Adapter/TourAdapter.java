@@ -22,7 +22,7 @@ public class TourAdapter extends RecyclerView.Adapter<TourAdapter.MyViewHolder> 
     private Activity activity;
     private List<Tour> tourList;
 
-    public TourAdapter(Context context, List<Tour> tourList) {
+    public TourAdapter(Context context, int layout,List<Tour> tourList) {
         this.context = context;
         this.tourList = tourList;
     }
@@ -30,7 +30,7 @@ public class TourAdapter extends RecyclerView.Adapter<TourAdapter.MyViewHolder> 
     @NonNull
     @Override
     public TourAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(context).inflate(R.layout.tour_list_item, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.tour_list_item, parent, false);
         return new MyViewHolder(itemView);
     }
 

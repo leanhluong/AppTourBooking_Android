@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imageView5"
+            android:id="@+id/mTourlist"
             android:layout_width="30dp"
             android:layout_height="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -36,7 +36,6 @@
             android:layout_gravity="center"
             android:layout_marginStart="16dp"/>
 
-        <!-- Add any other views for navigation buttons or other items in the top nav bar -->
 
     </LinearLayout>
     <androidx.viewpager2.widget.ViewPager2

@@ -13,12 +13,10 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.apptourbooking.Adapter.HotelsAdapter;
-import com.example.apptourbooking.Admin.PageViewListHotel;
 import com.example.apptourbooking.Database.DatabaseHelper;
 import com.example.apptourbooking.Domain.Hotel;
 import com.example.apptourbooking.Domain.UserInfo;
 import com.example.apptourbooking.R;
-import com.example.apptourbooking.TourListActivity;
 
 import java.util.ArrayList;
 import java.util.Calendar;
