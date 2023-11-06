@@ -11,10 +11,11 @@ import android.widget.TextView;
 import com.example.apptourbooking.Activitis.BrandActivity;
 import com.example.apptourbooking.Activitis.LoginActivity;
 import com.example.apptourbooking.Activitis.ManagerHotel;
+import com.example.apptourbooking.Activitis.TourListActivity;
 import com.example.apptourbooking.R;
 
 public class AdminActivity extends AppCompatActivity {
-    private LinearLayout btn_mAccount, btn_mHotel;
+    private LinearLayout btn_mAccount, btn_mHotel ,btn_mTour;
     private TextView btn_logout;
     private LinearLayout btn_mBrand;
     @Override
@@ -51,6 +52,12 @@ public class AdminActivity extends AppCompatActivity {
                 startActivity(new Intent(AdminActivity.this, BrandActivity.class));
             }
         });
+        btn_mTour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AdminActivity.this, PageViewListTour.class) );
+            }
+        });
 
     }
 
@@ -59,6 +66,7 @@ public class AdminActivity extends AppCompatActivity {
         btn_mHotel = findViewById(R.id.admin_ln_hotel);
         btn_logout = findViewById(R.id.admin_txt_logout);
         btn_mBrand = findViewById(R.id.admin_ln_brand);
+        btn_mTour =findViewById(R.id.admin_ln_tour);
     }
 
 }

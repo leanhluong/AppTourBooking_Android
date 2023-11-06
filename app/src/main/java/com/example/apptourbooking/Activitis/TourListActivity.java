@@ -35,24 +35,26 @@ import java.util.TimerTask;
 
 public class TourListActivity extends AppCompatActivity {
     private int[] carouselImages = {R.drawable.image1, R.drawable.image2, R.drawable.image3, R.drawable.image4};
-    private Context context;
-    private List<Tour> tourList;
+
+    private ArrayList<Tour> tourList;
     private RecyclerView recyclerView;
     private LinearLayout lnTour;
     private ImageView btn_back;
     private TourAdapter tourAdapter;
     DatabaseHelper db = new DatabaseHelper(this);
+    TourDAO tourDAO = new TourDAO(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tour_list);
 
-//       BacktoMain();
-//       LoadTour();
-        tourList = new ArrayList<>();
-        tourAdapter = new TourAdapter(context,R.layout.tour_list_item,tourList);
         Init();
+
+        tourList = new ArrayList<>();
+        InitRecyclerView();
+
+
         LoadCarousel();
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,8 +69,18 @@ public class TourListActivity extends AppCompatActivity {
     }
 
     private void InitRecyclerView(){
+     tourList =  tourDAO.getAllTours();
 
+
+//        listHotel.add(new Hotel("Hoa Hồng","Đà Nẵng","akjad  hasd askd jhas dkjas",3, true, 4.8, "location_dannang", true, 1000));
+//        listHotel.add(new Hotel("Hanh Hương","Đà Lạt","ádasdasdasd ",3, true, 4.9, "location_dalat", true, 2000));
+//        listHotel.add(new Hotel("Lưu Ly","Sa Pa","ádasdasdasd",3, false, 4.5, "location_sapa", true, 5000));
+//  tourList.add(new Tour("a","a","a","https://storage.googleapis.com/vntravel-fe/a4dcdcec1178cd7fce9267a13b5f9368/82fc8692928a203f242444b8191d6849/3103999fa66a8d336a294cf6e2131ada.jpg"));
+        recyclerView.setLayoutManager(new LinearLayoutManager(TourListActivity.this, LinearLayoutManager.VERTICAL, false));
+        tourAdapter = new TourAdapter(tourList);
+        recyclerView.setAdapter(tourAdapter);
     }
+
  private void LoadCarousel(){
      ViewPager2 viewPager = findViewById(R.id.carousel_view_tour_list);
      ImageSliderAdapter carouselAdapter = new ImageSliderAdapter(this, carouselImages);

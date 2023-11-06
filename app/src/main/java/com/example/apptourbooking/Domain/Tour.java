@@ -10,6 +10,17 @@ public class Tour {
     String  place;
     String price;
 
+    public Tour(String tourName, String tourDescription, String tourDuration, String tourSize, String tourType, String place, String price, String img) {
+        this.tourName = tourName;
+        this.tourDescription = tourDescription;
+        this.tourDuration = tourDuration;
+        this.tourSize = tourSize;
+        this.tourType = tourType;
+        this.place = place;
+        this.price = price;
+        this.img = img;
+    }
+
     public Tour(int tourid, String tourName, String tourDescription, String tourDuration, String tourSize, String tourType, String place, String price) {
         this.tourid = tourid;
         this.tourName = tourName;

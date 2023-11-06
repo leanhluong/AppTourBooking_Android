@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/item_tour">
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -63,7 +64,7 @@
             android:gravity="center"
             android:id="@+id/btn_tour_booking"
             android:layout_width="100dp"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
              android:layout_marginTop="100dp"
             android:text="Dang Ki"
             android:background="@drawable/rounded_background"

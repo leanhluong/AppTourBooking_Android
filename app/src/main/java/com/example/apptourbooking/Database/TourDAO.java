@@ -16,6 +16,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.widget.Toast;
 
 import com.example.apptourbooking.Database.DatabaseHelper;
 import com.example.apptourbooking.Domain.Tour;
@@ -29,10 +30,9 @@ public class TourDAO {
     private Context context;
 
     public TourDAO(Context context) {
-        this.db = db;
-        this.dbHelper = dbHelper;
+
         this.context = context;
-        db = dbHelper.getWritableDatabase();
+
 
     }
     public boolean deleteTour(int tourId) {
@@ -65,9 +65,30 @@ public class TourDAO {
 
         return rowsUpdated > 0;
     }
+    public void addTour(String name, String description, String place, String type, String price, String img
+            , String size, String duration){
+        SQLiteDatabase db = this.dbHelper.getWritableDatabase();
+        ContentValues cv = new ContentValues();
 
-    public List<Tour> getAllTours() {
-        List<Tour> tourList = new ArrayList<>();
+        cv.put(TB_TOUR_NAME,name);
+        cv.put(TB_TOUR_DESCRIPTION,description);
+        cv.put(TB_TOUR_PLACE,place);
+        cv.put(TB_TOUR_TYPE,type);
+        cv.put(TB_TOUR_PRICE,price);
+        cv.put(TB_TOUR_IMG,img);
+        cv.put(TB_TOUR_SIZE,size);
+        cv.put(TB_TOUR_DURATION,duration);
+
+        long result = db.insert(TB_TOUR,null, cv);
+        if(result == -1){
+            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(context, "Added Successfully!", Toast.LENGTH_SHORT).show();
+        }
+    }
+    public ArrayList<Tour> getAllTours() {
+        ArrayList<Tour> tourList = new ArrayList<>();
+
         Cursor cursor = db.query(TB_TOUR, null, null, null, null, null, null);
 
         if (cursor != null && cursor.moveToFirst()) {
@@ -100,6 +121,9 @@ public class TourDAO {
                     tourList.add(tour);
                 }
             } while (cursor.moveToNext());
+        }
+        else {
+
         }
 
         if (cursor != null) {
