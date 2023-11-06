@@ -69,6 +69,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public DatabaseHelper(@Nullable Context context) {
         super(context, DBTOURBOOKING, null, 1);
+//        context.deleteDatabase(DBTOURBOOKING);
     }
 
     @Override
@@ -83,7 +84,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 + TB_LOCATION_NAME +" TEXT," + TB_LOCATION_PIC+" TEXT) ";
 
         String createTblBrand = "CREATE TABLE " + TB_BRAND + " ( " + TB_BRAND_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + TB_BRAND_NAME + " TEXT," + TB_BRAND_DESCRIPTION + " TEXT, " + TB_BRAND_LOGO + " INTEGER)";
+                + TB_BRAND_NAME + " TEXT," + TB_BRAND_DESCRIPTION + " TEXT, " + TB_BRAND_LOGO + " INTEGER) ";
 
         String tbFlights = "CREATE TABLE " + TB_FLIGHTS + " ( " + TB_FLIGHT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 TB_FLIGHT_NAME + " TEXT, " +
@@ -93,21 +94,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 TB_FLIGHT_PRICE + " REAL);";
         db.execSQL(tbFlights);
 
-        String addColumnWithForeinKey = "ALTER TABLE " + TB_HOTEL + " ADD COLUMN " + TB_HOTEL_BRANDID
-                + " INTEGER REFERENCES " + TB_BRAND + "(" + TB_BRAND_ID + ")";
+//        String addColumnWithForeinKey = "ALTER TABLE " + TB_HOTEL + " ADD COLUMN " + TB_HOTEL_BRANDID
+//                + " INTEGER REFERENCES " + TB_BRAND + "(" + TB_BRAND_ID + ")";
+
         db.execSQL(tbUSER);
         db.execSQL(tbHotel);
         db.execSQL(tbLocation);
         db.execSQL("DROP TABLE IF EXISTS " + TB_BRAND);
         db.execSQL(createTblBrand);
-        db.execSQL(addColumnWithForeinKey);
+//        db.execSQL(addColumnWithForeinKey);
         //db.execSQL("CREATE TABLE users(username TEXT PRIMARY KEY, fullname TEXT, password TEXT, ROLE TEXT)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TB_USER);
-        db.execSQL("DROP TABLE IF EXISTS " + TB_BRAND);
+//        db.execSQL("DROP TABLE IF EXISTS " + TB_BRAND);
         onCreate(db);
     }
 

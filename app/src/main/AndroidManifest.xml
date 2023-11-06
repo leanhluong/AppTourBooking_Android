@@ -13,30 +13,25 @@
             android:theme="@style/Theme.AppTourBooking"
             tools:targetApi="31">
         <activity
-
-                android:name=".Activitis.AdminActivities.BrandDetailForAdminActivity"
-                android:exported="false"/>
-
-        <activity android:name=".Activitis.FlightListActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Activitis.FlightDetailsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Activitis.FlightActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Activitis.UpdateProfileActivity"
-            android:exported="false" />
-
-        <activity
-                android:name=".Activitis.AdminActivities.BrandCreateActivity"
+                android:name=".Activitis.BrandActivity"
                 android:exported="false"/>
         <activity
-                android:name=".Activitis.UserActivities.BrandDetailActivity"
+                android:name=".Activitis.FlightListActivity"
                 android:exported="false"/>
         <activity
-                android:name=".Activitis.UserActivities.BrandIndexActivity"
+                android:name=".Activitis.FlightDetailsActivity"
+                android:exported="false"/>
+        <activity
+                android:name=".Activitis.FlightActivity"
+                android:exported="false"/>
+        <activity
+                android:name=".Activitis.UpdateProfileActivity"
+                android:exported="false"/>
+        <activity
+                android:name=".Activitis.BrandDetailActivity"
+                android:exported="false"/>
+        <activity
+                android:name=".Activitis.BrandIndexActivity"
                 android:exported="false"/>
         <activity
                 android:name=".Admin.ManagerHotel"

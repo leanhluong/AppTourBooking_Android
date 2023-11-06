@@ -8,5 +8,5 @@
     <string name="btn_des_back">Back</string>
     <string name="btn_search">Search</string>
 
-    <string name="hnt_chooseBrand"> Choose a brand</string>
+    <string name="hnt_chooseBrand">Choose a brand</string>
 </resources>

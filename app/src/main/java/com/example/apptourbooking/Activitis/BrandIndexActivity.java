@@ -1,4 +1,4 @@
-package com.example.apptourbooking.Activitis.UserActivities;
+package com.example.apptourbooking.Activitis;
 
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,8 +28,14 @@ public class BrandIndexActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_brand_index);
+
         Binding();
-        setViewAdapter();
+        brandManager = new BrandManager(this);
+        brandList = brandManager.getAllBrands();
+        BrandAdapter brandAdapter = new BrandAdapter(this, R.layout.brand_view_holder, brandList);
+        lvBrandList.setAdapter(brandAdapter);
+        lvBrandList.setLayoutManager(new LinearLayoutManager(this));
+//        setViewAdapter();
         setEventBack();
         setEventSearch();
     }
@@ -48,15 +54,13 @@ public class BrandIndexActivity extends AppCompatActivity {
     private void setEventSearch() {
         btnSearch.setOnClickListener(v -> {
             brandList = brandManager.searchBrand(edtSearch.getText().toString());
+            BrandAdapter brandAdapter = new BrandAdapter(this, R.layout.brand_view_holder, brandList);
+            lvBrandList.setAdapter(brandAdapter);
+            lvBrandList.setLayoutManager(new LinearLayoutManager(this));
         });
     }
 
     private void setViewAdapter() {
-        brandManager = new BrandManager(this);
-        brandManager.CreateSampleData();
-        brandList = brandManager.getAllBrands();
-        BrandAdapter brandAdapter = new BrandAdapter(getApplicationContext(), R.layout.brand_view_holder, brandList);
-        lvBrandList.setAdapter(brandAdapter);
-        lvBrandList.setLayoutManager(new LinearLayoutManager(this));
+//        brandManager.CreateSampleData();
     }
 }

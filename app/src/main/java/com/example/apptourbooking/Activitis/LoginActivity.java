@@ -97,6 +97,7 @@ public class LoginActivity extends AppCompatActivity {
     private void Login(){
         DB =  new DatabaseHelper(this);
         userDAO = new UserDAO(this);
+
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

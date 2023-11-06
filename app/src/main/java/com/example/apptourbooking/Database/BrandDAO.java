@@ -91,6 +91,7 @@ public class BrandDAO {
         ContentValues contentValues = new ContentValues();
         contentValues.put(DatabaseHelper.TB_BRAND_NAME, brand.getBrandName());
         contentValues.put(DatabaseHelper.TB_BRAND_DESCRIPTION, brand.getDescription());
+        contentValues.put(DatabaseHelper.TB_BRAND_LOGO, brand.getLogo());
         return contentValues;
     }
 
@@ -98,10 +99,11 @@ public class BrandDAO {
     private List<Brand> getBrands(Cursor cursor) {
         List<Brand> brandList = new ArrayList<>();
         while (cursor.moveToNext()) {
+//            String logo = cursor.getString(cursor.getColumnIndex(DatabaseHelper.TB_BRAND_LOGO));
             brandList.add(new Brand(cursor.getInt(cursor.getColumnIndex(DatabaseHelper.TB_BRAND_ID)),
                     cursor.getString(cursor.getColumnIndex(DatabaseHelper.TB_BRAND_NAME)),
                     cursor.getString(cursor.getColumnIndex(DatabaseHelper.TB_BRAND_DESCRIPTION)),
-                    0));
+                    Integer.parseInt(cursor.getString(cursor.getColumnIndex(DatabaseHelper.TB_BRAND_LOGO)))));
         }
         cursor.close();
         return brandList;

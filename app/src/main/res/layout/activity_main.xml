@@ -229,6 +229,7 @@
                         android:orientation="horizontal"
                         android:layout_weight="1">
                         <LinearLayout
+                                android:id="@+id/am_ln_brand"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="0.2"

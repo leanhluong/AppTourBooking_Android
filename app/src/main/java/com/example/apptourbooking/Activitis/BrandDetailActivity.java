@@ -1,4 +1,4 @@
-package com.example.apptourbooking.Activitis.UserActivities;
+package com.example.apptourbooking.Activitis;
 
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -7,7 +7,10 @@ import android.os.Bundle;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.apptourbooking.Adapter.HotelsAdapter;
+import com.example.apptourbooking.Domain.Hotel;
 import com.example.apptourbooking.R;
+
+import java.util.ArrayList;
 
 public class BrandDetailActivity extends AppCompatActivity {
 
@@ -20,7 +23,14 @@ public class BrandDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_brand_detail);
         Binding();
-        HotelsAdapter hotelsAdapter = new HotelsAdapter(null);
+
+        ArrayList<Hotel> listHotel =  new ArrayList<>();
+        listHotel.add(new Hotel("Hoa Hồng","Đà Nẵng","akjad  hasd askd jhas dkjas",3, true, 4.8, "location_dannang", true, 1000));
+        listHotel.add(new Hotel("Hanh Hương","Đà Lạt","ádasdasdasd ",3, true, 4.9, "location_dalat", true, 2000));
+        listHotel.add(new Hotel("Lưu Ly","Sa Pa","ádasdasdasd",3, true, 4.5, "location_sapa", true, 5000));
+
+        HotelsAdapter hotelsAdapter = new HotelsAdapter(listHotel);
+
         rvHotelList.setAdapter(hotelsAdapter);
         rvHotelList.setLayoutManager(new LinearLayoutManager(this));
     }

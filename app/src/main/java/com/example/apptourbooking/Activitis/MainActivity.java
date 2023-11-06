@@ -12,7 +12,6 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.example.apptourbooking.Activitis.UserActivities.BrandIndexActivity;
 import com.example.apptourbooking.Adapter.HotelsAdapter;
 import com.example.apptourbooking.Domain.Hotel;
 import com.example.apptourbooking.Domain.UserInfo;
@@ -49,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         TaiKhoan();
         Filght();
+        Brand();
 
         Intent intent = getIntent();
         userInfo = (UserInfo) intent.getSerializableExtra("key_account");
