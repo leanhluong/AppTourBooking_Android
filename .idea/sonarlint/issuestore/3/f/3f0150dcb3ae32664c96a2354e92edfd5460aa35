@@ -1,34 +1,2 @@
 
-k
-java:S1192M"NDefine a constant instead of duplicating this literal "CREATE TABLE " 5 times.(ÿ‹‘8Ùµí¡º1
-m
-java:S1192N"KDefine a constant instead of duplicating this literal " INTEGER) " 3 times.(Õ¾°õúÿÿÿÿ8Ùµí¡º1
-k
-java:S1192N"IDefine a constant instead of duplicating this literal " TEXT, " 16 times.(Õ¾°õúÿÿÿÿ8Î¤¤£º1
-‚
-java:S1192M"eDefine a constant instead of duplicating this literal " INTEGER PRIMARY KEY AUTOINCREMENT, " 4 times.(ÿ‹‘8Ùµí¡º1
-r	java:S117u"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“Çó°ÿÿÿÿÿ8Ùµí¡º1
-s	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“Çó°ÿÿÿÿÿ8Ùµí¡º1
-s	java:S117™"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“Çó°ÿÿÿÿÿ8Ùµí¡º1
 u	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(º‚¹u8éµí¡º1
-]	java:S125H"<This block of commented-out lines of code should be removed.(¨ÌĞÜúÿÿÿÿ8¼‘¢º1
-]	java:S125b"<This block of commented-out lines of code should be removed.(–çñÏÿÿÿÿÿ8—¶í¡º1
-]	java:S125i"<This block of commented-out lines of code should be removed.(éù“˜ùÿÿÿÿ8—¶í¡º1
-]	java:S125p"<This block of commented-out lines of code should be removed.(²Ğ’Õøÿÿÿÿ8èú£º1
-j	java:S100t"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(êˆ³8—¶í¡º1
-^
-java:S1126|"AReplace this if-then-else statement by a single return statement.(Ö³Á8—¶í¡º1
-M
-java:S1172"/Remove this unused method parameter "password".(•î½ü8—¶í¡º1
-_
-java:S1126‘"AReplace this if-then-else statement by a single return statement.(¡°µ°8—¶í¡º1
-_
-java:S1126›"AReplace this if-then-else statement by a single return statement.(¡°µ°8§¶í¡º1
-K
-java:S1185¢"(Remove this method to simply inherit it.(öå“ùÿÿÿÿ8§¶í¡º1
-b
-java:S1128"ERemove this unused import 'com.example.apptourbooking.Domain.Flight'.(÷ö‚8§¶í¡º1
-V
-java:S1068@"4Remove this unused "DATABASE_VERSION" private field.(‰Ãîßÿÿÿÿÿ8§¶í¡º1
-O
-java:S1144"1Remove this unused private "validateUser" method.(•î½ü8§¶í¡º1

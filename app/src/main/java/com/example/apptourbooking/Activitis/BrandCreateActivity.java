@@ -27,6 +27,9 @@ public class BrandCreateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_brand_create);
         brandManager = new BrandManager(this);
+        Binding();
+        setEventBack();
+        setEventSave();
     }
 
     private void Binding() {
