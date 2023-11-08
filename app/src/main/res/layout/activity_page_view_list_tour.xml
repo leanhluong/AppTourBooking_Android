@@ -30,7 +30,7 @@
                     android:orientation="vertical">
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/recycler_view_tour"
+                        android:id="@+id/recycler_view_tour_list"
                         android:layout_width="match_parent"
                         android:layout_height="569dp" />
                 </LinearLayout>

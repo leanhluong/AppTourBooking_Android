@@ -76,6 +76,7 @@ public class UserDAO {
         return 1;
     }
 
+
     public long updateUser(UserInfo s){
         ContentValues values = new ContentValues();
         values.put("username", s.getUserName());

@@ -10,6 +10,7 @@ import static com.example.apptourbooking.Database.DatabaseHelper.TB_TOUR_PLACE;
 import static com.example.apptourbooking.Database.DatabaseHelper.TB_TOUR_PRICE;
 import static com.example.apptourbooking.Database.DatabaseHelper.TB_TOUR_SIZE;
 import static com.example.apptourbooking.Database.DatabaseHelper.TB_TOUR_TYPE;
+import static com.example.apptourbooking.Database.DatabaseHelper.TB_USER;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
@@ -38,17 +39,25 @@ public class TourDAO {
     }
 
 
-    public boolean deleteTour(int tourId) {
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
-        String whereClause = TB_TOUR_ID + " = ?";
-        String[] whereArgs = {String.valueOf(tourId)};
+//    public boolean deleteTour(int tourId) {
+//        SQLiteDatabase db = dbHelper.getWritableDatabase();
+//        String whereClause = TB_TOUR_ID + " = ?";
+//        String[] whereArgs = {String.valueOf(tourId)};
+//
+//        int rowsDeleted = db.delete(TB_TOUR, whereClause, whereArgs);
+//        db.close();
+//
+//        return rowsDeleted > 0;
+//    }
+public void deleteTour(String tourName) {
+    SQLiteDatabase db = dbHelper.getWritableDatabase();
+    db.delete(TB_TOUR,"TourName = ? ",new String[]{tourName});
+}
 
-        int rowsDeleted = db.delete(TB_TOUR, whereClause, whereArgs);
-        db.close();
-
-        return rowsDeleted > 0;
-    }
     public boolean updateTour(Tour tour) {
+        if (tour == null || tour.getTourid() == null || tour.getTourid().isEmpty()) {
+            return false;
+        }
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(TB_TOUR_NAME, tour.getTourName());
@@ -111,7 +120,7 @@ public class TourDAO {
                 if (tourIdIndex != -1 && tourNameIndex != -1 && descriptionIndex != -1
                         && durationIndex != -1 && sizeIndex != -1 && typeIndex != -1
                         && placeIndex != -1 && priceIndex != -1 && imgIndex != -1) {
-                    int tourId = cursor.getInt(tourIdIndex);
+                    String tourId = cursor.getString(tourIdIndex);
                     String tourName = cursor.getString(tourNameIndex);
                     String description = cursor.getString(descriptionIndex);
                     String duration = cursor.getString(durationIndex);
@@ -147,7 +156,7 @@ public class TourDAO {
         }
         return cursor;
     }
-    public Tour getTourById(int tourId) {
+    public Tour getTourById(String tourId) {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         String selection = DatabaseHelper.TB_TOUR_ID + " = ?";
         String[] selectionArgs = {String.valueOf(tourId)};
@@ -193,11 +202,10 @@ public class TourDAO {
     }
     public Tour getTourByName(String tourName) {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
-        String selection = DatabaseHelper.TB_TOUR_NAME + " = ?";
-        String[] selectionArgs = {tourName};
 
-        Cursor cursor = db.query(DatabaseHelper.TB_TOUR, null, selection, selectionArgs, null, null, null);
+        String query = "SELECT * FROM " + TB_TOUR + " WHERE " + tourName ;
 
+        Cursor cursor = db.rawQuery(query, null);
         if (cursor != null && cursor.moveToFirst()) {
             int tourIdIndex = cursor.getColumnIndex(DatabaseHelper.TB_TOUR_ID);
             int descriptionIndex = cursor.getColumnIndex(DatabaseHelper.TB_TOUR_DESCRIPTION);
@@ -211,7 +219,7 @@ public class TourDAO {
             if (tourIdIndex != -1 && descriptionIndex != -1
                     && durationIndex != -1 && sizeIndex != -1 && typeIndex != -1
                     && placeIndex != -1 && priceIndex != -1 && imgIndex != -1) {
-                int tourId = cursor.getInt(tourIdIndex);
+                String tourId = cursor.getString(tourIdIndex);
                 String description = cursor.getString(descriptionIndex);
                 String duration = cursor.getString(durationIndex);
                 String size = cursor.getString(sizeIndex);

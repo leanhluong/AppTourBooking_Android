@@ -60,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
         Filght();
         Brand();
 
-
         Intent intent = getIntent();
         userInfo = (UserInfo) intent.getSerializableExtra("key_account");
         txtLogin.setText(""+ userInfo.getFullName() );

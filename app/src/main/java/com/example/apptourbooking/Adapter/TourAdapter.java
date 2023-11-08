@@ -1,7 +1,7 @@
 package com.example.apptourbooking.Adapter;
 
-import android.app.Activity;
-import android.content.Context;
+
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,18 +12,19 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.apptourbooking.Activitis.TourDetailsActivity;
 import com.example.apptourbooking.Domain.Tour;
 import com.example.apptourbooking.R;
 import com.squareup.picasso.Picasso;
 
+
 import java.util.ArrayList;
-import java.util.List;
+
 
 public class TourAdapter extends RecyclerView.Adapter<TourAdapter.MyViewHolder> {
 
     private ArrayList<Tour> tourList;
-    private static final int VIEW_TYPE_ONE = 1;
-    private static final int VIEW_TYPE_TWO = 2;
+
 
 
     public TourAdapter( ArrayList<Tour> tourList) {
@@ -49,12 +50,20 @@ public class TourAdapter extends RecyclerView.Adapter<TourAdapter.MyViewHolder> 
         holder.tvTourName.setText(tourList.get(position).getTourName());
         holder.tvTourPlace.setText(tourList.get(position).getPlace());
         holder.tvTourPrice.setText("Từ " + tourList.get(position).getPrice() + " ₫");
-        holder.btnTourBooking.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+//        holder.btnTourBooking.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                         }
+//        });
 
-            }
+
+
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(holder.itemView.getContext(), TourDetailsActivity.class);
+            intent.putExtra("object",tourList.get(position));
+            holder.itemView.getContext().startActivity(intent);
         });
+
     }
 
     @Override
@@ -75,7 +84,7 @@ public class TourAdapter extends RecyclerView.Adapter<TourAdapter.MyViewHolder> 
             tvTourName = view.findViewById(R.id.tv_tour_name);
             tvTourPlace = view.findViewById(R.id.tv_tour_place);
             tvTourPrice = view.findViewById(R.id.tv_tour_price);
-            btnTourBooking = view.findViewById(R.id.btn_tour_booking);
+//            btnTourBooking = view.findViewById(R.id.btn_tour_booking);
         }
     }
 

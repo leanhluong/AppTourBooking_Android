@@ -1,7 +1,9 @@
 package com.example.apptourbooking.Domain;
 
-public class Tour {
-    int tourid;
+import java.io.Serializable;
+
+public class Tour implements Serializable {
+    String tourid;
     String tourName;
     String tourDescription;
     String tourDuration;
@@ -21,7 +23,7 @@ public class Tour {
         this.img = img;
     }
 
-    public Tour(int tourid, String tourName, String tourDescription, String tourDuration, String tourSize, String tourType, String place, String price) {
+    public Tour(String tourid, String tourName, String tourDescription, String tourDuration, String tourSize, String tourType, String place, String price, String img) {
         this.tourid = tourid;
         this.tourName = tourName;
         this.tourDescription = tourDescription;
@@ -30,6 +32,7 @@ public class Tour {
         this.tourType = tourType;
         this.place = place;
         this.price = price;
+        this.img = img;
     }
 
     public Tour(String tourName, String place, String price, String img) {
@@ -72,11 +75,11 @@ public class Tour {
 
 
 
-    public int getTourid() {
+    public String getTourid() {
         return tourid;
     }
 
-    public void setTourid(int tourid) {
+    public void setTourid(String tourid) {
         this.tourid = tourid;
     }
 
@@ -95,7 +98,7 @@ public class Tour {
     }
 
     public void setPlace(String place) {
-        place = place;
+        this.place = place;
     }
 
     public String getPrice() {

@@ -45,11 +45,6 @@ public class ManagerHotel extends AppCompatActivity {
 
     private void InitRecyclerView(){
         ArrayList<Hotel> listHotel =  db.getAllHotels();
-
-//        listHotel.add(new Hotel("Hoa Hồng","Đà Nẵng","akjad  hasd askd jhas dkjas",3, true, 4.8, "location_dannang", true, 1000));
-//        listHotel.add(new Hotel("Hanh Hương","Đà Lạt","ádasdasdasd ",3, true, 4.9, "location_dalat", true, 2000));
-//        listHotel.add(new Hotel("Lưu Ly","Sa Pa","ádasdasdasd",3, false, 4.5, "location_sapa", true, 5000));
-
         recyclerView.setLayoutManager(new LinearLayoutManager(ManagerHotel.this, LinearLayoutManager.VERTICAL, false));
         adapterHotel = new HotelsAdapter(listHotel);
         recyclerView.setAdapter(adapterHotel);

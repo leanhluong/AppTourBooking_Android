@@ -193,7 +193,7 @@
                     android:layout_height="100dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
-                    android:src="@drawable/ic_tour" />
+                    android:src="@drawable/ic_tour_duration" />
 
                 <TextView
                     android:layout_width="match_parent"

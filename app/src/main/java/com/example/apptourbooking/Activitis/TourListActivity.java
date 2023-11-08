@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -38,9 +39,9 @@ public class TourListActivity extends AppCompatActivity {
 
     private ArrayList<Tour> tourList;
     private RecyclerView recyclerView;
-    private LinearLayout lnTour;
     private ImageView btn_back;
     private TourAdapter tourAdapter;
+    private Button btn_book;
     DatabaseHelper db = new DatabaseHelper(this);
     TourDAO tourDAO = new TourDAO(this);
 
@@ -64,18 +65,14 @@ public class TourListActivity extends AppCompatActivity {
         });
     }
     private void Init(){
+
         btn_back = findViewById(R.id.mTourlist);
         recyclerView = findViewById(R.id.recycler_view_tour_list);
+
     }
 
     private void InitRecyclerView(){
      tourList =  tourDAO.getAllTours();
-
-
-//        listHotel.add(new Hotel("Hoa Hồng","Đà Nẵng","akjad  hasd askd jhas dkjas",3, true, 4.8, "location_dannang", true, 1000));
-//        listHotel.add(new Hotel("Hanh Hương","Đà Lạt","ádasdasdasd ",3, true, 4.9, "location_dalat", true, 2000));
-//        listHotel.add(new Hotel("Lưu Ly","Sa Pa","ádasdasdasd",3, false, 4.5, "location_sapa", true, 5000));
-//  tourList.add(new Tour("a","a","a","https://storage.googleapis.com/vntravel-fe/a4dcdcec1178cd7fce9267a13b5f9368/82fc8692928a203f242444b8191d6849/3103999fa66a8d336a294cf6e2131ada.jpg"));
         recyclerView.setLayoutManager(new LinearLayoutManager(TourListActivity.this, LinearLayoutManager.VERTICAL, false));
         tourAdapter = new TourAdapter(tourList);
         recyclerView.setAdapter(tourAdapter);
