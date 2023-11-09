@@ -68,6 +68,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String TB_TOUR_ID = "TourId";
     public static final String TB_TOUR_NAME = "TourName";
     public static final String TB_TOUR_DESCRIPTION = "Description";
+
+    public static final String TB_TOUR_DURATION = "TourDuration";
+    public static final String TB_TOUR_SIZE = "TourSize";
+    public static final String TB_TOUR_TYPE = "TourType";
+
     public static final String TB_TOUR_PLACE = "Place";
     public static final String TB_TOUR_PRICE = "Price";
     public static final String TB_TOUR_IMG = "Img";
@@ -105,6 +110,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FLIGHT_START_TIME + " TEXT, " +
                 FLIGHT_END_TIME + " TEXT" +
                 ");");
+        String tbTour = "CREATE TABLE " + TB_TOUR + " ( "
+                + TB_TOUR_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + TB_TOUR_NAME + " TEXT, "
+                + TB_TOUR_DESCRIPTION + " TEXT, "
+                + TB_TOUR_DURATION + " TEXT, "
+                + TB_TOUR_SIZE + " TEXT, "
+                + TB_TOUR_TYPE + " TEXT, "
+                + TB_TOUR_PLACE + " TEXT, "
+                + TB_TOUR_PRICE + " TEXT, "
+                + TB_TOUR_IMG + " TEXT)";
+        String createTblBrand = "CREATE TABLE " + TB_BRAND + " ( " + TB_BRAND_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + TB_BRAND_NAME + " TEXT," + TB_BRAND_DESCRIPTION + " TEXT, " + TB_BRAND_LOGO + " INTEGER) ";
+
         db.execSQL(tbUSER);
         db.execSQL(tbHotel);
         db.execSQL(tbLocation);
@@ -203,25 +221,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         String query = "SELECT * FROM " + TB_HOTEL;
 
-        // public List<Hotel> getAllHotel() {
-        // List<Hotel> list = new ArrayList<>();
-        // SQLiteDatabase st = getReadableDatabase();
-        // String order = "date DESC";
-        // Cursor rs = st.query(TB_HOTEL, null, null,
-        // null, null, null, order);
-        // while (rs != null && rs.moveToNext()) {
-        // int id = rs.getInt(0);
-        // String name = rs.getString(1);
-        // String location = rs.getString(2);
-        // String description = rs.getString(3);
-        // int bed = rs.getInt(4);
-        // double score = rs.getDouble(5);
-        // String pic = rs.getString(6);
-        // int price = rs.getInt(7);
-        // list.add(new Hotel(id, name, location, description, bed
-        // , score, pic, price));
-        // }
-        // }
+
 
         Cursor cursor = db.rawQuery(query, null);
         if (cursor != null && cursor.moveToFirst()) {
