@@ -18,7 +18,7 @@ import java.util.List;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     private Context context;
-    private static final int DATABASE_VERSION= 1;
+    private static final int DATABASE_VERSION = 1;
     public static final String DBTOURBOOKING = "TourBooking.db";
 
     public static final String TB_USER = "Users";
@@ -45,7 +45,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String TB_HOTEL_PRICE = "Price";
     public static final String TB_HOTEL_BRANDID = "BrandId";
 
-
     public static final String TB_LOCATION_ID = "LocationId";
     public static final String TB_LOCATION_NAME = "LocationName";
     public static final String TB_LOCATION_PIC = "LocationPic";
@@ -54,13 +53,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String TB_BRAND_NAME = "BrandName";
     public static final String TB_BRAND_DESCRIPTION = "BrandDescription";
     public static final String TB_BRAND_LOGO = "BrandLogo";
-
-
-
-
-    public static final String TB_FLIGHTS = "Flights";
-
-
 
     public static final String TABLE_FLIGHTS = "Flights";
     public static final String FLIGHT_ID = "FlightId";
@@ -72,93 +64,36 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String FLIGHT_START_TIME = "StartTime";
     public static final String FLIGHT_END_TIME = "EndTime";
 
-
-
-
     public static final String TB_TOUR = "Tour";
     public static final String TB_TOUR_ID = "TourId";
     public static final String TB_TOUR_NAME = "TourName";
-    public static final String TB_TOUR_DESCRIPTION = "TourDescription";
-    public static final String TB_TOUR_DURATION = "TourDuration";
-    public static final String TB_TOUR_SIZE = "TourSize";
-    public static final String TB_TOUR_TYPE = "TourType";
+    public static final String TB_TOUR_DESCRIPTION = "Description";
     public static final String TB_TOUR_PLACE = "Place";
     public static final String TB_TOUR_PRICE = "Price";
     public static final String TB_TOUR_IMG = "Img";
 
-
     public DatabaseHelper(@Nullable Context context) {
         super(context, DBTOURBOOKING, null, 1);
 
-        this.context=context;
+        this.context = context;
 
-//        context.deleteDatabase(DBTOURBOOKING);
+        // context.deleteDatabase(DBTOURBOOKING);
 
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         String tbUSER = "CREATE TABLE " + TB_USER + " ( " + TB_USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + TB_USER_FULLNAME +" TEXT, " + TB_USER_NAME + " TEXT, " + TB_USER_PASSWORD +" TEXT, "+ TB_USER_TOKEN +" TEXT, "+TB_USER_ROLE +" INTEGER) ";
-        String tbHotel = "CREATE TABLE " + TB_HOTEL + "( "
-                + TB_HOTEL_ID+ " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + TB_HOTEL_NAME + " TEXT, "
-                + TB_HOTEL_LOCATION + " TEXT, "
-                + TB_HOTEL_DESCRIPTION + " TEXT, "
-                + TB_HOTEL_BED + " NTEGER, "
-                + TB_HOTEL_GUIDE + " TEXT, "
-                + TB_HOTEL_SCORE + " TEXT, "
-                +TB_HOTEL_PIC + " TEXT, "
-                + TB_HOTEL_WIFI +" TEXT, "
-                + TB_HOTEL_PRICE + " INTEGER) ";
-        String tbLocation = "CREATE TABLE "+ TB_LOCATION +" ( "+TB_LOCATION_ID+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + TB_LOCATION_NAME +" TEXT," + TB_LOCATION_PIC+" TEXT) ";
+                + TB_USER_FULLNAME + " TEXT, " + TB_USER_NAME + " TEXT, " + TB_USER_PASSWORD + " TEXT, " + TB_USER_TOKEN
+                + " TEXT, " + TB_USER_ROLE + " INTEGER) ";
+        String tbHotel = "CREATE TABLE " + TB_HOTEL + "( " + TB_HOTEL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + TB_HOTEL_NAME + " TEXT, " + TB_HOTEL_LOCATION + " TEXT, " + TB_HOTEL_DESCRIPTION + " TEXT, "
+                + TB_HOTEL_BED + " NTEGER, " + TB_HOTEL_GUIDE + " TEXT, " + TB_HOTEL_SCORE + " TEXT, "
+                + TB_HOTEL_PIC + " TEXT, " + TB_HOTEL_WIFI + " TEXT, " + TB_HOTEL_PRICE + " INTEGER) ";
+        String tbLocation = "CREATE TABLE " + TB_LOCATION + " ( " + TB_LOCATION_ID
+                + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + TB_LOCATION_NAME + " TEXT," + TB_LOCATION_PIC + " TEXT) ";
 
-        String tbTour = "CREATE TABLE " + TB_TOUR + " ( "
-                + TB_TOUR_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + TB_TOUR_NAME + " TEXT, "
-                + TB_TOUR_DESCRIPTION + " TEXT, "
-                + TB_TOUR_DURATION + " TEXT, "
-                + TB_TOUR_SIZE + " TEXT, "
-                + TB_TOUR_TYPE + " TEXT, "
-                + TB_TOUR_PLACE + " TEXT, "
-                + TB_TOUR_PRICE + " TEXT, "
-                + TB_TOUR_IMG + " TEXT)";
-
-        String createTblBrand = "CREATE TABLE " + TB_BRAND + " ( " + TB_BRAND_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + TB_BRAND_NAME + " TEXT," + TB_BRAND_DESCRIPTION + " TEXT, " + TB_BRAND_LOGO + " INTEGER) ";
-
-
-
-//        String addColumnWithForeinKey = "ALTER TABLE " + TB_HOTEL + " ADD COLUMN " + TB_HOTEL_BRANDID
-//                + " INTEGER REFERENCES " + TB_BRAND + "(" + TB_BRAND_ID + ")";
-
-
-//        ContentValues values1 = new ContentValues();
-//        values1.put(TB_HOTEL_NAME, "5 sao");
-//        values1.put(TB_HOTEL_LOCATION, "Da Nang");
-//        values1.put(TB_HOTEL_DESCRIPTION, "beautiful");
-//        values1.put(TB_HOTEL_BED, 2);
-//        values1.put(TB_HOTEL_GUIDE, "yes");
-//        values1.put(TB_HOTEL_SCORE, 4);
-//        values1.put(TB_HOTEL_PIC, "https://media-cdn.tripadvisor.com/media/photo-s/1c/85/a8/6c/aira-boutique-hanoi-hotel.jpg");
-//        values1.put(TB_HOTEL_WIFI, "yes");
-//        values1.put(TB_HOTEL_PRICE, "200");
-//
-//        db.insert("Hotel", null, values1);
-//
-//        ContentValues values2 = new ContentValues();
-//        values2.put(TB_HOTEL_NAME, "4 sao");
-//        values2.put(TB_HOTEL_LOCATION, "Hai Phong");
-//        values2.put(TB_HOTEL_DESCRIPTION, "yes");
-//        values2.put(TB_HOTEL_BED, 2);
-//        values2.put(TB_HOTEL_GUIDE, "yes");
-//        values2.put(TB_HOTEL_SCORE, 4);
-//        values2.put(TB_HOTEL_PIC, "https://static.leonardo-hotels.com/image/leonardohotelbucharestcitycenter_room_comfortdouble2_2022_4000x2600_7e18f254bc75491965d36cc312e8111f_1200x780_mobile_3.jpeg");
-//        values2.put(TB_HOTEL_WIFI, "yes");
-//        values2.put(TB_HOTEL_PRICE, "200");
-//
-//        db.insert("Hotel", null, values2);
         // Tạo bảng Flights
         db.execSQL("CREATE TABLE " + TABLE_FLIGHTS + " (" +
                 FLIGHT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -170,58 +105,60 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FLIGHT_START_TIME + " TEXT, " +
                 FLIGHT_END_TIME + " TEXT" +
                 ");");
-
         db.execSQL(tbUSER);
         db.execSQL(tbHotel);
         db.execSQL(tbLocation);
 
         db.execSQL(tbTour);
 
-
         db.execSQL("DROP TABLE IF EXISTS " + TB_BRAND);
         db.execSQL(createTblBrand);
-//        db.execSQL(addColumnWithForeinKey);
+        // db.execSQL(addColumnWithForeinKey);
 
-        //db.execSQL("CREATE TABLE users(username TEXT PRIMARY KEY, fullname TEXT, password TEXT, ROLE TEXT)");
+        // db.execSQL("CREATE TABLE users(username TEXT PRIMARY KEY, fullname TEXT,
+        // password TEXT, ROLE TEXT)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
-        db.execSQL("DROP TABLE IF EXISTS "+ TB_USER);
+        db.execSQL("DROP TABLE IF EXISTS " + TB_USER);
         db.execSQL("DROP TABLE IF EXISTS " + TB_TOUR);
 
-
         db.execSQL("DROP TABLE IF EXISTS " + TB_USER);
-        db.execSQL("DROP TABLE IF EXISTS " + TB_BRAND);
+        // db.execSQL("DROP TABLE IF EXISTS " + TB_BRAND);
         onCreate(db);
-        db.execSQL("DROP TABLE IF EXISTS "+ TB_HOTEL);
+        db.execSQL("DROP TABLE IF EXISTS " + TB_HOTEL);
 
         onCreate(db);
     }
 
-    public Boolean InsertData(String username,String fullname,String token, String password){
+    public Boolean InsertData(String username, String fullname, String token, String password) {
         SQLiteDatabase MyDB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-                contentValues.put(TB_USER_NAME, username);
-                contentValues.put(TB_USER_FULLNAME, fullname);
-                contentValues.put(TB_USER_TOKEN, token);
-                contentValues.put(TB_USER_PASSWORD, password);
-        long result = MyDB.insert(TB_USER, null, contentValues );
-        if(result == -1) return false;
+        contentValues.put(TB_USER_NAME, username);
+        contentValues.put(TB_USER_FULLNAME, fullname);
+        contentValues.put(TB_USER_TOKEN, token);
+        contentValues.put(TB_USER_PASSWORD, password);
+        long result = MyDB.insert(TB_USER, null, contentValues);
+        if (result == -1)
+            return false;
         else
             return true;
     }
+
     public long insertTour(String tourName, String description, String location, String price, String img) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(TB_TOUR_NAME, tourName);
+        values.put(TB_TOUR_DESCRIPTION, description);
         values.put(TB_TOUR_PLACE, location);
         values.put(TB_TOUR_PRICE, price);
         values.put(TB_TOUR_IMG, img);
 
         return db.insert(TB_TOUR, null, values);
     }
+
     private boolean validateUser(String username, String password) {
         if (username != null && username.length() <= 10) {
             try {
@@ -234,10 +171,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return false;
     }
 
-
     public Boolean checkusername(String username) {
         SQLiteDatabase MyDB = this.getWritableDatabase();
-        Cursor cursor = MyDB.rawQuery("SELECT * FROM Users where username = ?", new String[]{username});
+        Cursor cursor = MyDB.rawQuery("SELECT * FROM Users where username = ?", new String[] { username });
         if (cursor.getCount() > 0)
             return true;
         else
@@ -247,7 +183,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public Boolean checkusernamepassword(String username, String password) {
         SQLiteDatabase MyDB = this.getWritableDatabase();
-        Cursor cursor = MyDB.rawQuery("SELECT * FROM users WHERE username = ? and password = ?", new String[]{username, password});
+        Cursor cursor = MyDB.rawQuery("SELECT * FROM users WHERE username = ? and password = ?",
+                new String[] { username, password });
         if (cursor.getCount() > 0)
             return true;
         else
@@ -259,14 +196,32 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         super.onOpen(db);
     }
 
-
-    //get all hotel
+    // get all hotel
 
     public ArrayList<Hotel> getAllHotels() {
         ArrayList<Hotel> listHotel = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
         String query = "SELECT * FROM " + TB_HOTEL;
 
+        // public List<Hotel> getAllHotel() {
+        // List<Hotel> list = new ArrayList<>();
+        // SQLiteDatabase st = getReadableDatabase();
+        // String order = "date DESC";
+        // Cursor rs = st.query(TB_HOTEL, null, null,
+        // null, null, null, order);
+        // while (rs != null && rs.moveToNext()) {
+        // int id = rs.getInt(0);
+        // String name = rs.getString(1);
+        // String location = rs.getString(2);
+        // String description = rs.getString(3);
+        // int bed = rs.getInt(4);
+        // double score = rs.getDouble(5);
+        // String pic = rs.getString(6);
+        // int price = rs.getInt(7);
+        // list.add(new Hotel(id, name, location, description, bed
+        // , score, pic, price));
+        // }
+        // }
 
         Cursor cursor = db.rawQuery(query, null);
         if (cursor != null && cursor.moveToFirst()) {
@@ -298,7 +253,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     int wifi = cursor.getInt(wifiIndex);
                     int price = cursor.getInt(priceIndex);
 
-                    Hotel hotel = new Hotel(hotelName, location, description, bed, guide == 1, score, pic, wifi == 1, price);
+                    Hotel hotel = new Hotel(hotelName, location, description, bed, guide == 1, score, pic, wifi == 1,
+                            price);
                     hotel.setId(hotelId); // Set the hotel ID
                     listHotel.add(hotel);
                 }
@@ -314,74 +270,76 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return listHotel;
     }
 
+    // Hotel call
 
-// Hotel call
+    public void addHotel(String name, String description, String location, int bed, int price, String pic, String guide,
+            String score, String wifi) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
 
-public void addHotel(String name, String description, String location, int bed, int price, String pic
-        , String guide, String score, String wifi){
-    SQLiteDatabase db = this.getWritableDatabase();
-    ContentValues cv = new ContentValues();
+        cv.put(TB_HOTEL_NAME, name);
+        cv.put(TB_HOTEL_DESCRIPTION, description);
+        cv.put(TB_HOTEL_LOCATION, location);
+        cv.put(TB_HOTEL_BED, bed);
+        cv.put(TB_HOTEL_PRICE, price);
+        cv.put(TB_HOTEL_PIC, pic);
+        cv.put(TB_HOTEL_GUIDE, guide);
+        cv.put(TB_HOTEL_SCORE, score);
+        cv.put(TB_HOTEL_WIFI, wifi);
 
-    cv.put(TB_HOTEL_NAME,name);
-    cv.put(TB_HOTEL_DESCRIPTION,description);
-    cv.put(TB_HOTEL_LOCATION,location);
-    cv.put(TB_HOTEL_BED,bed);
-    cv.put(TB_HOTEL_PRICE,price);
-    cv.put(TB_HOTEL_PIC,pic);
-    cv.put(TB_HOTEL_GUIDE,guide);
-    cv.put(TB_HOTEL_SCORE,score);
-    cv.put(TB_HOTEL_WIFI,wifi);
-
-    long result = db.insert(TB_HOTEL,null, cv);
-    if(result == -1){
-        Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
-    }else {
-        Toast.makeText(context, "Added Successfully!", Toast.LENGTH_SHORT).show();
+        long result = db.insert(TB_HOTEL, null, cv);
+        if (result == -1) {
+            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "Added Successfully!", Toast.LENGTH_SHORT).show();
+        }
     }
-}
 
     // doc database
-    public Cursor readAllDataHotel(){
+    public Cursor readAllDataHotel() {
         String query = "SELECT * FROM " + TB_HOTEL;
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = null;
-        if(db != null){
+        if (db != null) {
             cursor = db.rawQuery(query, null);
         }
         return cursor;
     }
-    public void updateData(String row_id, String name, String description, String location, int bed, int price, String pic
-            , String guide, String score, String wifi){
+
+    public void updateData(String row_id, String name, String description, String location, int bed, int price,
+            String pic, String guide, String score, String wifi) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
-        cv.put(TB_HOTEL_NAME,name);
-        cv.put(TB_HOTEL_LOCATION,location);
-        cv.put(TB_HOTEL_DESCRIPTION,description);
-        cv.put(TB_HOTEL_BED,bed);
-        cv.put(TB_HOTEL_GUIDE,guide);
-        cv.put(TB_HOTEL_PIC,pic);
-        cv.put(TB_HOTEL_SCORE,score);
-        cv.put(TB_HOTEL_WIFI,wifi);
-        cv.put(TB_HOTEL_PRICE,price);
+        cv.put(TB_HOTEL_NAME, name);
+        cv.put(TB_HOTEL_LOCATION, location);
+        cv.put(TB_HOTEL_DESCRIPTION, description);
+        cv.put(TB_HOTEL_BED, bed);
+        cv.put(TB_HOTEL_GUIDE, guide);
+        cv.put(TB_HOTEL_PIC, pic);
+        cv.put(TB_HOTEL_SCORE, score);
+        cv.put(TB_HOTEL_WIFI, wifi);
+        cv.put(TB_HOTEL_PRICE, price);
 
-        long result = db.update(TB_HOTEL, cv, "_id=?", new String[]{row_id});
-        if(result == -1){
+        long result = db.update(TB_HOTEL, cv, "_id=?", new String[] { row_id });
+        if (result == -1) {
             Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
-        }else {
+        } else {
             Toast.makeText(context, "Updated Successfully!", Toast.LENGTH_SHORT).show();
         }
 
     }
-    public void deleteOneRow(String row_id){
+
+    public void deleteOneRow(String row_id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        long result = db.delete(TB_HOTEL, "_id=?", new String[]{row_id});
-        if(result == -1){
+        long result = db.delete(TB_HOTEL, "_id=?", new String[] { row_id });
+        if (result == -1) {
             Toast.makeText(context, "Failed to Delete.", Toast.LENGTH_SHORT).show();
-        }else{
+        } else {
             Toast.makeText(context, "Successfully Deleted.", Toast.LENGTH_SHORT).show();
         }
     }
+
     public boolean insertFlight(Flight flight) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -397,22 +355,6 @@ public void addHotel(String name, String description, String location, int bed, 
         db.close();
 
         return result != -1;
-    }
-
-
-    public long insertTour(Tour tour) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(TB_TOUR_NAME, tour.getTourName());
-        values.put(TB_TOUR_DESCRIPTION, tour.getTourDescription());
-        values.put(TB_TOUR_DURATION, tour.getTourDuration());
-        values.put(TB_TOUR_SIZE, tour.getTourSize());
-        values.put(TB_TOUR_TYPE, tour.getTourType());
-        values.put(TB_TOUR_PLACE, tour.getPlace());
-        values.put(TB_TOUR_PRICE, tour.getPrice());
-        values.put(TB_TOUR_IMG, tour.getImg());
-
-        return db.insert(TB_TOUR, null, values);
     }
 
 }
