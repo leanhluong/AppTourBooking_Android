@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         Init();
 
         Logout();
+
         SetWelcomeHeader();
 
         initRecyclerView();
